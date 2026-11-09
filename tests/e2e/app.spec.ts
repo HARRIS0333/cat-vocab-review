@@ -1,0 +1,133 @@
+import { expect, test } from "@playwright/test";
+import {
+  chooseSimpleTarget,
+  drawMedians,
+  drawOneWrongStroke,
+  expectCachedAsset,
+  expectNoHorizontalOverflow,
+  openSingleItemPractice,
+  waitForOfflineReady,
+} from "./helpers";
+
+test("loads under the GitHub Pages subpath and becomes offline-ready", async ({
+  page,
+}) => {
+  await page.goto("./");
+
+  await expect(
+    page.getByRole("heading", { name: "小桃猫生字屋" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("main").getByRole("heading", { name: "选择课目" }),
+  ).toBeVisible();
+  await waitForOfflineReady(page);
+
+  expect(new URL(page.url()).pathname).toBe("/cat-vocab/");
+  await expectNoHorizontalOverflow(page);
+});
+
+test("draws real pointer strokes, shows correct feedback, summarizes, and persists progress", async ({
+  page,
+}) => {
+  await page.goto("./");
+  const target = await chooseSimpleTarget(page);
+  const data = await openSingleItemPractice(page, target);
+  await expectNoHorizontalOverflow(page);
+
+  await drawMedians(page, data);
+  await page.getByRole("button", { name: "提交" }).click();
+
+  await expect(page.getByText("写对了！")).toBeVisible();
+  await expectNoHorizontalOverflow(page);
+  await page.getByRole("button", { name: "下一字" }).click({ timeout: 500 });
+  await expect(
+    page.getByRole("heading", { name: "本次练习结果" }),
+  ).toBeVisible();
+  await expect(page.getByLabel("本次正确")).toContainText("1");
+  await expectNoHorizontalOverflow(page);
+
+  await page.reload();
+  await expect(
+    page.getByRole("heading", { name: "本次练习结果" }),
+  ).toBeVisible();
+  await page.goto("./");
+  await expect(page.getByText("已掌握 1")).toBeVisible();
+});
+
+test("shows stroke-count feedback, autoplay guidance, and skip review summary", async ({
+  page,
+}) => {
+  await page.goto("./");
+  const target = await chooseSimpleTarget(page);
+  await openSingleItemPractice(page, target);
+  await expectNoHorizontalOverflow(page);
+
+  await drawOneWrongStroke(page);
+  await page.getByRole("button", { name: "提交" }).click();
+
+  await expect(
+    page.getByRole("heading", { name: "这次还差一点" }),
+  ).toBeVisible();
+  await expect(page.getByText("笔画数量不对")).toBeVisible();
+  const strokePlayer = page.getByRole("region", { name: /标准笔顺动画/ });
+  await expect(strokePlayer).toBeVisible();
+  await expect(strokePlayer.locator("svg")).toBeVisible();
+  const strokePath = strokePlayer.locator("svg path").first();
+  await expect(strokePath).toBeAttached({ timeout: 30_000 });
+  await expect(strokePath).toHaveAttribute("d", /.+/);
+  await expectNoHorizontalOverflow(page);
+  await expect(
+    page.getByRole("button", { name: "重播笔顺" }),
+  ).toBeVisible({ timeout: 30_000 });
+  await page.getByRole("button", { name: "先跳过" }).click();
+
+  await expect(
+    page.getByRole("heading", { name: "本次练习结果" }),
+  ).toBeVisible();
+  await expect(page.getByLabel("本次待复习")).toContainText("1");
+  await expectNoHorizontalOverflow(page);
+});
+
+test("reloads offline after the first online visit, completes real writing, and opens a cached license", async ({
+  page,
+  context,
+}) => {
+  await page.goto("./");
+  await waitForOfflineReady(page);
+  const target = await chooseSimpleTarget(page);
+  await expectCachedAsset(page, "content.json");
+  await expectCachedAsset(
+    page,
+    `characters/${encodeURIComponent(target.item.char)}.json`,
+  );
+
+  await context.setOffline(true);
+  await page.reload();
+  await expect(
+    page.getByRole("heading", { name: "小桃猫生字屋" }),
+  ).toBeVisible();
+
+  const data = await openSingleItemPractice(page, target);
+  await expectNoHorizontalOverflow(page);
+  await drawMedians(page, data);
+  await page.getByRole("button", { name: "提交" }).click();
+  await expect(page.getByText("写对了！")).toBeVisible();
+  await page.getByRole("button", { name: "下一字" }).click({ timeout: 500 });
+  await expect(
+    page.getByRole("heading", { name: "本次练习结果" }),
+  ).toBeVisible();
+  await expect(page.getByLabel("本次正确")).toContainText("1");
+  await expectNoHorizontalOverflow(page);
+
+  await page.goto("/cat-vocab/#/about");
+  await expect(
+    page.getByRole("heading", { name: /关于与许可/ }),
+  ).toBeVisible();
+
+  const popupPromise = page.waitForEvent("popup");
+  await page.getByRole("link", { name: "Hanzi Writer MIT 许可" }).click();
+  const licensePage = await popupPromise;
+  await expect(licensePage.locator("body")).toContainText("MIT License");
+
+  await context.setOffline(false);
+});

@@ -1,0 +1,2920 @@
+{
+  "edition": "（根据2022年版课程标准修订）义务教育教科书·语文四年级上册",
+  "publisher": "人民教育出版社",
+  "auditYear": 2024,
+  "source": "国家中小学智慧教育平台",
+  "sourceId": "5cd7e623-5c38-4602-871a-3fba8a551db2",
+  "counts": {
+    "readingItems": 265,
+    "readingCounted": 250,
+    "writingItems": 250
+  },
+  "groups": [
+    {
+      "kind": "lesson",
+      "unit": "第一单元",
+      "title": "1 观潮",
+      "lessonNo": 1,
+      "sourcePage": 7,
+      "reading": [
+        {
+          "char": "盐",
+          "pinyin": "yán",
+          "polyphone": false
+        },
+        {
+          "char": "薄",
+          "pinyin": "bó",
+          "polyphone": true
+        },
+        {
+          "char": "隆",
+          "pinyin": "lóng",
+          "polyphone": false
+        },
+        {
+          "char": "鼎",
+          "pinyin": "dǐng",
+          "polyphone": false
+        },
+        {
+          "char": "沸",
+          "pinyin": "fèi",
+          "polyphone": false
+        },
+        {
+          "char": "浩",
+          "pinyin": "hào",
+          "polyphone": false
+        },
+        {
+          "char": "崩",
+          "pinyin": "bēng",
+          "polyphone": false
+        },
+        {
+          "char": "霎",
+          "pinyin": "shà",
+          "polyphone": false
+        },
+        {
+          "char": "余",
+          "pinyin": "yú",
+          "polyphone": false
+        },
+        {
+          "char": "漫",
+          "pinyin": "màn",
+          "polyphone": false
+        },
+        {
+          "char": "吼",
+          "pinyin": "hǒu",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "据",
+          "pinyin": "jù",
+          "polyphone": false
+        },
+        {
+          "char": "随",
+          "pinyin": "suí",
+          "polyphone": false
+        },
+        {
+          "char": "堤",
+          "pinyin": "dī",
+          "polyphone": false
+        },
+        {
+          "char": "顿",
+          "pinyin": "dùn",
+          "polyphone": false
+        },
+        {
+          "char": "逐",
+          "pinyin": "zhú",
+          "polyphone": false
+        },
+        {
+          "char": "渐",
+          "pinyin": "jiàn",
+          "polyphone": false
+        },
+        {
+          "char": "堵",
+          "pinyin": "dǔ",
+          "polyphone": false
+        },
+        {
+          "char": "墙",
+          "pinyin": "qiáng",
+          "polyphone": false
+        },
+        {
+          "char": "浩",
+          "pinyin": "hào",
+          "polyphone": false
+        },
+        {
+          "char": "崩",
+          "pinyin": "bēng",
+          "polyphone": false
+        },
+        {
+          "char": "霎",
+          "pinyin": "shà",
+          "polyphone": false
+        },
+        {
+          "char": "余",
+          "pinyin": "yú",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第一单元",
+      "title": "2 繁星",
+      "lessonNo": 2,
+      "sourcePage": 10,
+      "reading": [
+        {
+          "char": "昧",
+          "pinyin": "mèi",
+          "polyphone": false
+        },
+        {
+          "char": "坠",
+          "pinyin": "zhuì",
+          "polyphone": false
+        },
+        {
+          "char": "萤",
+          "pinyin": "yíng",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "繁",
+          "pinyin": "fán",
+          "polyphone": false
+        },
+        {
+          "char": "怀",
+          "pinyin": "huái",
+          "polyphone": false
+        },
+        {
+          "char": "寂",
+          "pinyin": "jì",
+          "polyphone": false
+        },
+        {
+          "char": "谈",
+          "pinyin": "tán",
+          "polyphone": false
+        },
+        {
+          "char": "熟",
+          "pinyin": "shú",
+          "polyphone": false
+        },
+        {
+          "char": "躺",
+          "pinyin": "tǎng",
+          "polyphone": false
+        },
+        {
+          "char": "模",
+          "pinyin": "mó",
+          "polyphone": false
+        },
+        {
+          "char": "糊",
+          "pinyin": "hú",
+          "polyphone": false
+        },
+        {
+          "char": "围",
+          "pinyin": "wéi",
+          "polyphone": false
+        },
+        {
+          "char": "舞",
+          "pinyin": "wǔ",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第一单元",
+      "title": "3* 现代诗二首",
+      "lessonNo": 3,
+      "sourcePage": 12,
+      "reading": [
+        {
+          "char": "巢",
+          "pinyin": "cháo",
+          "polyphone": false
+        },
+        {
+          "char": "苇",
+          "pinyin": "wěi",
+          "polyphone": false
+        },
+        {
+          "char": "瞬",
+          "pinyin": "shùn",
+          "polyphone": false
+        },
+        {
+          "char": "穗",
+          "pinyin": "suì",
+          "polyphone": false
+        },
+        {
+          "char": "罗",
+          "pinyin": "luó",
+          "polyphone": false
+        },
+        {
+          "char": "霸",
+          "pinyin": "bà",
+          "polyphone": false
+        }
+      ],
+      "writing": []
+    },
+    {
+      "kind": "lesson",
+      "unit": "第二单元",
+      "title": "4 一个豆荚里的五粒豆",
+      "lessonNo": 4,
+      "sourcePage": 19,
+      "reading": [
+        {
+          "char": "豌",
+          "pinyin": "wān",
+          "polyphone": false
+        },
+        {
+          "char": "僵",
+          "pinyin": "jiāng",
+          "polyphone": false
+        },
+        {
+          "char": "预",
+          "pinyin": "yù",
+          "polyphone": false
+        },
+        {
+          "char": "揭",
+          "pinyin": "jiē",
+          "polyphone": false
+        },
+        {
+          "char": "囚",
+          "pinyin": "qiú",
+          "polyphone": false
+        },
+        {
+          "char": "劈",
+          "pinyin": "pī",
+          "polyphone": false
+        },
+        {
+          "char": "框",
+          "pinyin": "kuàng",
+          "polyphone": false
+        },
+        {
+          "char": "吻",
+          "pinyin": "wěn",
+          "polyphone": false
+        },
+        {
+          "char": "脏",
+          "pinyin": "zāng",
+          "polyphone": true
+        },
+        {
+          "char": "溢",
+          "pinyin": "yì",
+          "polyphone": false
+        },
+        {
+          "char": "健",
+          "pinyin": "jiàn",
+          "polyphone": false
+        },
+        {
+          "char": "康",
+          "pinyin": "kāng",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "舒",
+          "pinyin": "shū",
+          "polyphone": false
+        },
+        {
+          "char": "适",
+          "pinyin": "shì",
+          "polyphone": false
+        },
+        {
+          "char": "揭",
+          "pinyin": "jiē",
+          "polyphone": false
+        },
+        {
+          "char": "晓",
+          "pinyin": "xiǎo",
+          "polyphone": false
+        },
+        {
+          "char": "滚",
+          "pinyin": "gǔn",
+          "polyphone": false
+        },
+        {
+          "char": "滑",
+          "pinyin": "huá",
+          "polyphone": false
+        },
+        {
+          "char": "擦",
+          "pinyin": "cā",
+          "polyphone": false
+        },
+        {
+          "char": "探",
+          "pinyin": "tàn",
+          "polyphone": false
+        },
+        {
+          "char": "曾",
+          "pinyin": "céng",
+          "polyphone": false
+        },
+        {
+          "char": "沟",
+          "pinyin": "gōu",
+          "polyphone": false
+        },
+        {
+          "char": "涨",
+          "pinyin": "zhàng",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第二单元",
+      "title": "5 夜间飞行的秘密",
+      "lessonNo": 5,
+      "sourcePage": 24,
+      "reading": [
+        {
+          "char": "蝙",
+          "pinyin": "biān",
+          "polyphone": false
+        },
+        {
+          "char": "蝠",
+          "pinyin": "fú",
+          "polyphone": false
+        },
+        {
+          "char": "蛾",
+          "pinyin": "é",
+          "polyphone": false
+        },
+        {
+          "char": "避",
+          "pinyin": "bì",
+          "polyphone": false
+        },
+        {
+          "char": "锐",
+          "pinyin": "ruì",
+          "polyphone": false
+        },
+        {
+          "char": "蝇",
+          "pinyin": "yíng",
+          "polyphone": false
+        },
+        {
+          "char": "障",
+          "pinyin": "zhàng",
+          "polyphone": false
+        },
+        {
+          "char": "碍",
+          "pinyin": "ài",
+          "polyphone": false
+        },
+        {
+          "char": "荧",
+          "pinyin": "yíng",
+          "polyphone": false
+        },
+        {
+          "char": "屏",
+          "pinyin": "píng",
+          "polyphone": true
+        },
+        {
+          "char": "驾",
+          "pinyin": "jià",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "蚊",
+          "pinyin": "wén",
+          "polyphone": false
+        },
+        {
+          "char": "即",
+          "pinyin": "jí",
+          "polyphone": false
+        },
+        {
+          "char": "题",
+          "pinyin": "tí",
+          "polyphone": false
+        },
+        {
+          "char": "绳",
+          "pinyin": "shéng",
+          "polyphone": false
+        },
+        {
+          "char": "嘴",
+          "pinyin": "zuǐ",
+          "polyphone": false
+        },
+        {
+          "char": "蝇",
+          "pinyin": "yíng",
+          "polyphone": false
+        },
+        {
+          "char": "研",
+          "pinyin": "yán",
+          "polyphone": false
+        },
+        {
+          "char": "究",
+          "pinyin": "jiū",
+          "polyphone": false
+        },
+        {
+          "char": "驾",
+          "pinyin": "jià",
+          "polyphone": false
+        },
+        {
+          "char": "驶",
+          "pinyin": "shǐ",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第二单元",
+      "title": "6 方帽子店",
+      "lessonNo": 6,
+      "sourcePage": 28,
+      "reading": [
+        {
+          "char": "橱",
+          "pinyin": "chú",
+          "polyphone": false
+        },
+        {
+          "char": "蕉",
+          "pinyin": "jiāo",
+          "polyphone": false
+        },
+        {
+          "char": "扣",
+          "pinyin": "kòu",
+          "polyphone": false
+        },
+        {
+          "char": "嚷",
+          "pinyin": "rǎng",
+          "polyphone": false
+        },
+        {
+          "char": "溜",
+          "pinyin": "liù",
+          "polyphone": true
+        },
+        {
+          "char": "筒",
+          "pinyin": "tǒng",
+          "polyphone": false
+        },
+        {
+          "char": "董",
+          "pinyin": "dǒng",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "帽",
+          "pinyin": "mào",
+          "polyphone": false
+        },
+        {
+          "char": "脑",
+          "pinyin": "nǎo",
+          "polyphone": false
+        },
+        {
+          "char": "袋",
+          "pinyin": "dài",
+          "polyphone": false
+        },
+        {
+          "char": "假",
+          "pinyin": "jiǎ",
+          "polyphone": false
+        },
+        {
+          "char": "扣",
+          "pinyin": "kòu",
+          "polyphone": false
+        },
+        {
+          "char": "懂",
+          "pinyin": "dǒng",
+          "polyphone": false
+        },
+        {
+          "char": "溜",
+          "pinyin": "liù",
+          "polyphone": true
+        },
+        {
+          "char": "筒",
+          "pinyin": "tǒng",
+          "polyphone": false
+        },
+        {
+          "char": "摆",
+          "pinyin": "bǎi",
+          "polyphone": false
+        },
+        {
+          "char": "玻",
+          "pinyin": "bō",
+          "polyphone": false
+        },
+        {
+          "char": "璃",
+          "pinyin": "lí",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第二单元",
+      "title": "7* 田忌赛马",
+      "lessonNo": 7,
+      "sourcePage": 33,
+      "reading": [
+        {
+          "char": "忌",
+          "pinyin": "jì",
+          "polyphone": false
+        },
+        {
+          "char": "将",
+          "pinyin": "jiàng",
+          "polyphone": true
+        },
+        {
+          "char": "获",
+          "pinyin": "huò",
+          "polyphone": false
+        },
+        {
+          "char": "赢",
+          "pinyin": "yíng",
+          "polyphone": false
+        },
+        {
+          "char": "拳",
+          "pinyin": "quán",
+          "polyphone": false
+        },
+        {
+          "char": "跃",
+          "pinyin": "yuè",
+          "polyphone": false
+        },
+        {
+          "char": "测",
+          "pinyin": "cè",
+          "polyphone": false
+        },
+        {
+          "char": "输",
+          "pinyin": "shū",
+          "polyphone": false
+        },
+        {
+          "char": "谋",
+          "pinyin": "móu",
+          "polyphone": false
+        },
+        {
+          "char": "划",
+          "pinyin": "huà",
+          "polyphone": true
+        },
+        {
+          "char": "策",
+          "pinyin": "cè",
+          "polyphone": false
+        },
+        {
+          "char": "荐",
+          "pinyin": "jiàn",
+          "polyphone": false
+        }
+      ],
+      "writing": []
+    },
+    {
+      "kind": "garden",
+      "title": "语文园地二",
+      "unit": "第二单元",
+      "page": 36,
+      "reading": [
+        {
+          "char": "纲",
+          "pinyin": "gāng",
+          "polyphone": false
+        },
+        {
+          "char": "揍",
+          "pinyin": "zòu",
+          "polyphone": false
+        },
+        {
+          "char": "锈",
+          "pinyin": "xiù",
+          "polyphone": false
+        },
+        {
+          "char": "沫",
+          "pinyin": "mò",
+          "polyphone": false
+        },
+        {
+          "char": "综",
+          "pinyin": "zōng",
+          "polyphone": false
+        },
+        {
+          "char": "氧",
+          "pinyin": "yǎng",
+          "polyphone": false
+        },
+        {
+          "char": "账",
+          "pinyin": "zhàng",
+          "polyphone": false
+        },
+        {
+          "char": "矿",
+          "pinyin": "kuàng",
+          "polyphone": false
+        },
+        {
+          "char": "俱",
+          "pinyin": "jù",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "纲",
+          "pinyin": "gāng",
+          "polyphone": false
+        },
+        {
+          "char": "揍",
+          "pinyin": "zòu",
+          "polyphone": false
+        },
+        {
+          "char": "锈",
+          "pinyin": "xiù",
+          "polyphone": false
+        },
+        {
+          "char": "沫",
+          "pinyin": "mò",
+          "polyphone": false
+        },
+        {
+          "char": "综",
+          "pinyin": "zōng",
+          "polyphone": false
+        },
+        {
+          "char": "氧",
+          "pinyin": "yǎng",
+          "polyphone": false
+        },
+        {
+          "char": "账",
+          "pinyin": "zhàng",
+          "polyphone": false
+        },
+        {
+          "char": "矿",
+          "pinyin": "kuàng",
+          "polyphone": false
+        },
+        {
+          "char": "俱",
+          "pinyin": "jù",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第三单元",
+      "title": "8 古诗三首",
+      "lessonNo": 8,
+      "sourcePage": 39,
+      "reading": [
+        {
+          "char": "暮",
+          "pinyin": "mù",
+          "polyphone": false
+        },
+        {
+          "char": "残",
+          "pinyin": "cán",
+          "polyphone": false
+        },
+        {
+          "char": "瑟",
+          "pinyin": "sè",
+          "polyphone": false
+        },
+        {
+          "char": "缘",
+          "pinyin": "yuán",
+          "polyphone": false
+        },
+        {
+          "char": "降",
+          "pinyin": "xiáng",
+          "polyphone": true
+        },
+        {
+          "char": "骚",
+          "pinyin": "sāo",
+          "polyphone": false
+        },
+        {
+          "char": "评",
+          "pinyin": "píng",
+          "polyphone": false
+        },
+        {
+          "char": "逊",
+          "pinyin": "xùn",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "残",
+          "pinyin": "cán",
+          "polyphone": false
+        },
+        {
+          "char": "铺",
+          "pinyin": "pū",
+          "polyphone": false
+        },
+        {
+          "char": "壁",
+          "pinyin": "bì",
+          "polyphone": false
+        },
+        {
+          "char": "横",
+          "pinyin": "héng",
+          "polyphone": false
+        },
+        {
+          "char": "侧",
+          "pinyin": "cè",
+          "polyphone": false
+        },
+        {
+          "char": "峰",
+          "pinyin": "fēng",
+          "polyphone": false
+        },
+        {
+          "char": "庐",
+          "pinyin": "lú",
+          "polyphone": false
+        },
+        {
+          "char": "缘",
+          "pinyin": "yuán",
+          "polyphone": false
+        },
+        {
+          "char": "降",
+          "pinyin": "xiáng",
+          "polyphone": true
+        },
+        {
+          "char": "评",
+          "pinyin": "píng",
+          "polyphone": false
+        },
+        {
+          "char": "章",
+          "pinyin": "zhāng",
+          "polyphone": false
+        },
+        {
+          "char": "输",
+          "pinyin": "shū",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第三单元",
+      "title": "9 爬山虎的脚",
+      "lessonNo": 9,
+      "sourcePage": 41,
+      "reading": [
+        {
+          "char": "茎",
+          "pinyin": "jīng",
+          "polyphone": false
+        },
+        {
+          "char": "柄",
+          "pinyin": "bǐng",
+          "polyphone": false
+        },
+        {
+          "char": "蜗",
+          "pinyin": "wō",
+          "polyphone": false
+        },
+        {
+          "char": "曲",
+          "pinyin": "qū",
+          "polyphone": true
+        },
+        {
+          "char": "萎",
+          "pinyin": "wěi",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "虎",
+          "pinyin": "hǔ",
+          "polyphone": false
+        },
+        {
+          "char": "脚",
+          "pinyin": "jiǎo",
+          "polyphone": false
+        },
+        {
+          "char": "操",
+          "pinyin": "cāo",
+          "polyphone": false
+        },
+        {
+          "char": "嫩",
+          "pinyin": "nèn",
+          "polyphone": false
+        },
+        {
+          "char": "隙",
+          "pinyin": "xì",
+          "polyphone": false
+        },
+        {
+          "char": "柄",
+          "pinyin": "bǐng",
+          "polyphone": false
+        },
+        {
+          "char": "触",
+          "pinyin": "chù",
+          "polyphone": false
+        },
+        {
+          "char": "痕",
+          "pinyin": "hén",
+          "polyphone": false
+        },
+        {
+          "char": "迹",
+          "pinyin": "jì",
+          "polyphone": false
+        },
+        {
+          "char": "瞧",
+          "pinyin": "qiáo",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第三单元",
+      "title": "10 蟋蟀的住宅 ",
+      "lessonNo": 10,
+      "sourcePage": 44,
+      "reading": [
+        {
+          "char": "蟋",
+          "pinyin": "xī",
+          "polyphone": false
+        },
+        {
+          "char": "蟀",
+          "pinyin": "shuài",
+          "polyphone": false
+        },
+        {
+          "char": "宅",
+          "pinyin": "zhái",
+          "polyphone": false
+        },
+        {
+          "char": "慎",
+          "pinyin": "shèn",
+          "polyphone": false
+        },
+        {
+          "char": "址",
+          "pinyin": "zhǐ",
+          "polyphone": false
+        },
+        {
+          "char": "畅",
+          "pinyin": "chàng",
+          "polyphone": false
+        },
+        {
+          "char": "倾",
+          "pinyin": "qīng",
+          "polyphone": false
+        },
+        {
+          "char": "骤",
+          "pinyin": "zhòu",
+          "polyphone": false
+        },
+        {
+          "char": "置",
+          "pinyin": "zhì",
+          "polyphone": false
+        },
+        {
+          "char": "糙",
+          "pinyin": "cāo",
+          "polyphone": false
+        },
+        {
+          "char": "朴",
+          "pinyin": "pǔ",
+          "polyphone": false
+        },
+        {
+          "char": "燥",
+          "pinyin": "zào",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "宅",
+          "pinyin": "zhái",
+          "polyphone": false
+        },
+        {
+          "char": "毫",
+          "pinyin": "háo",
+          "polyphone": false
+        },
+        {
+          "char": "重",
+          "pinyin": "zhòng",
+          "polyphone": false
+        },
+        {
+          "char": "选",
+          "pinyin": "xuǎn",
+          "polyphone": false
+        },
+        {
+          "char": "择",
+          "pinyin": "zé",
+          "polyphone": false
+        },
+        {
+          "char": "址",
+          "pinyin": "zhǐ",
+          "polyphone": false
+        },
+        {
+          "char": "厅",
+          "pinyin": "tīng",
+          "polyphone": false
+        },
+        {
+          "char": "专",
+          "pinyin": "zhuān",
+          "polyphone": false
+        },
+        {
+          "char": "修",
+          "pinyin": "xiū",
+          "polyphone": false
+        },
+        {
+          "char": "较",
+          "pinyin": "jiào",
+          "polyphone": false
+        },
+        {
+          "char": "腿",
+          "pinyin": "tuǐ",
+          "polyphone": false
+        },
+        {
+          "char": "增",
+          "pinyin": "zēng",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第四单元",
+      "title": "11 盘古开天地",
+      "lessonNo": 11,
+      "sourcePage": 53,
+      "reading": [
+        {
+          "char": "斧",
+          "pinyin": "fǔ",
+          "polyphone": false
+        },
+        {
+          "char": "缓",
+          "pinyin": "huǎn",
+          "polyphone": false
+        },
+        {
+          "char": "浊",
+          "pinyin": "zhuó",
+          "polyphone": false
+        },
+        {
+          "char": "丈",
+          "pinyin": "zhàng",
+          "polyphone": false
+        },
+        {
+          "char": "肢",
+          "pinyin": "zhī",
+          "polyphone": false
+        },
+        {
+          "char": "躯",
+          "pinyin": "qū",
+          "polyphone": false
+        },
+        {
+          "char": "液",
+          "pinyin": "yè",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "醒",
+          "pinyin": "xǐng",
+          "polyphone": false
+        },
+        {
+          "char": "翻",
+          "pinyin": "fān",
+          "polyphone": false
+        },
+        {
+          "char": "缓",
+          "pinyin": "huǎn",
+          "polyphone": false
+        },
+        {
+          "char": "踏",
+          "pinyin": "tà",
+          "polyphone": false
+        },
+        {
+          "char": "丈",
+          "pinyin": "zhàng",
+          "polyphone": false
+        },
+        {
+          "char": "撑",
+          "pinyin": "chēng",
+          "polyphone": false
+        },
+        {
+          "char": "疲",
+          "pinyin": "pí",
+          "polyphone": false
+        },
+        {
+          "char": "竭",
+          "pinyin": "jié",
+          "polyphone": false
+        },
+        {
+          "char": "耀",
+          "pinyin": "yào",
+          "polyphone": false
+        },
+        {
+          "char": "肢",
+          "pinyin": "zhī",
+          "polyphone": false
+        },
+        {
+          "char": "整",
+          "pinyin": "zhěng",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第四单元",
+      "title": "12 精卫填海",
+      "lessonNo": 12,
+      "sourcePage": 55,
+      "reading": [
+        {
+          "char": "曰",
+          "pinyin": "yuē",
+          "polyphone": false
+        },
+        {
+          "char": "溺",
+          "pinyin": "nì",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "填",
+          "pinyin": "tián",
+          "polyphone": false
+        },
+        {
+          "char": "帝",
+          "pinyin": "dì",
+          "polyphone": false
+        },
+        {
+          "char": "曰",
+          "pinyin": "yuē",
+          "polyphone": false
+        },
+        {
+          "char": "娃",
+          "pinyin": "wá",
+          "polyphone": false
+        },
+        {
+          "char": "衔",
+          "pinyin": "xián",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第四单元",
+      "title": "13 普罗米修斯",
+      "lessonNo": 13,
+      "sourcePage": 56,
+      "reading": [
+        {
+          "char": "斯",
+          "pinyin": "sī",
+          "polyphone": false
+        },
+        {
+          "char": "悲",
+          "pinyin": "bēi",
+          "polyphone": false
+        },
+        {
+          "char": "惨",
+          "pinyin": "cǎn",
+          "polyphone": false
+        },
+        {
+          "char": "盗",
+          "pinyin": "dào",
+          "polyphone": false
+        },
+        {
+          "char": "驰",
+          "pinyin": "chí",
+          "polyphone": false
+        },
+        {
+          "char": "佩",
+          "pinyin": "pèi",
+          "polyphone": false
+        },
+        {
+          "char": "违",
+          "pinyin": "wéi",
+          "polyphone": false
+        },
+        {
+          "char": "锁",
+          "pinyin": "suǒ",
+          "polyphone": false
+        },
+        {
+          "char": "遭",
+          "pinyin": "zāo",
+          "polyphone": false
+        },
+        {
+          "char": "肝",
+          "pinyin": "gān",
+          "polyphone": false
+        },
+        {
+          "char": "脏",
+          "pinyin": "zàng",
+          "polyphone": true
+        },
+        {
+          "char": "愤",
+          "pinyin": "fèn",
+          "polyphone": false
+        },
+        {
+          "char": "砸",
+          "pinyin": "zá",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "喷",
+          "pinyin": "pēn",
+          "polyphone": false
+        },
+        {
+          "char": "颗",
+          "pinyin": "kē",
+          "polyphone": false
+        },
+        {
+          "char": "败",
+          "pinyin": "bài",
+          "polyphone": false
+        },
+        {
+          "char": "敬",
+          "pinyin": "jìng",
+          "polyphone": false
+        },
+        {
+          "char": "佩",
+          "pinyin": "pèi",
+          "polyphone": false
+        },
+        {
+          "char": "忍",
+          "pinyin": "rěn",
+          "polyphone": false
+        },
+        {
+          "char": "既",
+          "pinyin": "jì",
+          "polyphone": false
+        },
+        {
+          "char": "遭",
+          "pinyin": "zāo",
+          "polyphone": false
+        },
+        {
+          "char": "屈",
+          "pinyin": "qū",
+          "polyphone": false
+        },
+        {
+          "char": "肝",
+          "pinyin": "gān",
+          "polyphone": false
+        },
+        {
+          "char": "脏",
+          "pinyin": "zàng",
+          "polyphone": true
+        },
+        {
+          "char": "获",
+          "pinyin": "huò",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第四单元",
+      "title": "14* 女娲补天",
+      "lessonNo": 14,
+      "sourcePage": 59,
+      "reading": [
+        {
+          "char": "兽",
+          "pinyin": "shòu",
+          "polyphone": false
+        },
+        {
+          "char": "措",
+          "pinyin": "cuò",
+          "polyphone": false
+        },
+        {
+          "char": "陷",
+          "pinyin": "xiàn",
+          "polyphone": false
+        },
+        {
+          "char": "混",
+          "pinyin": "hùn",
+          "polyphone": false
+        },
+        {
+          "char": "拣",
+          "pinyin": "jiǎn",
+          "polyphone": false
+        },
+        {
+          "char": "燃",
+          "pinyin": "rán",
+          "polyphone": false
+        },
+        {
+          "char": "炼",
+          "pinyin": "liàn",
+          "polyphone": false
+        },
+        {
+          "char": "熄",
+          "pinyin": "xī",
+          "polyphone": false
+        },
+        {
+          "char": "浆",
+          "pinyin": "jiāng",
+          "polyphone": false
+        },
+        {
+          "char": "杀",
+          "pinyin": "shā",
+          "polyphone": false
+        },
+        {
+          "char": "颂",
+          "pinyin": "sòng",
+          "polyphone": false
+        }
+      ],
+      "writing": []
+    },
+    {
+      "kind": "garden",
+      "title": "语文园地四",
+      "unit": "第四单元",
+      "page": 61,
+      "reading": [
+        {
+          "char": "卉",
+          "pinyin": "huì",
+          "polyphone": false
+        },
+        {
+          "char": "玫",
+          "pinyin": "méi",
+          "polyphone": false
+        },
+        {
+          "char": "瑰",
+          "pinyin": "guī",
+          "polyphone": false
+        },
+        {
+          "char": "牡",
+          "pinyin": "mǔ",
+          "polyphone": false
+        },
+        {
+          "char": "丹",
+          "pinyin": "dān",
+          "polyphone": false
+        },
+        {
+          "char": "蕾",
+          "pinyin": "lěi",
+          "polyphone": false
+        },
+        {
+          "char": "茉",
+          "pinyin": "mò",
+          "polyphone": false
+        },
+        {
+          "char": "莉",
+          "pinyin": "lì",
+          "polyphone": false
+        },
+        {
+          "char": "棠",
+          "pinyin": "táng",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "卉",
+          "pinyin": "huì",
+          "polyphone": false
+        },
+        {
+          "char": "玫",
+          "pinyin": "méi",
+          "polyphone": false
+        },
+        {
+          "char": "瑰",
+          "pinyin": "guī",
+          "polyphone": false
+        },
+        {
+          "char": "牡",
+          "pinyin": "mǔ",
+          "polyphone": false
+        },
+        {
+          "char": "丹",
+          "pinyin": "dān",
+          "polyphone": false
+        },
+        {
+          "char": "蕾",
+          "pinyin": "lěi",
+          "polyphone": false
+        },
+        {
+          "char": "茉",
+          "pinyin": "mò",
+          "polyphone": false
+        },
+        {
+          "char": "莉",
+          "pinyin": "lì",
+          "polyphone": false
+        },
+        {
+          "char": "棠",
+          "pinyin": "táng",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第五单元",
+      "title": "15 麻雀",
+      "lessonNo": 15,
+      "sourcePage": 67,
+      "reading": [
+        {
+          "char": "嗅",
+          "pinyin": "xiù",
+          "polyphone": false
+        },
+        {
+          "char": "奈",
+          "pinyin": "nài",
+          "polyphone": false
+        },
+        {
+          "char": "拯",
+          "pinyin": "zhěng",
+          "polyphone": false
+        },
+        {
+          "char": "嘶",
+          "pinyin": "sī",
+          "polyphone": false
+        },
+        {
+          "char": "哑",
+          "pinyin": "yǎ",
+          "polyphone": false
+        },
+        {
+          "char": "牺",
+          "pinyin": "xī",
+          "polyphone": false
+        },
+        {
+          "char": "牲",
+          "pinyin": "shēng",
+          "polyphone": false
+        },
+        {
+          "char": "庞",
+          "pinyin": "páng",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "嗅",
+          "pinyin": "xiù",
+          "polyphone": false
+        },
+        {
+          "char": "猛",
+          "pinyin": "měng",
+          "polyphone": false
+        },
+        {
+          "char": "烈",
+          "pinyin": "liè",
+          "polyphone": false
+        },
+        {
+          "char": "奈",
+          "pinyin": "nài",
+          "polyphone": false
+        },
+        {
+          "char": "躯",
+          "pinyin": "qū",
+          "polyphone": false
+        },
+        {
+          "char": "掩",
+          "pinyin": "yǎn",
+          "polyphone": false
+        },
+        {
+          "char": "浑",
+          "pinyin": "hún",
+          "polyphone": false
+        },
+        {
+          "char": "牺",
+          "pinyin": "xī",
+          "polyphone": false
+        },
+        {
+          "char": "牲",
+          "pinyin": "shēng",
+          "polyphone": false
+        },
+        {
+          "char": "庞",
+          "pinyin": "páng",
+          "polyphone": false
+        },
+        {
+          "char": "强",
+          "pinyin": "qiáng",
+          "polyphone": false
+        },
+        {
+          "char": "量",
+          "pinyin": "liàng",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第五单元",
+      "title": "16 爬天都峰",
+      "lessonNo": 16,
+      "sourcePage": 70,
+      "reading": [
+        {
+          "char": "链",
+          "pinyin": "liàn",
+          "polyphone": false
+        },
+        {
+          "char": "颤",
+          "pinyin": "chàn",
+          "polyphone": false
+        },
+        {
+          "char": "攀",
+          "pinyin": "pān",
+          "polyphone": false
+        },
+        {
+          "char": "辫",
+          "pinyin": "biàn",
+          "polyphone": false
+        },
+        {
+          "char": "呵",
+          "pinyin": "hē",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "哩",
+          "pinyin": "li",
+          "polyphone": false
+        },
+        {
+          "char": "陡",
+          "pinyin": "dǒu",
+          "polyphone": false
+        },
+        {
+          "char": "级",
+          "pinyin": "jí",
+          "polyphone": false
+        },
+        {
+          "char": "链",
+          "pinyin": "liàn",
+          "polyphone": false
+        },
+        {
+          "char": "颤",
+          "pinyin": "chàn",
+          "polyphone": false
+        },
+        {
+          "char": "纪",
+          "pinyin": "jì",
+          "polyphone": false
+        },
+        {
+          "char": "攀",
+          "pinyin": "pān",
+          "polyphone": false
+        },
+        {
+          "char": "猴",
+          "pinyin": "hóu",
+          "polyphone": false
+        },
+        {
+          "char": "呵",
+          "pinyin": "hē",
+          "polyphone": false
+        },
+        {
+          "char": "啦",
+          "pinyin": "la",
+          "polyphone": false
+        },
+        {
+          "char": "鼓",
+          "pinyin": "gǔ",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第六单元",
+      "title": "17 长城",
+      "lessonNo": 17,
+      "sourcePage": 79,
+      "reading": [
+        {
+          "char": "峻",
+          "pinyin": "jùn",
+          "polyphone": false
+        },
+        {
+          "char": "基",
+          "pinyin": "jī",
+          "polyphone": false
+        },
+        {
+          "char": "础",
+          "pinyin": "chǔ",
+          "polyphone": false
+        },
+        {
+          "char": "扩",
+          "pinyin": "kuò",
+          "polyphone": false
+        },
+        {
+          "char": "砖",
+          "pinyin": "zhuān",
+          "polyphone": false
+        },
+        {
+          "char": "屯",
+          "pinyin": "tún",
+          "polyphone": false
+        },
+        {
+          "char": "兵",
+          "pinyin": "bīng",
+          "polyphone": false
+        },
+        {
+          "char": "堡",
+          "pinyin": "bǎo",
+          "polyphone": false
+        },
+        {
+          "char": "垒",
+          "pinyin": "lěi",
+          "polyphone": false
+        },
+        {
+          "char": "仗",
+          "pinyin": "zhàng",
+          "polyphone": false
+        },
+        {
+          "char": "畜",
+          "pinyin": "chù",
+          "polyphone": false
+        },
+        {
+          "char": "耗",
+          "pinyin": "hào",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "峻",
+          "pinyin": "jùn",
+          "polyphone": false
+        },
+        {
+          "char": "旋",
+          "pinyin": "xuán",
+          "polyphone": false
+        },
+        {
+          "char": "扩",
+          "pinyin": "kuò",
+          "polyphone": false
+        },
+        {
+          "char": "砖",
+          "pinyin": "zhuān",
+          "polyphone": false
+        },
+        {
+          "char": "筑",
+          "pinyin": "zhù",
+          "polyphone": false
+        },
+        {
+          "char": "隔",
+          "pinyin": "gé",
+          "polyphone": false
+        },
+        {
+          "char": "仗",
+          "pinyin": "zhàng",
+          "polyphone": false
+        },
+        {
+          "char": "扶",
+          "pinyin": "fú",
+          "polyphone": false
+        },
+        {
+          "char": "耗",
+          "pinyin": "hào",
+          "polyphone": false
+        },
+        {
+          "char": "智",
+          "pinyin": "zhì",
+          "polyphone": false
+        },
+        {
+          "char": "慧",
+          "pinyin": "huì",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第六单元",
+      "title": "18 颐和园",
+      "lessonNo": 18,
+      "sourcePage": 82,
+      "reading": [
+        {
+          "char": "殿",
+          "pinyin": "diàn",
+          "polyphone": false
+        },
+        {
+          "char": "漆",
+          "pinyin": "qī",
+          "polyphone": false
+        },
+        {
+          "char": "琉",
+          "pinyin": "liú",
+          "polyphone": false
+        },
+        {
+          "char": "佛",
+          "pinyin": "fó",
+          "polyphone": true
+        },
+        {
+          "char": "煌",
+          "pinyin": "huáng",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "绕",
+          "pinyin": "rào",
+          "polyphone": false
+        },
+        {
+          "char": "幅",
+          "pinyin": "fú",
+          "polyphone": false
+        },
+        {
+          "char": "栽",
+          "pinyin": "zāi",
+          "polyphone": false
+        },
+        {
+          "char": "耸",
+          "pinyin": "sǒng",
+          "polyphone": false
+        },
+        {
+          "char": "腰",
+          "pinyin": "yāo",
+          "polyphone": false
+        },
+        {
+          "char": "煌",
+          "pinyin": "huáng",
+          "polyphone": false
+        },
+        {
+          "char": "镜",
+          "pinyin": "jìng",
+          "polyphone": false
+        },
+        {
+          "char": "隐",
+          "pinyin": "yǐn",
+          "polyphone": false
+        },
+        {
+          "char": "狮",
+          "pinyin": "shī",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第六单元",
+      "title": "19* 秦兵马俑",
+      "lessonNo": 19,
+      "sourcePage": 85,
+      "reading": [
+        {
+          "char": "享",
+          "pinyin": "xiǎng",
+          "polyphone": false
+        },
+        {
+          "char": "誉",
+          "pinyin": "yù",
+          "polyphone": false
+        },
+        {
+          "char": "宏",
+          "pinyin": "hóng",
+          "polyphone": false
+        },
+        {
+          "char": "皇",
+          "pinyin": "huáng",
+          "polyphone": false
+        },
+        {
+          "char": "率",
+          "pinyin": "shuài",
+          "polyphone": false
+        },
+        {
+          "char": "着",
+          "pinyin": "zhuó",
+          "polyphone": true
+        },
+        {
+          "char": "靴",
+          "pinyin": "xuē",
+          "polyphone": false
+        },
+        {
+          "char": "誓",
+          "pinyin": "shì",
+          "polyphone": false
+        },
+        {
+          "char": "塑",
+          "pinyin": "sù",
+          "polyphone": false
+        },
+        {
+          "char": "帷",
+          "pinyin": "wéi",
+          "polyphone": false
+        },
+        {
+          "char": "肖",
+          "pinyin": "xiào",
+          "polyphone": false
+        },
+        {
+          "char": "拟",
+          "pinyin": "nǐ",
+          "polyphone": false
+        },
+        {
+          "char": "逼",
+          "pinyin": "bī",
+          "polyphone": false
+        }
+      ],
+      "writing": []
+    },
+    {
+      "kind": "garden",
+      "title": "语文园地六",
+      "unit": "第六单元",
+      "page": 91,
+      "reading": [
+        {
+          "char": "萨",
+          "pinyin": "sà",
+          "polyphone": false
+        },
+        {
+          "char": "昭",
+          "pinyin": "zhāo",
+          "polyphone": false
+        },
+        {
+          "char": "陵",
+          "pinyin": "líng",
+          "polyphone": false
+        },
+        {
+          "char": "寝",
+          "pinyin": "qǐn",
+          "polyphone": false
+        },
+        {
+          "char": "堰",
+          "pinyin": "yàn",
+          "polyphone": false
+        },
+        {
+          "char": "尼",
+          "pinyin": "ní",
+          "polyphone": false
+        },
+        {
+          "char": "绸",
+          "pinyin": "chóu",
+          "polyphone": false
+        },
+        {
+          "char": "廊",
+          "pinyin": "láng",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "萨",
+          "pinyin": "sà",
+          "polyphone": false
+        },
+        {
+          "char": "昭",
+          "pinyin": "zhāo",
+          "polyphone": false
+        },
+        {
+          "char": "陵",
+          "pinyin": "líng",
+          "polyphone": false
+        },
+        {
+          "char": "寝",
+          "pinyin": "qǐn",
+          "polyphone": false
+        },
+        {
+          "char": "堰",
+          "pinyin": "yàn",
+          "polyphone": false
+        },
+        {
+          "char": "尼",
+          "pinyin": "ní",
+          "polyphone": false
+        },
+        {
+          "char": "绸",
+          "pinyin": "chóu",
+          "polyphone": false
+        },
+        {
+          "char": "廊",
+          "pinyin": "láng",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第七单元",
+      "title": "20 牛和鹅",
+      "lessonNo": 20,
+      "sourcePage": 93,
+      "reading": [
+        {
+          "char": "鹅",
+          "pinyin": "é",
+          "polyphone": false
+        },
+        {
+          "char": "屁",
+          "pinyin": "pì",
+          "polyphone": false
+        },
+        {
+          "char": "股",
+          "pinyin": "gǔ",
+          "polyphone": false
+        },
+        {
+          "char": "谓",
+          "pinyin": "wèi",
+          "polyphone": false
+        },
+        {
+          "char": "捶",
+          "pinyin": "chuí",
+          "polyphone": false
+        },
+        {
+          "char": "顽",
+          "pinyin": "wán",
+          "polyphone": false
+        },
+        {
+          "char": "吁",
+          "pinyin": "xū",
+          "polyphone": false
+        },
+        {
+          "char": "膊",
+          "pinyin": "bó",
+          "polyphone": false
+        },
+        {
+          "char": "瓶",
+          "pinyin": "píng",
+          "polyphone": false
+        },
+        {
+          "char": "怖",
+          "pinyin": "bù",
+          "polyphone": false
+        },
+        {
+          "char": "欺",
+          "pinyin": "qī",
+          "polyphone": false
+        },
+        {
+          "char": "掐",
+          "pinyin": "qiā",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "鹅",
+          "pinyin": "é",
+          "polyphone": false
+        },
+        {
+          "char": "骑",
+          "pinyin": "qí",
+          "polyphone": false
+        },
+        {
+          "char": "拳",
+          "pinyin": "quán",
+          "polyphone": false
+        },
+        {
+          "char": "竖",
+          "pinyin": "shù",
+          "polyphone": false
+        },
+        {
+          "char": "竟",
+          "pinyin": "jìng",
+          "polyphone": false
+        },
+        {
+          "char": "胸",
+          "pinyin": "xiōng",
+          "polyphone": false
+        },
+        {
+          "char": "鞋",
+          "pinyin": "xié",
+          "polyphone": false
+        },
+        {
+          "char": "拖",
+          "pinyin": "tuō",
+          "polyphone": false
+        },
+        {
+          "char": "胳",
+          "pinyin": "gē",
+          "polyphone": false
+        },
+        {
+          "char": "膊",
+          "pinyin": "bó",
+          "polyphone": false
+        },
+        {
+          "char": "握",
+          "pinyin": "wò",
+          "polyphone": false
+        },
+        {
+          "char": "摔",
+          "pinyin": "shuāi",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第七单元",
+      "title": "21 一只窝囊的大老虎",
+      "lessonNo": 21,
+      "sourcePage": 98,
+      "reading": [
+        {
+          "char": "露",
+          "pinyin": "lòu",
+          "polyphone": true
+        },
+        {
+          "char": "羡",
+          "pinyin": "xiàn",
+          "polyphone": false
+        },
+        {
+          "char": "殷",
+          "pinyin": "yīn",
+          "polyphone": false
+        },
+        {
+          "char": "逗",
+          "pinyin": "dòu",
+          "polyphone": false
+        },
+        {
+          "char": "撇",
+          "pinyin": "piě",
+          "polyphone": false
+        },
+        {
+          "char": "啊",
+          "pinyin": "ā",
+          "polyphone": true
+        },
+        {
+          "char": "霉",
+          "pinyin": "méi",
+          "polyphone": false
+        },
+        {
+          "char": "亏",
+          "pinyin": "kuī",
+          "polyphone": false
+        },
+        {
+          "char": "撤",
+          "pinyin": "chè",
+          "polyphone": false
+        },
+        {
+          "char": "哄",
+          "pinyin": "hōng",
+          "polyphone": false
+        },
+        {
+          "char": "拙",
+          "pinyin": "zhuō",
+          "polyphone": false
+        },
+        {
+          "char": "唉",
+          "pinyin": "āi",
+          "polyphone": true
+        }
+      ],
+      "writing": [
+        {
+          "char": "表",
+          "pinyin": "biǎo",
+          "polyphone": false
+        },
+        {
+          "char": "演",
+          "pinyin": "yǎn",
+          "polyphone": false
+        },
+        {
+          "char": "俩",
+          "pinyin": "liǎ",
+          "polyphone": false
+        },
+        {
+          "char": "练",
+          "pinyin": "liàn",
+          "polyphone": false
+        },
+        {
+          "char": "捧",
+          "pinyin": "pěng",
+          "polyphone": false
+        },
+        {
+          "char": "示",
+          "pinyin": "shì",
+          "polyphone": false
+        },
+        {
+          "char": "技",
+          "pinyin": "jì",
+          "polyphone": false
+        },
+        {
+          "char": "撤",
+          "pinyin": "chè",
+          "polyphone": false
+        },
+        {
+          "char": "推",
+          "pinyin": "tuī",
+          "polyphone": false
+        },
+        {
+          "char": "哄",
+          "pinyin": "hōng",
+          "polyphone": false
+        },
+        {
+          "char": "堂",
+          "pinyin": "táng",
+          "polyphone": false
+        },
+        {
+          "char": "摘",
+          "pinyin": "zhāi",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第七单元",
+      "title": "22* 陀螺",
+      "lessonNo": 22,
+      "sourcePage": 103,
+      "reading": [
+        {
+          "char": "钉",
+          "pinyin": "dīng",
+          "polyphone": true
+        },
+        {
+          "char": "质",
+          "pinyin": "zhì",
+          "polyphone": false
+        },
+        {
+          "char": "岳",
+          "pinyin": "yuè",
+          "polyphone": false
+        },
+        {
+          "char": "削",
+          "pinyin": "xiāo",
+          "polyphone": false
+        },
+        {
+          "char": "匪",
+          "pinyin": "fěi",
+          "polyphone": false
+        },
+        {
+          "char": "骂",
+          "pinyin": "mà",
+          "polyphone": false
+        },
+        {
+          "char": "帅",
+          "pinyin": "shuài",
+          "polyphone": false
+        },
+        {
+          "char": "衅",
+          "pinyin": "xìn",
+          "polyphone": false
+        },
+        {
+          "char": "扭",
+          "pinyin": "niǔ",
+          "polyphone": false
+        },
+        {
+          "char": "彻",
+          "pinyin": "chè",
+          "polyphone": false
+        },
+        {
+          "char": "溃",
+          "pinyin": "kuì",
+          "polyphone": false
+        },
+        {
+          "char": "豪",
+          "pinyin": "háo",
+          "polyphone": false
+        }
+      ],
+      "writing": []
+    },
+    {
+      "kind": "lesson",
+      "unit": "第七单元",
+      "title": "23 王戎不取道旁李",
+      "lessonNo": 23,
+      "sourcePage": 107,
+      "reading": [
+        {
+          "char": "戎",
+          "pinyin": "róng",
+          "polyphone": false
+        },
+        {
+          "char": "诸",
+          "pinyin": "zhū",
+          "polyphone": false
+        },
+        {
+          "char": "竞",
+          "pinyin": "jìng",
+          "polyphone": false
+        },
+        {
+          "char": "唯",
+          "pinyin": "wéi",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "戎",
+          "pinyin": "róng",
+          "polyphone": false
+        },
+        {
+          "char": "诸",
+          "pinyin": "zhū",
+          "polyphone": false
+        },
+        {
+          "char": "竞",
+          "pinyin": "jìng",
+          "polyphone": false
+        },
+        {
+          "char": "唯",
+          "pinyin": "wéi",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "garden",
+      "title": "语文园地七",
+      "unit": "第七单元",
+      "page": 111,
+      "reading": [
+        {
+          "char": "韭",
+          "pinyin": "jiǔ",
+          "polyphone": false
+        },
+        {
+          "char": "芹",
+          "pinyin": "qín",
+          "polyphone": false
+        },
+        {
+          "char": "椒",
+          "pinyin": "jiāo",
+          "polyphone": false
+        },
+        {
+          "char": "蒜",
+          "pinyin": "suàn",
+          "polyphone": false
+        },
+        {
+          "char": "薯",
+          "pinyin": "shǔ",
+          "polyphone": false
+        },
+        {
+          "char": "藕",
+          "pinyin": "ǒu",
+          "polyphone": false
+        },
+        {
+          "char": "芋",
+          "pinyin": "yù",
+          "polyphone": false
+        },
+        {
+          "char": "姜",
+          "pinyin": "jiāng",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "韭",
+          "pinyin": "jiǔ",
+          "polyphone": false
+        },
+        {
+          "char": "芹",
+          "pinyin": "qín",
+          "polyphone": false
+        },
+        {
+          "char": "椒",
+          "pinyin": "jiāo",
+          "polyphone": false
+        },
+        {
+          "char": "蒜",
+          "pinyin": "suàn",
+          "polyphone": false
+        },
+        {
+          "char": "薯",
+          "pinyin": "shǔ",
+          "polyphone": false
+        },
+        {
+          "char": "藕",
+          "pinyin": "ǒu",
+          "polyphone": false
+        },
+        {
+          "char": "芋",
+          "pinyin": "yù",
+          "polyphone": false
+        },
+        {
+          "char": "姜",
+          "pinyin": "jiāng",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第八单元",
+      "title": "24 我将无我，不负人民",
+      "lessonNo": 24,
+      "sourcePage": 113,
+      "reading": [
+        {
+          "char": "菲",
+          "pinyin": "fēi",
+          "polyphone": false
+        },
+        {
+          "char": "抛",
+          "pinyin": "pāo",
+          "polyphone": false
+        },
+        {
+          "char": "奉",
+          "pinyin": "fèng",
+          "polyphone": false
+        },
+        {
+          "char": "亿",
+          "pinyin": "yì",
+          "polyphone": false
+        },
+        {
+          "char": "邀",
+          "pinyin": "yāo",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "席",
+          "pinyin": "xí",
+          "polyphone": false
+        },
+        {
+          "char": "抛",
+          "pinyin": "pāo",
+          "polyphone": false
+        },
+        {
+          "char": "激",
+          "pinyin": "jī",
+          "polyphone": false
+        },
+        {
+          "char": "奉",
+          "pinyin": "fèng",
+          "polyphone": false
+        },
+        {
+          "char": "训",
+          "pinyin": "xùn",
+          "polyphone": false
+        },
+        {
+          "char": "亿",
+          "pinyin": "yì",
+          "polyphone": false
+        },
+        {
+          "char": "勤",
+          "pinyin": "qín",
+          "polyphone": false
+        },
+        {
+          "char": "邀",
+          "pinyin": "yāo",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第八单元",
+      "title": "25 为中华之崛起而读书",
+      "lessonNo": 25,
+      "sourcePage": 115,
+      "reading": [
+        {
+          "char": "崛",
+          "pinyin": "jué",
+          "polyphone": false
+        },
+        {
+          "char": "范",
+          "pinyin": "fàn",
+          "polyphone": false
+        },
+        {
+          "char": "魏",
+          "pinyin": "wèi",
+          "polyphone": false
+        },
+        {
+          "char": "默",
+          "pinyin": "mò",
+          "polyphone": false
+        },
+        {
+          "char": "晰",
+          "pinyin": "xī",
+          "polyphone": false
+        },
+        {
+          "char": "惑",
+          "pinyin": "huò",
+          "polyphone": false
+        },
+        {
+          "char": "轧",
+          "pinyin": "yà",
+          "polyphone": false
+        },
+        {
+          "char": "惩",
+          "pinyin": "chéng",
+          "polyphone": false
+        },
+        {
+          "char": "肇",
+          "pinyin": "zhào",
+          "polyphone": false
+        },
+        {
+          "char": "斥",
+          "pinyin": "chì",
+          "polyphone": false
+        },
+        {
+          "char": "辱",
+          "pinyin": "rǔ",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "崛",
+          "pinyin": "jué",
+          "polyphone": false
+        },
+        {
+          "char": "肃",
+          "pinyin": "sù",
+          "polyphone": false
+        },
+        {
+          "char": "脆",
+          "pinyin": "cuì",
+          "polyphone": false
+        },
+        {
+          "char": "默",
+          "pinyin": "mò",
+          "polyphone": false
+        },
+        {
+          "char": "晰",
+          "pinyin": "xī",
+          "polyphone": false
+        },
+        {
+          "char": "离",
+          "pinyin": "lí",
+          "polyphone": false
+        },
+        {
+          "char": "凡",
+          "pinyin": "fán",
+          "polyphone": false
+        },
+        {
+          "char": "惩",
+          "pinyin": "chéng",
+          "polyphone": false
+        },
+        {
+          "char": "斥",
+          "pinyin": "chì",
+          "polyphone": false
+        },
+        {
+          "char": "燃",
+          "pinyin": "rán",
+          "polyphone": false
+        }
+      ]
+    },
+    {
+      "kind": "lesson",
+      "unit": "第八单元",
+      "title": "26* 延安，我把你追寻",
+      "lessonNo": 26,
+      "sourcePage": 120,
+      "reading": [
+        {
+          "char": "昔",
+          "pinyin": "xī",
+          "polyphone": false
+        },
+        {
+          "char": "茅",
+          "pinyin": "máo",
+          "polyphone": false
+        },
+        {
+          "char": "炕",
+          "pinyin": "kàng",
+          "polyphone": false
+        },
+        {
+          "char": "索",
+          "pinyin": "suǒ",
+          "polyphone": false
+        },
+        {
+          "char": "媚",
+          "pinyin": "mèi",
+          "polyphone": false
+        }
+      ],
+      "writing": []
+    },
+    {
+      "kind": "lesson",
+      "unit": "第八单元",
+      "title": "27 古诗三首",
+      "lessonNo": 27,
+      "sourcePage": 122,
+      "reading": [
+        {
+          "char": "催",
+          "pinyin": "cuī",
+          "polyphone": false
+        },
+        {
+          "char": "君",
+          "pinyin": "jūn",
+          "polyphone": false
+        },
+        {
+          "char": "征",
+          "pinyin": "zhēng",
+          "polyphone": false
+        },
+        {
+          "char": "塞",
+          "pinyin": "sài",
+          "polyphone": false
+        },
+        {
+          "char": "秦",
+          "pinyin": "qín",
+          "polyphone": false
+        },
+        {
+          "char": "杰",
+          "pinyin": "jié",
+          "polyphone": false
+        },
+        {
+          "char": "鬼",
+          "pinyin": "guǐ",
+          "polyphone": false
+        }
+      ],
+      "writing": [
+        {
+          "char": "词",
+          "pinyin": "cí",
+          "polyphone": false
+        },
+        {
+          "char": "葡",
+          "pinyin": "pú",
+          "polyphone": false
+        },
+        {
+          "char": "萄",
+          "pinyin": "táo",
+          "polyphone": false
+        },
+        {
+          "char": "杯",
+          "pinyin": "bēi",
+          "polyphone": false
+        },
+        {
+          "char": "塞",
+          "pinyin": "sài",
+          "polyphone": false
+        },
+        {
+          "char": "秦",
+          "pinyin": "qín",
+          "polyphone": false
+        },
+        {
+          "char": "将",
+          "pinyin": "jiàng",
+          "polyphone": true
+        },
+        {
+          "char": "杰",
+          "pinyin": "jié",
+          "polyphone": false
+        },
+        {
+          "char": "鬼",
+          "pinyin": "guǐ",
+          "polyphone": false
+        },
+        {
+          "char": "雄",
+          "pinyin": "xióng",
+          "polyphone": false
+        },
+        {
+          "char": "项",
+          "pinyin": "xiàng",
+          "polyphone": false
+        }
+      ]
+    }
+  ]
+}

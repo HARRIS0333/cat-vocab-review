@@ -1,0 +1,260 @@
+.recognition-page {
+  --recognition-pink-ink: #8f4960;
+  --recognition-pink-soft: #fce9ed;
+  --recognition-pink-wash: #fff5f6;
+  max-width: 760px;
+}
+
+.recognition-progress {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px 16px;
+  width: min(100%, 540px);
+  margin: 0 auto 18px;
+}
+
+.recognition-progress p {
+  margin: 0;
+  color: var(--recognition-pink-ink);
+  font-size: 0.9rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.recognition-progress progress {
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  background: var(--recognition-pink-soft);
+  appearance: none;
+}
+
+.recognition-progress progress::-webkit-progress-bar {
+  border-radius: inherit;
+  background: var(--recognition-pink-soft);
+}
+
+.recognition-progress progress::-webkit-progress-value {
+  border-radius: inherit;
+  background: linear-gradient(90deg, #e9a0b2, var(--color-cherry-pink));
+}
+
+.recognition-progress progress::-moz-progress-bar {
+  border-radius: inherit;
+  background: linear-gradient(90deg, #e9a0b2, var(--color-cherry-pink));
+}
+
+.recognition-stage {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: clamp(8px, 2vw, 18px) 0 4px;
+}
+
+.recognition-stage .mascot {
+  width: clamp(68px, 13vw, 88px);
+  filter: drop-shadow(0 7px 12px rgb(123 64 81 / 10%));
+}
+
+.recognition-card {
+  position: relative;
+  display: flex;
+  width: min(100%, 440px);
+  min-height: clamp(260px, 42vh, 390px);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: clamp(14px, 3vw, 22px);
+  padding: clamp(28px, 7vw, 48px) clamp(18px, 6vw, 40px);
+  overflow: hidden;
+  border: 1px solid #edc7d1;
+  border-radius: clamp(26px, 6vw, 38px);
+  background:
+    radial-gradient(circle at 12% 12%, rgb(255 255 255 / 92%) 0 3.2rem, transparent 3.25rem),
+    radial-gradient(circle at 92% 88%, rgb(247 211 221 / 70%) 0 5.4rem, transparent 5.45rem),
+    linear-gradient(145deg, #fffdfc 0%, var(--recognition-pink-wash) 58%, #fbe8ec 100%);
+  box-shadow:
+    0 22px 50px rgb(123 64 81 / 13%),
+    inset 0 1px 0 rgb(255 255 255 / 90%);
+  color: var(--color-deep-plum);
+  cursor: pointer;
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.recognition-card::before,
+.recognition-card::after {
+  position: absolute;
+  z-index: -1;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 64%);
+  box-shadow:
+    24px 7px 0 -4px rgb(255 255 255 / 52%),
+    7px 25px 0 -5px rgb(255 255 255 / 48%);
+  content: "";
+  pointer-events: none;
+}
+
+.recognition-card::before {
+  top: 30px;
+  right: 38px;
+}
+
+.recognition-card::after {
+  bottom: 44px;
+  left: 28px;
+  transform: rotate(28deg);
+}
+
+.recognition-card:hover {
+  border-color: #e5a8b7;
+  box-shadow:
+    0 26px 56px rgb(123 64 81 / 16%),
+    inset 0 1px 0 rgb(255 255 255 / 90%);
+  transform: translateY(-2px);
+}
+
+.recognition-card:active {
+  transform: scale(0.992);
+}
+
+.recognition-char {
+  font-family: var(--font-kai);
+  font-size: clamp(6rem, 24vw, 10.5rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  text-shadow: 0 3px 0 rgb(255 255 255 / 88%);
+}
+
+.recognition-answer {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.recognition-pinyin {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding: 5px 20px;
+  border: 1px solid #f0c8d2;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 76%);
+  color: var(--recognition-pink-ink);
+  font-family: ui-rounded, "Avenir Next", var(--font-ui);
+  font-size: clamp(1.55rem, 6vw, 2.25rem);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: 0.025em;
+}
+
+.recognition-answer > span:not(.recognition-pinyin) {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #fff4cf;
+  color: #8b6340;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.recognition-stage > .speech-control {
+  justify-content: center;
+  min-height: 44px;
+}
+
+.recognition-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: min(100%, 440px);
+  margin: 18px auto 0;
+}
+
+.recognition-actions .button {
+  width: 100%;
+  min-height: 56px;
+  border-radius: 18px;
+  font-size: 1.04rem;
+}
+
+@media (max-width: 560px) {
+  .recognition-progress {
+    margin-bottom: 10px;
+  }
+
+  .recognition-stage {
+    gap: 8px;
+    padding-top: 0;
+  }
+
+  .recognition-stage .mascot {
+    width: 62px;
+  }
+
+  .recognition-card {
+    min-height: clamp(230px, 38vh, 310px);
+    gap: 12px;
+    border-radius: 28px;
+  }
+
+  .recognition-char {
+    font-size: clamp(5.4rem, 28vw, 8rem);
+  }
+
+  .recognition-pinyin {
+    min-height: 38px;
+    padding-inline: 16px;
+  }
+
+  .recognition-actions {
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .recognition-actions .button {
+    min-height: 54px;
+    padding-inline: 12px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 640px) {
+  .recognition-stage {
+    grid-template-columns: auto minmax(0, 440px) auto;
+    align-items: center;
+  }
+
+  .recognition-card {
+    min-height: 220px;
+    padding-block: 20px;
+  }
+
+  .recognition-char {
+    font-size: clamp(4.8rem, 18vh, 7rem);
+  }
+
+  .recognition-stage > .speech-control {
+    align-self: center;
+  }
+
+  .recognition-actions {
+    margin-top: 10px;
+  }
+}
