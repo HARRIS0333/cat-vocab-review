@@ -254,6 +254,10 @@
   animation: writing-feedback-in 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.writing-feedback-dialog:focus {
+  outline: none;
+}
+
 .writing-feedback-dialog::backdrop {
   background: rgb(79 45 57 / 42%);
   backdrop-filter: blur(3px);
