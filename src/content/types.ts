@@ -1,11 +1,23 @@
 export type WritingSource = "writing" | "reading" | "both";
 
+export type WordPracticeCharacter = {
+  char: string;
+  pinyin: string;
+};
+
+export type PracticeWord = {
+  word: string;
+  chars: WordPracticeCharacter[];
+  source: "word-list" | "text";
+};
+
 export type PracticeItem = {
   id: string;
   char: string;
   pinyin: string;
   polyphone: boolean;
   speechText?: string;
+  word?: PracticeWord;
 };
 
 export type ContentGroup = {

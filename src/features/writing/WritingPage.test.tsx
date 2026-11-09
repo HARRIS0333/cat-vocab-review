@@ -12,19 +12,29 @@ import { loadSessionSummary } from "../session/session-summary";
 import { saveRetryQueue } from "../session/retry-queue";
 import { WritingPage } from "./WritingPage";
 
-vi.mock("./WritingBoard", () => ({
-  WritingBoard: ({
+vi.mock("./WordWritingBoard", () => ({
+  WordWritingBoard: ({
+    characters,
     strokes,
     onSubmit,
   }: {
-    strokes: InputStroke[];
-    onSubmit: (strokes: InputStroke[]) => void;
+    characters: Array<{ char: string; pinyin: string }>;
+    strokes: InputStroke[][];
+    onSubmit: (strokes: InputStroke[][]) => void;
   }) => (
     <div>
-      <output data-testid="draft-stroke-count">{strokes.length}</output>
-      <button onClick={() => onSubmit([
-        { id: "s1", points: [{ x: 0.1, y: 0.2 }, { x: 0.8, y: 0.2 }] },
-      ])}>提交测试笔迹</button>
+      <div>
+        {characters.map((character, index) => (
+          <span key={`${character.char}-${index}`}>{character.pinyin}</span>
+        ))}
+      </div>
+      <output data-testid="draft-stroke-count">
+        {strokes.filter((entry) => entry.length > 0).length}
+      </output>
+      <button onClick={() => onSubmit(strokes.map((entry, index) => entry.length > 0
+        ? entry
+        : [{ id: `s${index}`, points: [{ x: 0.1, y: 0.2 }, { x: 0.8, y: 0.2 }] }],
+      ))}>提交测试笔迹</button>
     </div>
   ),
 }));
@@ -42,7 +52,20 @@ const group: ContentGroup = {
   sourcePage: 42,
   reading: [],
   writing: [
-    { id: "lesson-11:丈:zhàng", char: "丈", pinyin: "zhàng", polyphone: false },
+    {
+      id: "lesson-11:丈:zhàng",
+      char: "丈",
+      pinyin: "zhàng",
+      polyphone: false,
+      word: {
+        word: "丈量",
+        chars: [
+          { char: "丈", pinyin: "zhàng" },
+          { char: "量", pinyin: "liàng" },
+        ],
+        source: "text",
+      },
+    },
   ],
 };
 const data: CharacterFileData = {
@@ -82,7 +105,7 @@ it("shows pinyin but not the answer and records a correct response", async () =>
       evaluate={evaluate}
     />,
   );
-  expect(screen.getByText("zhàng")).toBeInTheDocument();
+  expect(await screen.findByText("zhàng")).toBeInTheDocument();
   expect(screen.queryByText("丈")).not.toBeInTheDocument();
   await waitFor(() => expect(screen.getByRole("button", { name: "提交测试笔迹" })).toBeEnabled());
   await userEvent.click(screen.getByRole("button", { name: "提交测试笔迹" }));
@@ -149,7 +172,7 @@ it("submits once when the board reports twice in the same act", async () => {
   });
 
   expect(await screen.findByText("笔画顺序不对")).toBeInTheDocument();
-  expect(evaluate).toHaveBeenCalledTimes(1);
+  expect(evaluate).toHaveBeenCalledTimes(2);
   expect(recordWriting).toHaveBeenCalledTimes(1);
   expect(recordWriting).toHaveBeenCalledWith(group.writing[0]!.id, "wrong");
   expect(store.getSnapshot().state.items[group.writing[0]!.id]?.writing?.wrongAttempts).toBe(1);
@@ -192,7 +215,7 @@ it("skips a character when stroke data fails to load and records review", async 
       evaluate={evaluate}
     />,
   );
-  expect(await screen.findByText("这个字的笔顺数据暂时无法加载")).toBeInTheDocument();
+  expect(await screen.findByText("词语中的字形数据暂时无法加载")).toBeInTheDocument();
   await userEvent.click(screen.getByRole("button", { name: "先跳过" }));
   await waitFor(() => expect(window.location.hash).toContain("/summary?mode=write"));
   expect(evaluate).not.toHaveBeenCalled();
@@ -225,11 +248,11 @@ it("uses the saved writing source and remembers a source switch", async () => {
     "aria-pressed",
     "true",
   );
-  expect(screen.getByText("zhàng")).toBeInTheDocument();
+  expect(await screen.findByText("zhàng")).toBeInTheDocument();
 
   await userEvent.click(screen.getByRole("button", { name: "仅识字表 · 1 字" }));
 
-  expect(screen.getByText("cháo")).toBeInTheDocument();
+  expect(await screen.findByText("cháo")).toBeInTheDocument();
   expect(screen.getByRole("button", { name: "仅识字表 · 1 字" })).toHaveAttribute(
     "aria-pressed",
     "true",
@@ -237,7 +260,7 @@ it("uses the saved writing source and remembers a source switch", async () => {
   expect(store.getSnapshot().state.settings.defaultWritingSource).toBe("reading");
 });
 
-it("visibly falls back to the reading table when the saved writing table is empty", () => {
+it("visibly falls back to the reading table when the saved writing table is empty", async () => {
   const fallbackGroup: ContentGroup = {
     ...group,
     id: "lesson-fallback",
@@ -262,7 +285,7 @@ it("visibly falls back to the reading table when the saved writing table is empt
   expect(
     screen.getByText("本课没有写字表内容，已切换到仅识字表"),
   ).toBeInTheDocument();
-  expect(screen.getByText("cháo")).toBeInTheDocument();
+  expect(await screen.findByText("cháo")).toBeInTheDocument();
 });
 
 it("keeps the queued retry item when StrictMode replays state initialization", async () => {
@@ -288,7 +311,7 @@ it("keeps the queued retry item when StrictMode replays state initialization", a
     </StrictMode>,
   );
 
-  expect(screen.getByText("qiáng")).toBeInTheDocument();
+  expect(await screen.findByText("qiáng")).toBeInTheDocument();
   expect(screen.getByText("第 1 / 1 题")).toBeInTheDocument();
   expect(screen.queryByText("zhàng")).not.toBeInTheDocument();
   expect(store.getSnapshot().state.settings.defaultWritingSource).toBe("reading");
@@ -309,14 +332,14 @@ it("recovers after retrying a failed character-data load", async () => {
   );
 
   expect(
-    await screen.findByText("这个字的笔顺数据暂时无法加载"),
+    await screen.findByText("词语中的字形数据暂时无法加载"),
   ).toBeInTheDocument();
   await userEvent.click(screen.getByRole("button", { name: "重新加载" }));
 
   await waitFor(() =>
     expect(screen.getByRole("button", { name: "提交测试笔迹" })).toBeEnabled(),
   );
-  expect(loadCharacterData).toHaveBeenCalledTimes(2);
+  expect(loadCharacterData).toHaveBeenCalledTimes(4);
 });
 
 it("automatically advances and clears strokes 2 seconds after a correct answer", async () => {
@@ -351,7 +374,7 @@ it("automatically advances and clears strokes 2 seconds after a correct answer",
   try {
     fireEvent.click(screen.getByRole("button", { name: "提交测试笔迹" }));
     expect(screen.getByText("写对了！")).toBeInTheDocument();
-    expect(screen.getByTestId("draft-stroke-count")).toHaveTextContent("1");
+    expect(screen.getByTestId("draft-stroke-count")).toHaveTextContent("2");
     expect(window.location.hash).not.toContain("/summary");
 
     act(() => vi.advanceTimersByTime(1999));

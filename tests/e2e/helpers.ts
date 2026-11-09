@@ -4,6 +4,9 @@ type PracticeItem = {
   id: string;
   char: string;
   pinyin: string;
+  word: {
+    chars: Array<{ char: string; pinyin: string }>;
+  };
 };
 
 type ContentGroup = {
@@ -92,54 +95,73 @@ export async function chooseSimpleTarget(page: Page): Promise<SimpleTarget> {
 export async function openSingleItemPractice(
   page: Page,
   target: SimpleTarget,
-): Promise<CharacterData> {
-  const data = (await page.evaluate(async (char) => {
-    const response = await fetch(`characters/${encodeURIComponent(char)}.json`);
-    if (!response.ok) {
-      throw new Error(`character data returned ${response.status}`);
-    }
-    return (await response.json()) as CharacterData;
-  }, target.item.char)) as CharacterData;
+): Promise<CharacterData[]> {
+  const characters = target.item.word.chars;
+  const data = await page.evaluate(async (wordCharacters) => {
+    return Promise.all(
+      wordCharacters.map(async ({ char }) => {
+        const response = await fetch(`characters/${encodeURIComponent(char)}.json`);
+        if (!response.ok) {
+          throw new Error(`character data returned ${response.status}`);
+        }
+        return (await response.json()) as CharacterData;
+      }),
+    );
+  }, characters) as CharacterData[];
 
   await page.goto(
     `#/lesson/${encodeURIComponent(target.groupId)}/write?retry=1`,
   );
-  await expect(page.locator(".writing-pinyin")).toHaveText(target.item.pinyin);
-  await expect(page.getByTestId("writing-board")).toBeVisible();
+  const pinyin = page.locator(".writing-word-board__pinyin");
+  await expect(pinyin).toHaveCount(characters.length);
+  for (const [index, character] of characters.entries()) {
+    await expect(pinyin.nth(index)).toHaveText(character.pinyin);
+  }
+  await expect(page.getByTestId("writing-board-0")).toBeVisible();
   return data;
 }
 
 export async function drawMedians(
   page: Page,
-  data: CharacterData,
+  allData: CharacterData[],
+  startIndex = 0,
+  skipIndex?: number,
 ): Promise<void> {
-  const board = page.getByTestId("writing-board");
-  await board.scrollIntoViewIfNeeded();
-  const box = await board.boundingBox();
-  if (!box) throw new Error("writing board is not visible");
+  for (const [offset, data] of allData.entries()) {
+    const index = startIndex + offset;
+    if (index === skipIndex) continue;
+    const board = page.getByTestId(`writing-board-${index}`);
+    await board.scrollIntoViewIfNeeded();
+    const box = await board.boundingBox();
+    if (!box) throw new Error(`writing board ${index} is not visible`);
 
-  for (const median of data.medians) {
-    const [first, ...rest] = median;
-    if (!first) continue;
+    for (const median of data.medians) {
+      const [first, ...rest] = median;
+      if (!first) continue;
 
-    await page.mouse.move(
-      Math.round(box.x + (first[0] / 1024) * box.width),
-      Math.round(box.y + ((900 - first[1]) / 1024) * box.height),
-    );
-    await page.mouse.down();
-    for (const point of rest) {
       await page.mouse.move(
-        Math.round(box.x + (point[0] / 1024) * box.width),
-        Math.round(box.y + ((900 - point[1]) / 1024) * box.height),
-        { steps: 2 },
+        Math.round(box.x + (first[0] / 1024) * box.width),
+        Math.round(box.y + ((900 - first[1]) / 1024) * box.height),
       );
+      await page.mouse.down();
+      for (const point of rest) {
+        await page.mouse.move(
+          Math.round(box.x + (point[0] / 1024) * box.width),
+          Math.round(box.y + ((900 - point[1]) / 1024) * box.height),
+          { steps: 2 },
+        );
+      }
+      await page.mouse.up();
     }
-    await page.mouse.up();
   }
 }
 
-export async function drawOneWrongStroke(page: Page): Promise<void> {
-  const board = page.getByTestId("writing-board");
+export async function drawOneWrongStroke(
+  page: Page,
+  allData: CharacterData[],
+  wrongIndex = 0,
+): Promise<void> {
+  const board = page.getByTestId(`writing-board-${wrongIndex}`);
   await board.scrollIntoViewIfNeeded();
   const box = await board.boundingBox();
   if (!box) throw new Error("writing board is not visible");
@@ -155,4 +177,6 @@ export async function drawOneWrongStroke(page: Page): Promise<void> {
     { steps: 8 },
   );
   await page.mouse.up();
+
+  await drawMedians(page, allData, 0, wrongIndex);
 }

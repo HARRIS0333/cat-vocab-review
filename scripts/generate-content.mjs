@@ -6,13 +6,16 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = path.join(root, "data/source/textbook.json");
 const speechPath = path.join(root, "data/source/polyphone-speech.json");
+const practiceWordsPath = path.join(root, "data/source/practice-words.json");
 const charsSourceDir = path.join(root, "node_modules/hanzi-writer-data");
 const publicDir = path.join(root, "public");
 const charsOutputDir = path.join(publicDir, "characters");
 const sourceText = fs.readFileSync(sourcePath, "utf8");
 const speechText = fs.readFileSync(speechPath, "utf8");
+const practiceWordsText = fs.readFileSync(practiceWordsPath, "utf8");
 const source = JSON.parse(sourceText);
 const speech = JSON.parse(speechText);
+const practiceWords = JSON.parse(practiceWordsText);
 const gardenAfterLesson = new Map([
   [7, 2],
   [14, 4],
@@ -48,6 +51,24 @@ function enrichItems(groupId, items) {
       fail(`invalid item in ${groupId}`);
     }
     const speechTextValue = speech[`${item.char}|${item.pinyin}`];
+    const wordValue = practiceWords.groups?.[groupId]?.[item.char];
+    if (!wordValue) fail(`missing practice word for ${groupId}:${item.char}`);
+    if (
+      typeof wordValue.word !== "string" ||
+      !wordValue.word.includes(item.char) ||
+      !Array.isArray(wordValue.chars) ||
+      wordValue.chars.length !== Array.from(wordValue.word).length ||
+      !["word-list", "text"].includes(wordValue.source) ||
+      wordValue.chars.some(
+        (char) =>
+          typeof char.char !== "string" ||
+          !char.char ||
+          typeof char.pinyin !== "string" ||
+          !char.pinyin.trim(),
+      )
+    ) {
+      fail(`invalid practice word for ${groupId}:${item.char}`);
+    }
     if (item.polyphone && !speechTextValue) {
       fail(`missing speech phrase for ${item.char} ${item.pinyin}`);
     }
@@ -57,6 +78,14 @@ function enrichItems(groupId, items) {
       pinyin: item.pinyin,
       polyphone: item.polyphone,
       ...(speechTextValue ? { speechText: speechTextValue } : {}),
+      word: {
+        word: wordValue.word,
+        chars: wordValue.chars.map((char) => ({
+          char: char.char,
+          pinyin: char.pinyin,
+        })),
+        source: wordValue.source,
+      },
     };
   });
 }
@@ -103,6 +132,16 @@ const writing = groups.flatMap((group) => group.writing);
 const readingCounted = reading.filter((item) => !item.polyphone).length;
 const polyphoneEntries = reading.filter((item) => item.polyphone).length;
 const targetChars = [...new Set([...reading, ...writing].map((item) => item.char))].sort();
+const wordChars = [
+  ...new Set(
+    groups.flatMap((group) =>
+      [...group.reading, ...group.writing].flatMap((item) =>
+        item.word.chars.map((char) => char.char),
+      ),
+    ),
+  ),
+].sort();
+const characterChars = [...new Set([...targetChars, ...wordChars])].sort();
 
 if (lessons !== 27) fail(`expected 27 lessons, got ${lessons}`);
 if (gardens !== 4) fail(`expected 4 gardens, got ${gardens}`);
@@ -112,6 +151,7 @@ if (readingCounted !== 250) fail(`expected 250 counted reading chars, got ${read
 if (polyphoneEntries !== 15) fail(`expected 15 polyphone entries, got ${polyphoneEntries}`);
 if (writing.length !== 250) fail(`expected 250 writing items, got ${writing.length}`);
 if (targetChars.length !== 413) fail(`expected 413 target chars, got ${targetChars.length}`);
+if (practiceWords.count !== 420) fail(`expected 420 practice words, got ${practiceWords.count}`);
 if ([...reading, ...writing].some((item) => !item.char || !item.pinyin.trim())) {
   fail("empty character or pinyin");
 }
@@ -120,7 +160,7 @@ if (groups.some((group) => !Number.isInteger(group.sourcePage) || group.sourcePa
 }
 
 const characterFiles = new Map();
-for (const char of targetChars) {
+for (const char of characterChars) {
   const sourceFile = path.join(charsSourceDir, `${char}.json`);
   if (!fs.existsSync(sourceFile)) fail(`missing Hanzi Writer data for ${char}`);
   let data;
@@ -140,7 +180,7 @@ for (const char of targetChars) {
 
 fs.rmSync(charsOutputDir, { recursive: true, force: true });
 fs.mkdirSync(charsOutputDir, { recursive: true });
-for (const char of targetChars) {
+for (const char of characterChars) {
   fs.writeFileSync(
     path.join(charsOutputDir, `${char}.json`),
     JSON.stringify(characterFiles.get(char)),
@@ -150,6 +190,7 @@ for (const char of targetChars) {
 const contentVersion = `2024-reader-${createHash("sha256")
   .update(sourceText)
   .update(speechText)
+  .update(practiceWordsText)
   .digest("hex")
   .slice(0, 12)}`;
 
@@ -181,6 +222,8 @@ fs.mkdirSync(publicDir, { recursive: true });
 fs.writeFileSync(path.join(publicDir, "content.json"), JSON.stringify(output));
 fs.writeFileSync(
   path.join(charsOutputDir, "index.json"),
-  JSON.stringify({ schemaVersion: 1, chars: targetChars }),
+  JSON.stringify({ schemaVersion: 1, chars: characterChars }),
 );
-console.log(`Generated ${groups.length} groups and ${targetChars.length} characters`);
+console.log(
+  `Generated ${groups.length} groups, ${targetChars.length} targets and ${characterChars.length} character files`,
+);

@@ -109,12 +109,104 @@
   -webkit-touch-callout: none;
 }
 
+.writing-word-board {
+  --writing-pink-ink: #8f4960;
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  gap: 14px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.writing-word-board__grid {
+  display: grid;
+  width: min(100%, 760px);
+  align-items: start;
+  justify-content: center;
+  gap: 14px;
+}
+
+.writing-word-board__grid--1 {
+  grid-template-columns: minmax(0, 280px);
+}
+
+.writing-word-board__grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 440px;
+}
+
+.writing-word-board__grid--3,
+.writing-word-board__grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
+}
+
+.writing-word-board__cell {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  max-width: 200px;
+  justify-items: center;
+  justify-self: center;
+  gap: 7px;
+}
+
+.writing-word-board__grid--1 .writing-word-board__cell {
+  max-width: 280px;
+}
+
+.writing-word-board__pinyin {
+  margin: 0;
+  color: var(--writing-pink-ink);
+  font-family: ui-rounded, "Avenir Next", var(--font-ui);
+  font-size: clamp(1.05rem, 4.5vw, 1.45rem);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.writing-word-board__pad {
+  width: 100%;
+  max-width: none;
+  border-radius: clamp(16px, 4vw, 24px);
+}
+
+.writing-word-board__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: min(100%, 560px);
+  padding-bottom: calc(12px + var(--safe-bottom));
+}
+
+.writing-word-board__actions .button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 18px;
+  font-size: 1rem;
+}
+
+.writing-word-board[data-disabled="true"] .writing-word-board__pad {
+  cursor: default;
+  opacity: 0.72;
+}
+
 @media (max-width: 380px) {
   .writing-board-panel {
     gap: 10px;
   }
 
   .writing-board-actions {
+    gap: 9px;
+  }
+
+  .writing-word-board__grid {
+    gap: 10px;
+  }
+
+  .writing-word-board__actions {
     gap: 9px;
   }
 }

@@ -150,10 +150,13 @@ test("shows glyph feedback, autoplay guidance, and skip review summary", async (
 }) => {
   await page.goto("./");
   const target = await chooseSimpleTarget(page);
-  await openSingleItemPractice(page, target);
+  const data = await openSingleItemPractice(page, target);
   await expectNoHorizontalOverflow(page);
 
-  await drawOneWrongStroke(page);
+  const targetIndex = target.item.word.chars.findIndex(
+    (character) => character.char === target.item.char,
+  );
+  await drawOneWrongStroke(page, data, targetIndex);
   await page.getByRole("button", { name: "提交" }).click();
 
   const errorDialog = page.getByRole("dialog", { name: "这次还差一点" });

@@ -18,7 +18,14 @@ const content = JSON.parse(fs.readFileSync(path.join(dist, "content.json"), "utf
 if (content.groups.length !== 31) throw new Error("expected 31 groups");
 const chars = fs.readdirSync(path.join(dist, "characters"))
   .filter((name) => name.endsWith(".json") && name !== "index.json");
-if (chars.length !== 413) throw new Error(`expected 413 character files, got ${chars.length}`);
+const characterIndex = JSON.parse(
+  fs.readFileSync(path.join(dist, "characters/index.json"), "utf8"),
+);
+if (chars.length !== characterIndex.chars.length) {
+  throw new Error(
+    `expected ${characterIndex.chars.length} character files, got ${chars.length}`,
+  );
+}
 if (content.counts.readingItems !== 265 || content.counts.writingItems !== 250) {
   throw new Error("content counts changed");
 }

@@ -54,6 +54,7 @@ describe("generated textbook content", () => {
   it("derives ids and every declared count from the actual groups", () => {
     const idsByTable = new Map<string, { reading: number; writing: number }>();
     const targetChars = new Set<string>();
+    const wordChars = new Set<string>();
 
     for (const group of content.groups) {
       const readingIds = new Set<string>();
@@ -67,6 +68,14 @@ describe("generated textbook content", () => {
           expect(seen.has(item.id), `${table} has duplicate id ${item.id}`).toBe(false);
           seen.add(item.id);
           targetChars.add(item.char);
+          expect(item.word, `${item.id} has no practice word`).toBeDefined();
+          expect(item.word!.word).toContain(item.char);
+          expect(item.word!.chars.map((entry) => entry.char).join("")).toBe(
+            item.word!.word,
+          );
+          expect(item.word!.chars.every((entry) => Boolean(entry.pinyin))).toBe(true);
+          expect(["word-list", "text"]).toContain(item.word!.source);
+          for (const entry of item.word!.chars) wordChars.add(entry.char);
 
           const occurrences = idsByTable.get(item.id) ?? { reading: 0, writing: 0 };
           occurrences[table] += 1;
@@ -98,8 +107,9 @@ describe("generated textbook content", () => {
     }).toEqual(content.counts);
 
     const sortedTargets = [...targetChars].sort();
-    expect(sortedTargets).toHaveLength(index.chars.length);
-    expect(sortedTargets).toEqual([...index.chars].sort());
+    const sortedContentChars = [...new Set([...targetChars, ...wordChars])].sort();
+    expect(index.chars).toEqual(sortedContentChars);
+    expect(sortedTargets).toHaveLength(413);
   });
 
   it("does not replace existing character output when a source file is invalid", () => {
@@ -125,6 +135,10 @@ describe("generated textbook content", () => {
       fs.copyFileSync(
         path.join(root, "data/source/polyphone-speech.json"),
         path.join(tempSourceDir, "polyphone-speech.json"),
+      );
+      fs.copyFileSync(
+        path.join(root, "data/source/practice-words.json"),
+        path.join(tempSourceDir, "practice-words.json"),
       );
 
       const sourceCharsDir = path.join(root, "node_modules/hanzi-writer-data");
@@ -184,10 +198,10 @@ describe("generated textbook content", () => {
     });
   });
 
-  it("contains one valid stroke file for every unique target character", () => {
+  it("contains one valid stroke file for every target and word character", () => {
     expect(index.schemaVersion).toBe(1);
-    expect(index.chars).toHaveLength(413);
-    expect(new Set(index.chars).size).toBe(413);
+    expect(index.chars).toHaveLength(680);
+    expect(new Set(index.chars).size).toBe(680);
     for (const char of index.chars) {
       const file = path.join(root, "public/characters", `${char}.json`);
       expect(fs.existsSync(file), `${char} stroke data missing`).toBe(true);
@@ -200,7 +214,7 @@ describe("generated textbook content", () => {
     }
 
     const files = fs.readdirSync(path.join(root, "public/characters"));
-    expect(files.filter((file) => file !== "index.json")).toHaveLength(413);
+    expect(files.filter((file) => file !== "index.json")).toHaveLength(680);
     expect(files.some((file) => file.includes("%"))).toBe(false);
   });
 

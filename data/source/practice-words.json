@@ -1,0 +1,6328 @@
+{
+  "source": "教材《词语表》与课文原句",
+  "count": 420,
+  "groups": {
+    "lesson-1": {
+      "盐": {
+        "word": "盐官镇",
+        "chars": [
+          {
+            "char": "盐",
+            "pinyin": "yán"
+          },
+          {
+            "char": "官",
+            "pinyin": "guān"
+          },
+          {
+            "char": "镇",
+            "pinyin": "zhèn"
+          }
+        ],
+        "source": "text"
+      },
+      "薄": {
+        "word": "薄雾",
+        "chars": [
+          {
+            "char": "薄",
+            "pinyin": "bó"
+          },
+          {
+            "char": "雾",
+            "pinyin": "wù"
+          }
+        ],
+        "source": "text"
+      },
+      "隆": {
+        "word": "隆隆",
+        "chars": [
+          {
+            "char": "隆",
+            "pinyin": "lóng"
+          },
+          {
+            "char": "隆",
+            "pinyin": "lóng"
+          }
+        ],
+        "source": "text"
+      },
+      "鼎": {
+        "word": "鼎沸",
+        "chars": [
+          {
+            "char": "鼎",
+            "pinyin": "dǐng"
+          },
+          {
+            "char": "沸",
+            "pinyin": "fèi"
+          }
+        ],
+        "source": "text"
+      },
+      "沸": {
+        "word": "鼎沸",
+        "chars": [
+          {
+            "char": "鼎",
+            "pinyin": "dǐng"
+          },
+          {
+            "char": "沸",
+            "pinyin": "fèi"
+          }
+        ],
+        "source": "text"
+      },
+      "浩": {
+        "word": "浩浩荡荡",
+        "chars": [
+          {
+            "char": "浩",
+            "pinyin": "hào"
+          },
+          {
+            "char": "浩",
+            "pinyin": "hào"
+          },
+          {
+            "char": "荡",
+            "pinyin": "dàng"
+          },
+          {
+            "char": "荡",
+            "pinyin": "dàng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "崩": {
+        "word": "山崩地裂",
+        "chars": [
+          {
+            "char": "山",
+            "pinyin": "shān"
+          },
+          {
+            "char": "崩",
+            "pinyin": "bēng"
+          },
+          {
+            "char": "地",
+            "pinyin": "dì"
+          },
+          {
+            "char": "裂",
+            "pinyin": "liè"
+          }
+        ],
+        "source": "word-list"
+      },
+      "霎": {
+        "word": "霎时",
+        "chars": [
+          {
+            "char": "霎",
+            "pinyin": "shà"
+          },
+          {
+            "char": "时",
+            "pinyin": "shí"
+          }
+        ],
+        "source": "word-list"
+      },
+      "余": {
+        "word": "余波",
+        "chars": [
+          {
+            "char": "余",
+            "pinyin": "yú"
+          },
+          {
+            "char": "波",
+            "pinyin": "bō"
+          }
+        ],
+        "source": "word-list"
+      },
+      "漫": {
+        "word": "漫天",
+        "chars": [
+          {
+            "char": "漫",
+            "pinyin": "màn"
+          },
+          {
+            "char": "天",
+            "pinyin": "tiān"
+          }
+        ],
+        "source": "text"
+      },
+      "吼": {
+        "word": "风号浪吼",
+        "chars": [
+          {
+            "char": "风",
+            "pinyin": "fēng"
+          },
+          {
+            "char": "号",
+            "pinyin": "háo"
+          },
+          {
+            "char": "浪",
+            "pinyin": "làng"
+          },
+          {
+            "char": "吼",
+            "pinyin": "hǒu"
+          }
+        ],
+        "source": "text"
+      },
+      "据": {
+        "word": "据说",
+        "chars": [
+          {
+            "char": "据",
+            "pinyin": "jù"
+          },
+          {
+            "char": "说",
+            "pinyin": "shuō"
+          }
+        ],
+        "source": "word-list"
+      },
+      "随": {
+        "word": "随着",
+        "chars": [
+          {
+            "char": "随",
+            "pinyin": "suí"
+          },
+          {
+            "char": "着",
+            "pinyin": "zhe"
+          }
+        ],
+        "source": "text"
+      },
+      "堤": {
+        "word": "大堤",
+        "chars": [
+          {
+            "char": "大",
+            "pinyin": "dà"
+          },
+          {
+            "char": "堤",
+            "pinyin": "dī"
+          }
+        ],
+        "source": "text"
+      },
+      "顿": {
+        "word": "顿时",
+        "chars": [
+          {
+            "char": "顿",
+            "pinyin": "dùn"
+          },
+          {
+            "char": "时",
+            "pinyin": "shí"
+          }
+        ],
+        "source": "word-list"
+      },
+      "逐": {
+        "word": "逐渐",
+        "chars": [
+          {
+            "char": "逐",
+            "pinyin": "zhú"
+          },
+          {
+            "char": "渐",
+            "pinyin": "jiàn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "渐": {
+        "word": "逐渐",
+        "chars": [
+          {
+            "char": "逐",
+            "pinyin": "zhú"
+          },
+          {
+            "char": "渐",
+            "pinyin": "jiàn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "堵": {
+        "word": "一堵",
+        "chars": [
+          {
+            "char": "一",
+            "pinyin": "yì"
+          },
+          {
+            "char": "堵",
+            "pinyin": "dǔ"
+          }
+        ],
+        "source": "text"
+      },
+      "墙": {
+        "word": "水墙",
+        "chars": [
+          {
+            "char": "水",
+            "pinyin": "shuǐ"
+          },
+          {
+            "char": "墙",
+            "pinyin": "qiáng"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-2": {
+      "昧": {
+        "word": "半明半昧",
+        "chars": [
+          {
+            "char": "半",
+            "pinyin": "bàn"
+          },
+          {
+            "char": "明",
+            "pinyin": "míng"
+          },
+          {
+            "char": "半",
+            "pinyin": "bàn"
+          },
+          {
+            "char": "昧",
+            "pinyin": "mèi"
+          }
+        ],
+        "source": "text"
+      },
+      "坠": {
+        "word": "摇摇欲坠",
+        "chars": [
+          {
+            "char": "摇",
+            "pinyin": "yáo"
+          },
+          {
+            "char": "摇",
+            "pinyin": "yáo"
+          },
+          {
+            "char": "欲",
+            "pinyin": "yù"
+          },
+          {
+            "char": "坠",
+            "pinyin": "zhuì"
+          }
+        ],
+        "source": "text"
+      },
+      "萤": {
+        "word": "萤火",
+        "chars": [
+          {
+            "char": "萤",
+            "pinyin": "yíng"
+          },
+          {
+            "char": "火",
+            "pinyin": "huǒ"
+          }
+        ],
+        "source": "text"
+      },
+      "繁": {
+        "word": "繁星",
+        "chars": [
+          {
+            "char": "繁",
+            "pinyin": "fán"
+          },
+          {
+            "char": "星",
+            "pinyin": "xīng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "怀": {
+        "word": "怀抱",
+        "chars": [
+          {
+            "char": "怀",
+            "pinyin": "huái"
+          },
+          {
+            "char": "抱",
+            "pinyin": "bào"
+          }
+        ],
+        "source": "word-list"
+      },
+      "寂": {
+        "word": "静寂",
+        "chars": [
+          {
+            "char": "静",
+            "pinyin": "jìng"
+          },
+          {
+            "char": "寂",
+            "pinyin": "jì"
+          }
+        ],
+        "source": "text"
+      },
+      "谈": {
+        "word": "谈话",
+        "chars": [
+          {
+            "char": "谈",
+            "pinyin": "tán"
+          },
+          {
+            "char": "话",
+            "pinyin": "huà"
+          }
+        ],
+        "source": "word-list"
+      },
+      "熟": {
+        "word": "很熟",
+        "chars": [
+          {
+            "char": "很",
+            "pinyin": "hěn"
+          },
+          {
+            "char": "熟",
+            "pinyin": "shú"
+          }
+        ],
+        "source": "text"
+      },
+      "躺": {
+        "word": "躺在",
+        "chars": [
+          {
+            "char": "躺",
+            "pinyin": "tǎng"
+          },
+          {
+            "char": "在",
+            "pinyin": "zài"
+          }
+        ],
+        "source": "text"
+      },
+      "模": {
+        "word": "模糊",
+        "chars": [
+          {
+            "char": "模",
+            "pinyin": "mó"
+          },
+          {
+            "char": "糊",
+            "pinyin": "hu"
+          }
+        ],
+        "source": "word-list"
+      },
+      "糊": {
+        "word": "模糊",
+        "chars": [
+          {
+            "char": "模",
+            "pinyin": "mó"
+          },
+          {
+            "char": "糊",
+            "pinyin": "hu"
+          }
+        ],
+        "source": "word-list"
+      },
+      "围": {
+        "word": "周围",
+        "chars": [
+          {
+            "char": "周",
+            "pinyin": "zhōu"
+          },
+          {
+            "char": "围",
+            "pinyin": "wéi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "舞": {
+        "word": "飞舞",
+        "chars": [
+          {
+            "char": "飞",
+            "pinyin": "fēi"
+          },
+          {
+            "char": "舞",
+            "pinyin": "wǔ"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-3": {
+      "巢": {
+        "word": "归巢",
+        "chars": [
+          {
+            "char": "归",
+            "pinyin": "guī"
+          },
+          {
+            "char": "巢",
+            "pinyin": "cháo"
+          }
+        ],
+        "source": "text"
+      },
+      "苇": {
+        "word": "芦苇",
+        "chars": [
+          {
+            "char": "芦",
+            "pinyin": "lú"
+          },
+          {
+            "char": "苇",
+            "pinyin": "wěi"
+          }
+        ],
+        "source": "text"
+      },
+      "瞬": {
+        "word": "一瞬",
+        "chars": [
+          {
+            "char": "一",
+            "pinyin": "yí"
+          },
+          {
+            "char": "瞬",
+            "pinyin": "shùn"
+          }
+        ],
+        "source": "text"
+      },
+      "穗": {
+        "word": "一穗",
+        "chars": [
+          {
+            "char": "一",
+            "pinyin": "yí"
+          },
+          {
+            "char": "穗",
+            "pinyin": "suì"
+          }
+        ],
+        "source": "text"
+      },
+      "罗": {
+        "word": "剪秋罗",
+        "chars": [
+          {
+            "char": "剪",
+            "pinyin": "jiǎn"
+          },
+          {
+            "char": "秋",
+            "pinyin": "qiū"
+          },
+          {
+            "char": "罗",
+            "pinyin": "luó"
+          }
+        ],
+        "source": "text"
+      },
+      "霸": {
+        "word": "霸占",
+        "chars": [
+          {
+            "char": "霸",
+            "pinyin": "bà"
+          },
+          {
+            "char": "占",
+            "pinyin": "zhàn"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-4": {
+      "豌": {
+        "word": "豌豆",
+        "chars": [
+          {
+            "char": "豌",
+            "pinyin": "wān"
+          },
+          {
+            "char": "豆",
+            "pinyin": "dòu"
+          }
+        ],
+        "source": "text"
+      },
+      "僵": {
+        "word": "僵硬",
+        "chars": [
+          {
+            "char": "僵",
+            "pinyin": "jiāng"
+          },
+          {
+            "char": "硬",
+            "pinyin": "yìng"
+          }
+        ],
+        "source": "text"
+      },
+      "预": {
+        "word": "预感",
+        "chars": [
+          {
+            "char": "预",
+            "pinyin": "yù"
+          },
+          {
+            "char": "感",
+            "pinyin": "gǎn"
+          }
+        ],
+        "source": "text"
+      },
+      "揭": {
+        "word": "揭晓",
+        "chars": [
+          {
+            "char": "揭",
+            "pinyin": "jiē"
+          },
+          {
+            "char": "晓",
+            "pinyin": "xiǎo"
+          }
+        ],
+        "source": "word-list"
+      },
+      "囚": {
+        "word": "囚犯",
+        "chars": [
+          {
+            "char": "囚",
+            "pinyin": "qiú"
+          },
+          {
+            "char": "犯",
+            "pinyin": "fàn"
+          }
+        ],
+        "source": "text"
+      },
+      "劈": {
+        "word": "劈柴",
+        "chars": [
+          {
+            "char": "劈",
+            "pinyin": "pǐ"
+          },
+          {
+            "char": "柴",
+            "pinyin": "chái"
+          }
+        ],
+        "source": "text"
+      },
+      "框": {
+        "word": "窗框",
+        "chars": [
+          {
+            "char": "窗",
+            "pinyin": "chuāng"
+          },
+          {
+            "char": "框",
+            "pinyin": "kuàng"
+          }
+        ],
+        "source": "text"
+      },
+      "吻": {
+        "word": "吻了",
+        "chars": [
+          {
+            "char": "吻",
+            "pinyin": "wěn"
+          },
+          {
+            "char": "了",
+            "pinyin": "le"
+          }
+        ],
+        "source": "text"
+      },
+      "脏": {
+        "word": "脏水",
+        "chars": [
+          {
+            "char": "脏",
+            "pinyin": "zāng"
+          },
+          {
+            "char": "水",
+            "pinyin": "shuǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "溢": {
+        "word": "洋溢",
+        "chars": [
+          {
+            "char": "洋",
+            "pinyin": "yáng"
+          },
+          {
+            "char": "溢",
+            "pinyin": "yì"
+          }
+        ],
+        "source": "text"
+      },
+      "健": {
+        "word": "健康",
+        "chars": [
+          {
+            "char": "健",
+            "pinyin": "jiàn"
+          },
+          {
+            "char": "康",
+            "pinyin": "kāng"
+          }
+        ],
+        "source": "text"
+      },
+      "康": {
+        "word": "健康",
+        "chars": [
+          {
+            "char": "健",
+            "pinyin": "jiàn"
+          },
+          {
+            "char": "康",
+            "pinyin": "kāng"
+          }
+        ],
+        "source": "text"
+      },
+      "舒": {
+        "word": "舒适",
+        "chars": [
+          {
+            "char": "舒",
+            "pinyin": "shū"
+          },
+          {
+            "char": "适",
+            "pinyin": "shì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "适": {
+        "word": "舒适",
+        "chars": [
+          {
+            "char": "舒",
+            "pinyin": "shū"
+          },
+          {
+            "char": "适",
+            "pinyin": "shì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "晓": {
+        "word": "揭晓",
+        "chars": [
+          {
+            "char": "揭",
+            "pinyin": "jiē"
+          },
+          {
+            "char": "晓",
+            "pinyin": "xiǎo"
+          }
+        ],
+        "source": "word-list"
+      },
+      "滚": {
+        "word": "打滚",
+        "chars": [
+          {
+            "char": "打",
+            "pinyin": "dǎ"
+          },
+          {
+            "char": "滚",
+            "pinyin": "gǔn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "滑": {
+        "word": "滑落",
+        "chars": [
+          {
+            "char": "滑",
+            "pinyin": "huá"
+          },
+          {
+            "char": "落",
+            "pinyin": "luò"
+          }
+        ],
+        "source": "text"
+      },
+      "擦": {
+        "word": "擦火炉",
+        "chars": [
+          {
+            "char": "擦",
+            "pinyin": "cā"
+          },
+          {
+            "char": "火",
+            "pinyin": "huǒ"
+          },
+          {
+            "char": "炉",
+            "pinyin": "lú"
+          }
+        ],
+        "source": "text"
+      },
+      "探": {
+        "word": "探出",
+        "chars": [
+          {
+            "char": "探",
+            "pinyin": "tàn"
+          },
+          {
+            "char": "出",
+            "pinyin": "chū"
+          }
+        ],
+        "source": "text"
+      },
+      "曾": {
+        "word": "曾经",
+        "chars": [
+          {
+            "char": "曾",
+            "pinyin": "céng"
+          },
+          {
+            "char": "经",
+            "pinyin": "jīng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "沟": {
+        "word": "水沟",
+        "chars": [
+          {
+            "char": "水",
+            "pinyin": "shuǐ"
+          },
+          {
+            "char": "沟",
+            "pinyin": "gōu"
+          }
+        ],
+        "source": "word-list"
+      },
+      "涨": {
+        "word": "涨得大大",
+        "chars": [
+          {
+            "char": "涨",
+            "pinyin": "zhǎng"
+          },
+          {
+            "char": "得",
+            "pinyin": "de"
+          },
+          {
+            "char": "大",
+            "pinyin": "dà"
+          },
+          {
+            "char": "大",
+            "pinyin": "dà"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-5": {
+      "蝙": {
+        "word": "蝙蝠",
+        "chars": [
+          {
+            "char": "蝙",
+            "pinyin": "biān"
+          },
+          {
+            "char": "蝠",
+            "pinyin": "fú"
+          }
+        ],
+        "source": "text"
+      },
+      "蝠": {
+        "word": "蝙蝠",
+        "chars": [
+          {
+            "char": "蝙",
+            "pinyin": "biān"
+          },
+          {
+            "char": "蝠",
+            "pinyin": "fú"
+          }
+        ],
+        "source": "text"
+      },
+      "蛾": {
+        "word": "飞蛾",
+        "chars": [
+          {
+            "char": "飞",
+            "pinyin": "fēi"
+          },
+          {
+            "char": "蛾",
+            "pinyin": "é"
+          }
+        ],
+        "source": "text"
+      },
+      "避": {
+        "word": "避开",
+        "chars": [
+          {
+            "char": "避",
+            "pinyin": "bì"
+          },
+          {
+            "char": "开",
+            "pinyin": "kāi"
+          }
+        ],
+        "source": "text"
+      },
+      "锐": {
+        "word": "敏锐",
+        "chars": [
+          {
+            "char": "敏",
+            "pinyin": "mǐn"
+          },
+          {
+            "char": "锐",
+            "pinyin": "ruì"
+          }
+        ],
+        "source": "text"
+      },
+      "蝇": {
+        "word": "苍蝇",
+        "chars": [
+          {
+            "char": "苍",
+            "pinyin": "cāng"
+          },
+          {
+            "char": "蝇",
+            "pinyin": "yíng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "障": {
+        "word": "障碍",
+        "chars": [
+          {
+            "char": "障",
+            "pinyin": "zhàng"
+          },
+          {
+            "char": "碍",
+            "pinyin": "ài"
+          }
+        ],
+        "source": "text"
+      },
+      "碍": {
+        "word": "障碍",
+        "chars": [
+          {
+            "char": "障",
+            "pinyin": "zhàng"
+          },
+          {
+            "char": "碍",
+            "pinyin": "ài"
+          }
+        ],
+        "source": "text"
+      },
+      "荧": {
+        "word": "荧光",
+        "chars": [
+          {
+            "char": "荧",
+            "pinyin": "yíng"
+          },
+          {
+            "char": "光",
+            "pinyin": "guāng"
+          }
+        ],
+        "source": "text"
+      },
+      "屏": {
+        "word": "荧光屏",
+        "chars": [
+          {
+            "char": "荧",
+            "pinyin": "yíng"
+          },
+          {
+            "char": "光",
+            "pinyin": "guāng"
+          },
+          {
+            "char": "屏",
+            "pinyin": "píng"
+          }
+        ],
+        "source": "text"
+      },
+      "驾": {
+        "word": "驾驶员",
+        "chars": [
+          {
+            "char": "驾",
+            "pinyin": "jià"
+          },
+          {
+            "char": "驶",
+            "pinyin": "shǐ"
+          },
+          {
+            "char": "员",
+            "pinyin": "yuán"
+          }
+        ],
+        "source": "text"
+      },
+      "蚊": {
+        "word": "蚊子",
+        "chars": [
+          {
+            "char": "蚊",
+            "pinyin": "wén"
+          },
+          {
+            "char": "子",
+            "pinyin": "zǐ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "即": {
+        "word": "即使",
+        "chars": [
+          {
+            "char": "即",
+            "pinyin": "jí"
+          },
+          {
+            "char": "使",
+            "pinyin": "shǐ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "题": {
+        "word": "问题",
+        "chars": [
+          {
+            "char": "问",
+            "pinyin": "wèn"
+          },
+          {
+            "char": "题",
+            "pinyin": "tí"
+          }
+        ],
+        "source": "word-list"
+      },
+      "绳": {
+        "word": "绳子",
+        "chars": [
+          {
+            "char": "绳",
+            "pinyin": "shéng"
+          },
+          {
+            "char": "子",
+            "pinyin": "zi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "嘴": {
+        "word": "嘴和耳朵",
+        "chars": [
+          {
+            "char": "嘴",
+            "pinyin": "zuǐ"
+          },
+          {
+            "char": "和",
+            "pinyin": "hé"
+          },
+          {
+            "char": "耳",
+            "pinyin": "ěr"
+          },
+          {
+            "char": "朵",
+            "pinyin": "duo"
+          }
+        ],
+        "source": "text"
+      },
+      "研": {
+        "word": "研究",
+        "chars": [
+          {
+            "char": "研",
+            "pinyin": "yán"
+          },
+          {
+            "char": "究",
+            "pinyin": "jiū"
+          }
+        ],
+        "source": "word-list"
+      },
+      "究": {
+        "word": "研究",
+        "chars": [
+          {
+            "char": "研",
+            "pinyin": "yán"
+          },
+          {
+            "char": "究",
+            "pinyin": "jiū"
+          }
+        ],
+        "source": "word-list"
+      },
+      "驶": {
+        "word": "驾驶员",
+        "chars": [
+          {
+            "char": "驾",
+            "pinyin": "jià"
+          },
+          {
+            "char": "驶",
+            "pinyin": "shǐ"
+          },
+          {
+            "char": "员",
+            "pinyin": "yuán"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-6": {
+      "橱": {
+        "word": "橱窗",
+        "chars": [
+          {
+            "char": "橱",
+            "pinyin": "chú"
+          },
+          {
+            "char": "窗",
+            "pinyin": "chuāng"
+          }
+        ],
+        "source": "text"
+      },
+      "蕉": {
+        "word": "香蕉",
+        "chars": [
+          {
+            "char": "香",
+            "pinyin": "xiāng"
+          },
+          {
+            "char": "蕉",
+            "pinyin": "jiāo"
+          }
+        ],
+        "source": "text"
+      },
+      "扣": {
+        "word": "扣在头上",
+        "chars": [
+          {
+            "char": "扣",
+            "pinyin": "kòu"
+          },
+          {
+            "char": "在",
+            "pinyin": "zài"
+          },
+          {
+            "char": "头",
+            "pinyin": "tóu"
+          },
+          {
+            "char": "上",
+            "pinyin": "shàng"
+          }
+        ],
+        "source": "text"
+      },
+      "嚷": {
+        "word": "嚷着",
+        "chars": [
+          {
+            "char": "嚷",
+            "pinyin": "rǎng"
+          },
+          {
+            "char": "着",
+            "pinyin": "zhe"
+          }
+        ],
+        "source": "text"
+      },
+      "溜": {
+        "word": "一溜烟",
+        "chars": [
+          {
+            "char": "一",
+            "pinyin": "yì"
+          },
+          {
+            "char": "溜",
+            "pinyin": "liù"
+          },
+          {
+            "char": "烟",
+            "pinyin": "yān"
+          }
+        ],
+        "source": "word-list"
+      },
+      "筒": {
+        "word": "圆筒形",
+        "chars": [
+          {
+            "char": "圆",
+            "pinyin": "yuán"
+          },
+          {
+            "char": "筒",
+            "pinyin": "tǒng"
+          },
+          {
+            "char": "形",
+            "pinyin": "xíng"
+          }
+        ],
+        "source": "text"
+      },
+      "董": {
+        "word": "古董",
+        "chars": [
+          {
+            "char": "古",
+            "pinyin": "gǔ"
+          },
+          {
+            "char": "董",
+            "pinyin": "dǒng"
+          }
+        ],
+        "source": "text"
+      },
+      "帽": {
+        "word": "帽子",
+        "chars": [
+          {
+            "char": "帽",
+            "pinyin": "mào"
+          },
+          {
+            "char": "子",
+            "pinyin": "zi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "脑": {
+        "word": "脑袋",
+        "chars": [
+          {
+            "char": "脑",
+            "pinyin": "nǎo"
+          },
+          {
+            "char": "袋",
+            "pinyin": "dài"
+          }
+        ],
+        "source": "word-list"
+      },
+      "袋": {
+        "word": "脑袋",
+        "chars": [
+          {
+            "char": "脑",
+            "pinyin": "nǎo"
+          },
+          {
+            "char": "袋",
+            "pinyin": "dài"
+          }
+        ],
+        "source": "word-list"
+      },
+      "假": {
+        "word": "假如",
+        "chars": [
+          {
+            "char": "假",
+            "pinyin": "jiǎ"
+          },
+          {
+            "char": "如",
+            "pinyin": "rú"
+          }
+        ],
+        "source": "word-list"
+      },
+      "懂": {
+        "word": "懂事",
+        "chars": [
+          {
+            "char": "懂",
+            "pinyin": "dǒng"
+          },
+          {
+            "char": "事",
+            "pinyin": "shì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "摆": {
+        "word": "摆放",
+        "chars": [
+          {
+            "char": "摆",
+            "pinyin": "bǎi"
+          },
+          {
+            "char": "放",
+            "pinyin": "fàng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "玻": {
+        "word": "玻璃",
+        "chars": [
+          {
+            "char": "玻",
+            "pinyin": "bō"
+          },
+          {
+            "char": "璃",
+            "pinyin": "lí"
+          }
+        ],
+        "source": "word-list"
+      },
+      "璃": {
+        "word": "玻璃",
+        "chars": [
+          {
+            "char": "玻",
+            "pinyin": "bō"
+          },
+          {
+            "char": "璃",
+            "pinyin": "lí"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-7": {
+      "忌": {
+        "word": "田忌",
+        "chars": [
+          {
+            "char": "田",
+            "pinyin": "tián"
+          },
+          {
+            "char": "忌",
+            "pinyin": "jì"
+          }
+        ],
+        "source": "text"
+      },
+      "将": {
+        "word": "大将",
+        "chars": [
+          {
+            "char": "大",
+            "pinyin": "dà"
+          },
+          {
+            "char": "将",
+            "pinyin": "jiàng"
+          }
+        ],
+        "source": "text"
+      },
+      "获": {
+        "word": "获胜",
+        "chars": [
+          {
+            "char": "获",
+            "pinyin": "huò"
+          },
+          {
+            "char": "胜",
+            "pinyin": "shèng"
+          }
+        ],
+        "source": "text"
+      },
+      "赢": {
+        "word": "赢了",
+        "chars": [
+          {
+            "char": "赢",
+            "pinyin": "yíng"
+          },
+          {
+            "char": "了",
+            "pinyin": "le"
+          }
+        ],
+        "source": "text"
+      },
+      "拳": {
+        "word": "摩拳擦掌",
+        "chars": [
+          {
+            "char": "摩",
+            "pinyin": "mó"
+          },
+          {
+            "char": "拳",
+            "pinyin": "quán"
+          },
+          {
+            "char": "擦",
+            "pinyin": "cā"
+          },
+          {
+            "char": "掌",
+            "pinyin": "zhǎng"
+          }
+        ],
+        "source": "text"
+      },
+      "跃": {
+        "word": "跃跃欲试",
+        "chars": [
+          {
+            "char": "跃",
+            "pinyin": "yuè"
+          },
+          {
+            "char": "跃",
+            "pinyin": "yuè"
+          },
+          {
+            "char": "欲",
+            "pinyin": "yù"
+          },
+          {
+            "char": "试",
+            "pinyin": "shì"
+          }
+        ],
+        "source": "text"
+      },
+      "测": {
+        "word": "猜测",
+        "chars": [
+          {
+            "char": "猜",
+            "pinyin": "cāi"
+          },
+          {
+            "char": "测",
+            "pinyin": "cè"
+          }
+        ],
+        "source": "text"
+      },
+      "输": {
+        "word": "输了",
+        "chars": [
+          {
+            "char": "输",
+            "pinyin": "shū"
+          },
+          {
+            "char": "了",
+            "pinyin": "le"
+          }
+        ],
+        "source": "text"
+      },
+      "谋": {
+        "word": "谋划",
+        "chars": [
+          {
+            "char": "谋",
+            "pinyin": "móu"
+          },
+          {
+            "char": "划",
+            "pinyin": "huà"
+          }
+        ],
+        "source": "text"
+      },
+      "划": {
+        "word": "谋划",
+        "chars": [
+          {
+            "char": "谋",
+            "pinyin": "móu"
+          },
+          {
+            "char": "划",
+            "pinyin": "huà"
+          }
+        ],
+        "source": "text"
+      },
+      "策": {
+        "word": "出谋划策",
+        "chars": [
+          {
+            "char": "出",
+            "pinyin": "chū"
+          },
+          {
+            "char": "谋",
+            "pinyin": "móu"
+          },
+          {
+            "char": "划",
+            "pinyin": "huà"
+          },
+          {
+            "char": "策",
+            "pinyin": "cè"
+          }
+        ],
+        "source": "text"
+      },
+      "荐": {
+        "word": "引荐",
+        "chars": [
+          {
+            "char": "引",
+            "pinyin": "yǐn"
+          },
+          {
+            "char": "荐",
+            "pinyin": "jiàn"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "garden-2": {
+      "纲": {
+        "word": "提纲",
+        "chars": [
+          {
+            "char": "提",
+            "pinyin": "tí"
+          },
+          {
+            "char": "纲",
+            "pinyin": "gāng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "揍": {
+        "word": "挨揍",
+        "chars": [
+          {
+            "char": "挨",
+            "pinyin": "āi"
+          },
+          {
+            "char": "揍",
+            "pinyin": "zòu"
+          }
+        ],
+        "source": "text"
+      },
+      "锈": {
+        "word": "生锈",
+        "chars": [
+          {
+            "char": "生",
+            "pinyin": "shēng"
+          },
+          {
+            "char": "锈",
+            "pinyin": "xiù"
+          }
+        ],
+        "source": "word-list"
+      },
+      "沫": {
+        "word": "泡沫",
+        "chars": [
+          {
+            "char": "泡",
+            "pinyin": "pào"
+          },
+          {
+            "char": "沫",
+            "pinyin": "mò"
+          }
+        ],
+        "source": "word-list"
+      },
+      "综": {
+        "word": "综合",
+        "chars": [
+          {
+            "char": "综",
+            "pinyin": "zōng"
+          },
+          {
+            "char": "合",
+            "pinyin": "hé"
+          }
+        ],
+        "source": "word-list"
+      },
+      "氧": {
+        "word": "氧气",
+        "chars": [
+          {
+            "char": "氧",
+            "pinyin": "yǎng"
+          },
+          {
+            "char": "气",
+            "pinyin": "qì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "账": {
+        "word": "结账",
+        "chars": [
+          {
+            "char": "结",
+            "pinyin": "jié"
+          },
+          {
+            "char": "账",
+            "pinyin": "zhàng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "矿": {
+        "word": "矿物",
+        "chars": [
+          {
+            "char": "矿",
+            "pinyin": "kuàng"
+          },
+          {
+            "char": "物",
+            "pinyin": "wù"
+          }
+        ],
+        "source": "word-list"
+      },
+      "俱": {
+        "word": "俱乐部",
+        "chars": [
+          {
+            "char": "俱",
+            "pinyin": "jù"
+          },
+          {
+            "char": "乐",
+            "pinyin": "lè"
+          },
+          {
+            "char": "部",
+            "pinyin": "bù"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-8": {
+      "暮": {
+        "word": "暮江吟",
+        "chars": [
+          {
+            "char": "暮",
+            "pinyin": "mù"
+          },
+          {
+            "char": "江",
+            "pinyin": "jiāng"
+          },
+          {
+            "char": "吟",
+            "pinyin": "yín"
+          }
+        ],
+        "source": "text"
+      },
+      "残": {
+        "word": "菊残",
+        "chars": [
+          {
+            "char": "菊",
+            "pinyin": "jú"
+          },
+          {
+            "char": "残",
+            "pinyin": "cán"
+          }
+        ],
+        "source": "text"
+      },
+      "瑟": {
+        "word": "瑟瑟",
+        "chars": [
+          {
+            "char": "瑟",
+            "pinyin": "sè"
+          },
+          {
+            "char": "瑟",
+            "pinyin": "sè"
+          }
+        ],
+        "source": "text"
+      },
+      "缘": {
+        "word": "只缘",
+        "chars": [
+          {
+            "char": "只",
+            "pinyin": "zhī"
+          },
+          {
+            "char": "缘",
+            "pinyin": "yuán"
+          }
+        ],
+        "source": "text"
+      },
+      "降": {
+        "word": "未肯降",
+        "chars": [
+          {
+            "char": "未",
+            "pinyin": "wèi"
+          },
+          {
+            "char": "肯",
+            "pinyin": "kěn"
+          },
+          {
+            "char": "降",
+            "pinyin": "xiáng"
+          }
+        ],
+        "source": "text"
+      },
+      "骚": {
+        "word": "骚人",
+        "chars": [
+          {
+            "char": "骚",
+            "pinyin": "sāo"
+          },
+          {
+            "char": "人",
+            "pinyin": "rén"
+          }
+        ],
+        "source": "text"
+      },
+      "评": {
+        "word": "费评章",
+        "chars": [
+          {
+            "char": "费",
+            "pinyin": "fèi"
+          },
+          {
+            "char": "评",
+            "pinyin": "píng"
+          },
+          {
+            "char": "章",
+            "pinyin": "zhāng"
+          }
+        ],
+        "source": "text"
+      },
+      "逊": {
+        "word": "逊雪",
+        "chars": [
+          {
+            "char": "逊",
+            "pinyin": "xùn"
+          },
+          {
+            "char": "雪",
+            "pinyin": "xuě"
+          }
+        ],
+        "source": "text"
+      },
+      "铺": {
+        "word": "铺水中",
+        "chars": [
+          {
+            "char": "铺",
+            "pinyin": "pù"
+          },
+          {
+            "char": "水",
+            "pinyin": "shuǐ"
+          },
+          {
+            "char": "中",
+            "pinyin": "zhōng"
+          }
+        ],
+        "source": "text"
+      },
+      "壁": {
+        "word": "西林壁",
+        "chars": [
+          {
+            "char": "西",
+            "pinyin": "xī"
+          },
+          {
+            "char": "林",
+            "pinyin": "lín"
+          },
+          {
+            "char": "壁",
+            "pinyin": "bì"
+          }
+        ],
+        "source": "text"
+      },
+      "横": {
+        "word": "横看",
+        "chars": [
+          {
+            "char": "横",
+            "pinyin": "héng"
+          },
+          {
+            "char": "看",
+            "pinyin": "kàn"
+          }
+        ],
+        "source": "text"
+      },
+      "侧": {
+        "word": "侧成峰",
+        "chars": [
+          {
+            "char": "侧",
+            "pinyin": "cè"
+          },
+          {
+            "char": "成",
+            "pinyin": "chéng"
+          },
+          {
+            "char": "峰",
+            "pinyin": "fēng"
+          }
+        ],
+        "source": "text"
+      },
+      "峰": {
+        "word": "侧成峰",
+        "chars": [
+          {
+            "char": "侧",
+            "pinyin": "cè"
+          },
+          {
+            "char": "成",
+            "pinyin": "chéng"
+          },
+          {
+            "char": "峰",
+            "pinyin": "fēng"
+          }
+        ],
+        "source": "text"
+      },
+      "庐": {
+        "word": "庐山",
+        "chars": [
+          {
+            "char": "庐",
+            "pinyin": "lú"
+          },
+          {
+            "char": "山",
+            "pinyin": "shān"
+          }
+        ],
+        "source": "text"
+      },
+      "章": {
+        "word": "评章",
+        "chars": [
+          {
+            "char": "评",
+            "pinyin": "píng"
+          },
+          {
+            "char": "章",
+            "pinyin": "zhāng"
+          }
+        ],
+        "source": "text"
+      },
+      "输": {
+        "word": "输梅",
+        "chars": [
+          {
+            "char": "输",
+            "pinyin": "shū"
+          },
+          {
+            "char": "梅",
+            "pinyin": "méi"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-9": {
+      "茎": {
+        "word": "根茎",
+        "chars": [
+          {
+            "char": "根",
+            "pinyin": "gēn"
+          },
+          {
+            "char": "茎",
+            "pinyin": "jīng"
+          }
+        ],
+        "source": "text"
+      },
+      "柄": {
+        "word": "叶柄",
+        "chars": [
+          {
+            "char": "叶",
+            "pinyin": "yè"
+          },
+          {
+            "char": "柄",
+            "pinyin": "bǐng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "蜗": {
+        "word": "蜗牛",
+        "chars": [
+          {
+            "char": "蜗",
+            "pinyin": "wō"
+          },
+          {
+            "char": "牛",
+            "pinyin": "niú"
+          }
+        ],
+        "source": "text"
+      },
+      "曲": {
+        "word": "弯曲",
+        "chars": [
+          {
+            "char": "弯",
+            "pinyin": "wān"
+          },
+          {
+            "char": "曲",
+            "pinyin": "qū"
+          }
+        ],
+        "source": "word-list"
+      },
+      "萎": {
+        "word": "萎了",
+        "chars": [
+          {
+            "char": "萎",
+            "pinyin": "wěi"
+          },
+          {
+            "char": "了",
+            "pinyin": "le"
+          }
+        ],
+        "source": "text"
+      },
+      "虎": {
+        "word": "爬山虎",
+        "chars": [
+          {
+            "char": "爬",
+            "pinyin": "pá"
+          },
+          {
+            "char": "山",
+            "pinyin": "shān"
+          },
+          {
+            "char": "虎",
+            "pinyin": "hǔ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "脚": {
+        "word": "爬山虎脚",
+        "chars": [
+          {
+            "char": "爬",
+            "pinyin": "pá"
+          },
+          {
+            "char": "山",
+            "pinyin": "shān"
+          },
+          {
+            "char": "虎",
+            "pinyin": "hǔ"
+          },
+          {
+            "char": "脚",
+            "pinyin": "jiǎo"
+          }
+        ],
+        "source": "text"
+      },
+      "操": {
+        "word": "操场",
+        "chars": [
+          {
+            "char": "操",
+            "pinyin": "cāo"
+          },
+          {
+            "char": "场",
+            "pinyin": "chǎng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "嫩": {
+        "word": "嫩绿",
+        "chars": [
+          {
+            "char": "嫩",
+            "pinyin": "nèn"
+          },
+          {
+            "char": "绿",
+            "pinyin": "lǜ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "隙": {
+        "word": "空隙",
+        "chars": [
+          {
+            "char": "空",
+            "pinyin": "kòng"
+          },
+          {
+            "char": "隙",
+            "pinyin": "xì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "触": {
+        "word": "触角",
+        "chars": [
+          {
+            "char": "触",
+            "pinyin": "chù"
+          },
+          {
+            "char": "角",
+            "pinyin": "jiǎo"
+          }
+        ],
+        "source": "word-list"
+      },
+      "痕": {
+        "word": "痕迹",
+        "chars": [
+          {
+            "char": "痕",
+            "pinyin": "hén"
+          },
+          {
+            "char": "迹",
+            "pinyin": "jì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "迹": {
+        "word": "痕迹",
+        "chars": [
+          {
+            "char": "痕",
+            "pinyin": "hén"
+          },
+          {
+            "char": "迹",
+            "pinyin": "jì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "瞧": {
+        "word": "瞧不起",
+        "chars": [
+          {
+            "char": "瞧",
+            "pinyin": "qiáo"
+          },
+          {
+            "char": "不",
+            "pinyin": "bù"
+          },
+          {
+            "char": "起",
+            "pinyin": "qǐ"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-10": {
+      "蟋": {
+        "word": "蟋蟀",
+        "chars": [
+          {
+            "char": "蟋",
+            "pinyin": "xī"
+          },
+          {
+            "char": "蟀",
+            "pinyin": "shuài"
+          }
+        ],
+        "source": "text"
+      },
+      "蟀": {
+        "word": "蟋蟀",
+        "chars": [
+          {
+            "char": "蟋",
+            "pinyin": "xī"
+          },
+          {
+            "char": "蟀",
+            "pinyin": "shuài"
+          }
+        ],
+        "source": "text"
+      },
+      "宅": {
+        "word": "住宅",
+        "chars": [
+          {
+            "char": "住",
+            "pinyin": "zhù"
+          },
+          {
+            "char": "宅",
+            "pinyin": "zhái"
+          }
+        ],
+        "source": "word-list"
+      },
+      "慎": {
+        "word": "慎重",
+        "chars": [
+          {
+            "char": "慎",
+            "pinyin": "shèn"
+          },
+          {
+            "char": "重",
+            "pinyin": "zhòng"
+          }
+        ],
+        "source": "text"
+      },
+      "址": {
+        "word": "住址",
+        "chars": [
+          {
+            "char": "住",
+            "pinyin": "zhù"
+          },
+          {
+            "char": "址",
+            "pinyin": "zhǐ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "畅": {
+        "word": "通畅",
+        "chars": [
+          {
+            "char": "通",
+            "pinyin": "tōng"
+          },
+          {
+            "char": "畅",
+            "pinyin": "chàng"
+          }
+        ],
+        "source": "text"
+      },
+      "倾": {
+        "word": "倾斜",
+        "chars": [
+          {
+            "char": "倾",
+            "pinyin": "qīng"
+          },
+          {
+            "char": "斜",
+            "pinyin": "xié"
+          }
+        ],
+        "source": "text"
+      },
+      "骤": {
+        "word": "骤雨",
+        "chars": [
+          {
+            "char": "骤",
+            "pinyin": "zhòu"
+          },
+          {
+            "char": "雨",
+            "pinyin": "yǔ"
+          }
+        ],
+        "source": "text"
+      },
+      "置": {
+        "word": "布置",
+        "chars": [
+          {
+            "char": "布",
+            "pinyin": "bù"
+          },
+          {
+            "char": "置",
+            "pinyin": "zhì"
+          }
+        ],
+        "source": "text"
+      },
+      "糙": {
+        "word": "粗糙",
+        "chars": [
+          {
+            "char": "粗",
+            "pinyin": "cū"
+          },
+          {
+            "char": "糙",
+            "pinyin": "cāo"
+          }
+        ],
+        "source": "text"
+      },
+      "朴": {
+        "word": "朴素",
+        "chars": [
+          {
+            "char": "朴",
+            "pinyin": "pǔ"
+          },
+          {
+            "char": "素",
+            "pinyin": "sù"
+          }
+        ],
+        "source": "text"
+      },
+      "燥": {
+        "word": "干燥",
+        "chars": [
+          {
+            "char": "干",
+            "pinyin": "gān"
+          },
+          {
+            "char": "燥",
+            "pinyin": "zào"
+          }
+        ],
+        "source": "text"
+      },
+      "毫": {
+        "word": "毫不可惜",
+        "chars": [
+          {
+            "char": "毫",
+            "pinyin": "háo"
+          },
+          {
+            "char": "不",
+            "pinyin": "bù"
+          },
+          {
+            "char": "可",
+            "pinyin": "kě"
+          },
+          {
+            "char": "惜",
+            "pinyin": "xī"
+          }
+        ],
+        "source": "text"
+      },
+      "重": {
+        "word": "重要",
+        "chars": [
+          {
+            "char": "重",
+            "pinyin": "zhòng"
+          },
+          {
+            "char": "要",
+            "pinyin": "yào"
+          }
+        ],
+        "source": "word-list"
+      },
+      "选": {
+        "word": "选择",
+        "chars": [
+          {
+            "char": "选",
+            "pinyin": "xuǎn"
+          },
+          {
+            "char": "择",
+            "pinyin": "zé"
+          }
+        ],
+        "source": "word-list"
+      },
+      "择": {
+        "word": "选择",
+        "chars": [
+          {
+            "char": "选",
+            "pinyin": "xuǎn"
+          },
+          {
+            "char": "择",
+            "pinyin": "zé"
+          }
+        ],
+        "source": "word-list"
+      },
+      "厅": {
+        "word": "大厅",
+        "chars": [
+          {
+            "char": "大",
+            "pinyin": "dà"
+          },
+          {
+            "char": "厅",
+            "pinyin": "tīng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "专": {
+        "word": "专家",
+        "chars": [
+          {
+            "char": "专",
+            "pinyin": "zhuān"
+          },
+          {
+            "char": "家",
+            "pinyin": "jiā"
+          }
+        ],
+        "source": "text"
+      },
+      "修": {
+        "word": "修理",
+        "chars": [
+          {
+            "char": "修",
+            "pinyin": "xiū"
+          },
+          {
+            "char": "理",
+            "pinyin": "lǐ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "较": {
+        "word": "较大",
+        "chars": [
+          {
+            "char": "较",
+            "pinyin": "jiào"
+          },
+          {
+            "char": "大",
+            "pinyin": "dà"
+          }
+        ],
+        "source": "text"
+      },
+      "腿": {
+        "word": "后腿",
+        "chars": [
+          {
+            "char": "后",
+            "pinyin": "hòu"
+          },
+          {
+            "char": "腿",
+            "pinyin": "tuǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "增": {
+        "word": "增长",
+        "chars": [
+          {
+            "char": "增",
+            "pinyin": "zēng"
+          },
+          {
+            "char": "长",
+            "pinyin": "zhǎng"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-11": {
+      "斧": {
+        "word": "斧头",
+        "chars": [
+          {
+            "char": "斧",
+            "pinyin": "fǔ"
+          },
+          {
+            "char": "头",
+            "pinyin": "tóu"
+          }
+        ],
+        "source": "text"
+      },
+      "缓": {
+        "word": "缓缓",
+        "chars": [
+          {
+            "char": "缓",
+            "pinyin": "huǎn"
+          },
+          {
+            "char": "缓",
+            "pinyin": "huǎn"
+          }
+        ],
+        "source": "text"
+      },
+      "浊": {
+        "word": "重而浊",
+        "chars": [
+          {
+            "char": "重",
+            "pinyin": "zhòng"
+          },
+          {
+            "char": "而",
+            "pinyin": "ér"
+          },
+          {
+            "char": "浊",
+            "pinyin": "zhuó"
+          }
+        ],
+        "source": "text"
+      },
+      "丈": {
+        "word": "一丈",
+        "chars": [
+          {
+            "char": "一",
+            "pinyin": "yí"
+          },
+          {
+            "char": "丈",
+            "pinyin": "zhàng"
+          }
+        ],
+        "source": "text"
+      },
+      "肢": {
+        "word": "四肢",
+        "chars": [
+          {
+            "char": "四",
+            "pinyin": "sì"
+          },
+          {
+            "char": "肢",
+            "pinyin": "zhī"
+          }
+        ],
+        "source": "word-list"
+      },
+      "躯": {
+        "word": "躯干",
+        "chars": [
+          {
+            "char": "躯",
+            "pinyin": "qū"
+          },
+          {
+            "char": "干",
+            "pinyin": "gàn"
+          }
+        ],
+        "source": "text"
+      },
+      "液": {
+        "word": "血液",
+        "chars": [
+          {
+            "char": "血",
+            "pinyin": "xuè"
+          },
+          {
+            "char": "液",
+            "pinyin": "yè"
+          }
+        ],
+        "source": "text"
+      },
+      "醒": {
+        "word": "醒来",
+        "chars": [
+          {
+            "char": "醒",
+            "pinyin": "xǐng"
+          },
+          {
+            "char": "来",
+            "pinyin": "lái"
+          }
+        ],
+        "source": "text"
+      },
+      "翻": {
+        "word": "翻身",
+        "chars": [
+          {
+            "char": "翻",
+            "pinyin": "fān"
+          },
+          {
+            "char": "身",
+            "pinyin": "shēn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "踏": {
+        "word": "脚踏地",
+        "chars": [
+          {
+            "char": "脚",
+            "pinyin": "jiǎo"
+          },
+          {
+            "char": "踏",
+            "pinyin": "tà"
+          },
+          {
+            "char": "地",
+            "pinyin": "dì"
+          }
+        ],
+        "source": "text"
+      },
+      "撑": {
+        "word": "撑在",
+        "chars": [
+          {
+            "char": "撑",
+            "pinyin": "chēng"
+          },
+          {
+            "char": "在",
+            "pinyin": "zài"
+          }
+        ],
+        "source": "text"
+      },
+      "疲": {
+        "word": "精疲力竭",
+        "chars": [
+          {
+            "char": "精",
+            "pinyin": "jīng"
+          },
+          {
+            "char": "疲",
+            "pinyin": "pí"
+          },
+          {
+            "char": "力",
+            "pinyin": "lì"
+          },
+          {
+            "char": "竭",
+            "pinyin": "jié"
+          }
+        ],
+        "source": "word-list"
+      },
+      "竭": {
+        "word": "精疲力竭",
+        "chars": [
+          {
+            "char": "精",
+            "pinyin": "jīng"
+          },
+          {
+            "char": "疲",
+            "pinyin": "pí"
+          },
+          {
+            "char": "力",
+            "pinyin": "lì"
+          },
+          {
+            "char": "竭",
+            "pinyin": "jié"
+          }
+        ],
+        "source": "word-list"
+      },
+      "耀": {
+        "word": "照耀",
+        "chars": [
+          {
+            "char": "照",
+            "pinyin": "zhào"
+          },
+          {
+            "char": "耀",
+            "pinyin": "yào"
+          }
+        ],
+        "source": "word-list"
+      },
+      "整": {
+        "word": "整个",
+        "chars": [
+          {
+            "char": "整",
+            "pinyin": "zhěng"
+          },
+          {
+            "char": "个",
+            "pinyin": "gè"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-12": {
+      "曰": {
+        "word": "名曰",
+        "chars": [
+          {
+            "char": "名",
+            "pinyin": "míng"
+          },
+          {
+            "char": "曰",
+            "pinyin": "yuē"
+          }
+        ],
+        "source": "text"
+      },
+      "溺": {
+        "word": "溺水",
+        "chars": [
+          {
+            "char": "溺",
+            "pinyin": "nì"
+          },
+          {
+            "char": "水",
+            "pinyin": "shuǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "填": {
+        "word": "填海",
+        "chars": [
+          {
+            "char": "填",
+            "pinyin": "tián"
+          },
+          {
+            "char": "海",
+            "pinyin": "hǎi"
+          }
+        ],
+        "source": "text"
+      },
+      "帝": {
+        "word": "炎帝",
+        "chars": [
+          {
+            "char": "炎",
+            "pinyin": "yán"
+          },
+          {
+            "char": "帝",
+            "pinyin": "dì"
+          }
+        ],
+        "source": "text"
+      },
+      "娃": {
+        "word": "女娃",
+        "chars": [
+          {
+            "char": "女",
+            "pinyin": "nǚ"
+          },
+          {
+            "char": "娃",
+            "pinyin": "wá"
+          }
+        ],
+        "source": "text"
+      },
+      "衔": {
+        "word": "常衔",
+        "chars": [
+          {
+            "char": "常",
+            "pinyin": "cháng"
+          },
+          {
+            "char": "衔",
+            "pinyin": "xián"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-13": {
+      "斯": {
+        "word": "宙斯",
+        "chars": [
+          {
+            "char": "宙",
+            "pinyin": "zhòu"
+          },
+          {
+            "char": "斯",
+            "pinyin": "sī"
+          }
+        ],
+        "source": "text"
+      },
+      "悲": {
+        "word": "悲惨",
+        "chars": [
+          {
+            "char": "悲",
+            "pinyin": "bēi"
+          },
+          {
+            "char": "惨",
+            "pinyin": "cǎn"
+          }
+        ],
+        "source": "text"
+      },
+      "惨": {
+        "word": "悲惨",
+        "chars": [
+          {
+            "char": "悲",
+            "pinyin": "bēi"
+          },
+          {
+            "char": "惨",
+            "pinyin": "cǎn"
+          }
+        ],
+        "source": "text"
+      },
+      "盗": {
+        "word": "盗取",
+        "chars": [
+          {
+            "char": "盗",
+            "pinyin": "dào"
+          },
+          {
+            "char": "取",
+            "pinyin": "qǔ"
+          }
+        ],
+        "source": "text"
+      },
+      "驰": {
+        "word": "驰过",
+        "chars": [
+          {
+            "char": "驰",
+            "pinyin": "chí"
+          },
+          {
+            "char": "过",
+            "pinyin": "guò"
+          }
+        ],
+        "source": "text"
+      },
+      "佩": {
+        "word": "敬佩",
+        "chars": [
+          {
+            "char": "敬",
+            "pinyin": "jìng"
+          },
+          {
+            "char": "佩",
+            "pinyin": "pèi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "违": {
+        "word": "违抗",
+        "chars": [
+          {
+            "char": "违",
+            "pinyin": "wéi"
+          },
+          {
+            "char": "抗",
+            "pinyin": "kàng"
+          }
+        ],
+        "source": "text"
+      },
+      "锁": {
+        "word": "锁链",
+        "chars": [
+          {
+            "char": "锁",
+            "pinyin": "suǒ"
+          },
+          {
+            "char": "链",
+            "pinyin": "liàn"
+          }
+        ],
+        "source": "text"
+      },
+      "遭": {
+        "word": "遭受",
+        "chars": [
+          {
+            "char": "遭",
+            "pinyin": "zāo"
+          },
+          {
+            "char": "受",
+            "pinyin": "shòu"
+          }
+        ],
+        "source": "word-list"
+      },
+      "肝": {
+        "word": "肝脏",
+        "chars": [
+          {
+            "char": "肝",
+            "pinyin": "gān"
+          },
+          {
+            "char": "脏",
+            "pinyin": "zāng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "脏": {
+        "word": "肝脏",
+        "chars": [
+          {
+            "char": "肝",
+            "pinyin": "gān"
+          },
+          {
+            "char": "脏",
+            "pinyin": "zāng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "愤": {
+        "word": "愤愤不平",
+        "chars": [
+          {
+            "char": "愤",
+            "pinyin": "fèn"
+          },
+          {
+            "char": "愤",
+            "pinyin": "fèn"
+          },
+          {
+            "char": "不",
+            "pinyin": "bù"
+          },
+          {
+            "char": "平",
+            "pinyin": "píng"
+          }
+        ],
+        "source": "text"
+      },
+      "砸": {
+        "word": "砸碎",
+        "chars": [
+          {
+            "char": "砸",
+            "pinyin": "zá"
+          },
+          {
+            "char": "碎",
+            "pinyin": "suì"
+          }
+        ],
+        "source": "text"
+      },
+      "喷": {
+        "word": "喷射",
+        "chars": [
+          {
+            "char": "喷",
+            "pinyin": "pēn"
+          },
+          {
+            "char": "射",
+            "pinyin": "shè"
+          }
+        ],
+        "source": "word-list"
+      },
+      "颗": {
+        "word": "一颗火星",
+        "chars": [
+          {
+            "char": "一",
+            "pinyin": "yì"
+          },
+          {
+            "char": "颗",
+            "pinyin": "kē"
+          },
+          {
+            "char": "火",
+            "pinyin": "huǒ"
+          },
+          {
+            "char": "星",
+            "pinyin": "xīng"
+          }
+        ],
+        "source": "text"
+      },
+      "败": {
+        "word": "气急败坏",
+        "chars": [
+          {
+            "char": "气",
+            "pinyin": "qì"
+          },
+          {
+            "char": "急",
+            "pinyin": "jí"
+          },
+          {
+            "char": "败",
+            "pinyin": "bài"
+          },
+          {
+            "char": "坏",
+            "pinyin": "huài"
+          }
+        ],
+        "source": "word-list"
+      },
+      "敬": {
+        "word": "敬佩",
+        "chars": [
+          {
+            "char": "敬",
+            "pinyin": "jìng"
+          },
+          {
+            "char": "佩",
+            "pinyin": "pèi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "忍": {
+        "word": "忍受",
+        "chars": [
+          {
+            "char": "忍",
+            "pinyin": "rěn"
+          },
+          {
+            "char": "受",
+            "pinyin": "shòu"
+          }
+        ],
+        "source": "word-list"
+      },
+      "既": {
+        "word": "既不能",
+        "chars": [
+          {
+            "char": "既",
+            "pinyin": "jì"
+          },
+          {
+            "char": "不",
+            "pinyin": "bù"
+          },
+          {
+            "char": "能",
+            "pinyin": "néng"
+          }
+        ],
+        "source": "text"
+      },
+      "屈": {
+        "word": "屈服",
+        "chars": [
+          {
+            "char": "屈",
+            "pinyin": "qū"
+          },
+          {
+            "char": "服",
+            "pinyin": "fú"
+          }
+        ],
+        "source": "word-list"
+      },
+      "获": {
+        "word": "获得",
+        "chars": [
+          {
+            "char": "获",
+            "pinyin": "huò"
+          },
+          {
+            "char": "得",
+            "pinyin": "dé"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-14": {
+      "兽": {
+        "word": "野兽",
+        "chars": [
+          {
+            "char": "野",
+            "pinyin": "yě"
+          },
+          {
+            "char": "兽",
+            "pinyin": "shòu"
+          }
+        ],
+        "source": "text"
+      },
+      "措": {
+        "word": "失措",
+        "chars": [
+          {
+            "char": "失",
+            "pinyin": "shī"
+          },
+          {
+            "char": "措",
+            "pinyin": "cuò"
+          }
+        ],
+        "source": "text"
+      },
+      "陷": {
+        "word": "陷入",
+        "chars": [
+          {
+            "char": "陷",
+            "pinyin": "xiàn"
+          },
+          {
+            "char": "入",
+            "pinyin": "rù"
+          }
+        ],
+        "source": "text"
+      },
+      "混": {
+        "word": "混沌",
+        "chars": [
+          {
+            "char": "混",
+            "pinyin": "hùn"
+          },
+          {
+            "char": "沌",
+            "pinyin": "dùn"
+          }
+        ],
+        "source": "text"
+      },
+      "拣": {
+        "word": "拣来",
+        "chars": [
+          {
+            "char": "拣",
+            "pinyin": "jiǎn"
+          },
+          {
+            "char": "来",
+            "pinyin": "lái"
+          }
+        ],
+        "source": "text"
+      },
+      "燃": {
+        "word": "燃起",
+        "chars": [
+          {
+            "char": "燃",
+            "pinyin": "rán"
+          },
+          {
+            "char": "起",
+            "pinyin": "qǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "炼": {
+        "word": "熔炼",
+        "chars": [
+          {
+            "char": "熔",
+            "pinyin": "róng"
+          },
+          {
+            "char": "炼",
+            "pinyin": "liàn"
+          }
+        ],
+        "source": "text"
+      },
+      "熄": {
+        "word": "熄灭",
+        "chars": [
+          {
+            "char": "熄",
+            "pinyin": "xī"
+          },
+          {
+            "char": "灭",
+            "pinyin": "miè"
+          }
+        ],
+        "source": "text"
+      },
+      "浆": {
+        "word": "石浆",
+        "chars": [
+          {
+            "char": "石",
+            "pinyin": "shí"
+          },
+          {
+            "char": "浆",
+            "pinyin": "jiāng"
+          }
+        ],
+        "source": "text"
+      },
+      "杀": {
+        "word": "杀死",
+        "chars": [
+          {
+            "char": "杀",
+            "pinyin": "shā"
+          },
+          {
+            "char": "死",
+            "pinyin": "sǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "颂": {
+        "word": "歌颂",
+        "chars": [
+          {
+            "char": "歌",
+            "pinyin": "gē"
+          },
+          {
+            "char": "颂",
+            "pinyin": "sòng"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "garden-4": {
+      "卉": {
+        "word": "花卉",
+        "chars": [
+          {
+            "char": "花",
+            "pinyin": "huā"
+          },
+          {
+            "char": "卉",
+            "pinyin": "huì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "玫": {
+        "word": "玫瑰",
+        "chars": [
+          {
+            "char": "玫",
+            "pinyin": "méi"
+          },
+          {
+            "char": "瑰",
+            "pinyin": "guī"
+          }
+        ],
+        "source": "word-list"
+      },
+      "瑰": {
+        "word": "玫瑰",
+        "chars": [
+          {
+            "char": "玫",
+            "pinyin": "méi"
+          },
+          {
+            "char": "瑰",
+            "pinyin": "guī"
+          }
+        ],
+        "source": "word-list"
+      },
+      "牡": {
+        "word": "牡丹",
+        "chars": [
+          {
+            "char": "牡",
+            "pinyin": "mǔ"
+          },
+          {
+            "char": "丹",
+            "pinyin": "dān"
+          }
+        ],
+        "source": "word-list"
+      },
+      "丹": {
+        "word": "牡丹",
+        "chars": [
+          {
+            "char": "牡",
+            "pinyin": "mǔ"
+          },
+          {
+            "char": "丹",
+            "pinyin": "dān"
+          }
+        ],
+        "source": "word-list"
+      },
+      "蕾": {
+        "word": "花蕾",
+        "chars": [
+          {
+            "char": "花",
+            "pinyin": "huā"
+          },
+          {
+            "char": "蕾",
+            "pinyin": "lěi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "茉": {
+        "word": "茉莉",
+        "chars": [
+          {
+            "char": "茉",
+            "pinyin": "mò"
+          },
+          {
+            "char": "莉",
+            "pinyin": "lì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "莉": {
+        "word": "茉莉",
+        "chars": [
+          {
+            "char": "茉",
+            "pinyin": "mò"
+          },
+          {
+            "char": "莉",
+            "pinyin": "lì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "棠": {
+        "word": "海棠",
+        "chars": [
+          {
+            "char": "海",
+            "pinyin": "hǎi"
+          },
+          {
+            "char": "棠",
+            "pinyin": "táng"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-15": {
+      "嗅": {
+        "word": "嗅了嗅",
+        "chars": [
+          {
+            "char": "嗅",
+            "pinyin": "xiù"
+          },
+          {
+            "char": "了",
+            "pinyin": "le"
+          },
+          {
+            "char": "嗅",
+            "pinyin": "xiù"
+          }
+        ],
+        "source": "text"
+      },
+      "奈": {
+        "word": "无可奈何",
+        "chars": [
+          {
+            "char": "无",
+            "pinyin": "wú"
+          },
+          {
+            "char": "可",
+            "pinyin": "kě"
+          },
+          {
+            "char": "奈",
+            "pinyin": "nài"
+          },
+          {
+            "char": "何",
+            "pinyin": "hé"
+          }
+        ],
+        "source": "word-list"
+      },
+      "拯": {
+        "word": "拯救",
+        "chars": [
+          {
+            "char": "拯",
+            "pinyin": "zhěng"
+          },
+          {
+            "char": "救",
+            "pinyin": "jiù"
+          }
+        ],
+        "source": "text"
+      },
+      "嘶": {
+        "word": "嘶哑",
+        "chars": [
+          {
+            "char": "嘶",
+            "pinyin": "sī"
+          },
+          {
+            "char": "哑",
+            "pinyin": "yǎ"
+          }
+        ],
+        "source": "text"
+      },
+      "哑": {
+        "word": "嘶哑",
+        "chars": [
+          {
+            "char": "嘶",
+            "pinyin": "sī"
+          },
+          {
+            "char": "哑",
+            "pinyin": "yǎ"
+          }
+        ],
+        "source": "text"
+      },
+      "牺": {
+        "word": "牺牲",
+        "chars": [
+          {
+            "char": "牺",
+            "pinyin": "xī"
+          },
+          {
+            "char": "牲",
+            "pinyin": "shēng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "牲": {
+        "word": "牺牲",
+        "chars": [
+          {
+            "char": "牺",
+            "pinyin": "xī"
+          },
+          {
+            "char": "牲",
+            "pinyin": "shēng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "庞": {
+        "word": "庞大",
+        "chars": [
+          {
+            "char": "庞",
+            "pinyin": "páng"
+          },
+          {
+            "char": "大",
+            "pinyin": "dà"
+          }
+        ],
+        "source": "word-list"
+      },
+      "猛": {
+        "word": "猛烈",
+        "chars": [
+          {
+            "char": "猛",
+            "pinyin": "měng"
+          },
+          {
+            "char": "烈",
+            "pinyin": "liè"
+          }
+        ],
+        "source": "word-list"
+      },
+      "烈": {
+        "word": "猛烈",
+        "chars": [
+          {
+            "char": "猛",
+            "pinyin": "měng"
+          },
+          {
+            "char": "烈",
+            "pinyin": "liè"
+          }
+        ],
+        "source": "word-list"
+      },
+      "躯": {
+        "word": "身躯",
+        "chars": [
+          {
+            "char": "身",
+            "pinyin": "shēn"
+          },
+          {
+            "char": "躯",
+            "pinyin": "qū"
+          }
+        ],
+        "source": "word-list"
+      },
+      "掩": {
+        "word": "掩护",
+        "chars": [
+          {
+            "char": "掩",
+            "pinyin": "yǎn"
+          },
+          {
+            "char": "护",
+            "pinyin": "hù"
+          }
+        ],
+        "source": "word-list"
+      },
+      "浑": {
+        "word": "浑身",
+        "chars": [
+          {
+            "char": "浑",
+            "pinyin": "hún"
+          },
+          {
+            "char": "身",
+            "pinyin": "shēn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "强": {
+        "word": "强大",
+        "chars": [
+          {
+            "char": "强",
+            "pinyin": "qiáng"
+          },
+          {
+            "char": "大",
+            "pinyin": "dà"
+          }
+        ],
+        "source": "word-list"
+      },
+      "量": {
+        "word": "力量",
+        "chars": [
+          {
+            "char": "力",
+            "pinyin": "lì"
+          },
+          {
+            "char": "量",
+            "pinyin": "liàng"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-16": {
+      "链": {
+        "word": "铁链",
+        "chars": [
+          {
+            "char": "铁",
+            "pinyin": "tiě"
+          },
+          {
+            "char": "链",
+            "pinyin": "liàn"
+          }
+        ],
+        "source": "text"
+      },
+      "颤": {
+        "word": "发颤",
+        "chars": [
+          {
+            "char": "发",
+            "pinyin": "fā"
+          },
+          {
+            "char": "颤",
+            "pinyin": "chàn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "攀": {
+        "word": "攀着",
+        "chars": [
+          {
+            "char": "攀",
+            "pinyin": "pān"
+          },
+          {
+            "char": "着",
+            "pinyin": "zhe"
+          }
+        ],
+        "source": "text"
+      },
+      "辫": {
+        "word": "辫子",
+        "chars": [
+          {
+            "char": "辫",
+            "pinyin": "biàn"
+          },
+          {
+            "char": "子",
+            "pinyin": "zi"
+          }
+        ],
+        "source": "text"
+      },
+      "呵": {
+        "word": "笑呵呵",
+        "chars": [
+          {
+            "char": "笑",
+            "pinyin": "xiào"
+          },
+          {
+            "char": "呵",
+            "pinyin": "hē"
+          },
+          {
+            "char": "呵",
+            "pinyin": "hē"
+          }
+        ],
+        "source": "word-list"
+      },
+      "哩": {
+        "word": "上面哩",
+        "chars": [
+          {
+            "char": "上",
+            "pinyin": "shàng"
+          },
+          {
+            "char": "面",
+            "pinyin": "miàn"
+          },
+          {
+            "char": "哩",
+            "pinyin": "li"
+          }
+        ],
+        "source": "text"
+      },
+      "陡": {
+        "word": "笔陡",
+        "chars": [
+          {
+            "char": "笔",
+            "pinyin": "bǐ"
+          },
+          {
+            "char": "陡",
+            "pinyin": "dǒu"
+          }
+        ],
+        "source": "text"
+      },
+      "级": {
+        "word": "石级",
+        "chars": [
+          {
+            "char": "石",
+            "pinyin": "shí"
+          },
+          {
+            "char": "级",
+            "pinyin": "jí"
+          }
+        ],
+        "source": "word-list"
+      },
+      "纪": {
+        "word": "年纪",
+        "chars": [
+          {
+            "char": "年",
+            "pinyin": "nián"
+          },
+          {
+            "char": "纪",
+            "pinyin": "jì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "猴": {
+        "word": "猴子",
+        "chars": [
+          {
+            "char": "猴",
+            "pinyin": "hóu"
+          },
+          {
+            "char": "子",
+            "pinyin": "zi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "啦": {
+        "word": "谢谢你啦",
+        "chars": [
+          {
+            "char": "谢",
+            "pinyin": "xiè"
+          },
+          {
+            "char": "谢",
+            "pinyin": "xiè"
+          },
+          {
+            "char": "你",
+            "pinyin": "nǐ"
+          },
+          {
+            "char": "啦",
+            "pinyin": "la"
+          }
+        ],
+        "source": "text"
+      },
+      "鼓": {
+        "word": "鼓舞",
+        "chars": [
+          {
+            "char": "鼓",
+            "pinyin": "gǔ"
+          },
+          {
+            "char": "舞",
+            "pinyin": "wǔ"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-17": {
+      "峻": {
+        "word": "崇山峻岭",
+        "chars": [
+          {
+            "char": "崇",
+            "pinyin": "chóng"
+          },
+          {
+            "char": "山",
+            "pinyin": "shān"
+          },
+          {
+            "char": "峻",
+            "pinyin": "jùn"
+          },
+          {
+            "char": "岭",
+            "pinyin": "lǐng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "基": {
+        "word": "基础",
+        "chars": [
+          {
+            "char": "基",
+            "pinyin": "jī"
+          },
+          {
+            "char": "础",
+            "pinyin": "chǔ"
+          }
+        ],
+        "source": "text"
+      },
+      "础": {
+        "word": "基础",
+        "chars": [
+          {
+            "char": "基",
+            "pinyin": "jī"
+          },
+          {
+            "char": "础",
+            "pinyin": "chǔ"
+          }
+        ],
+        "source": "text"
+      },
+      "扩": {
+        "word": "扩建",
+        "chars": [
+          {
+            "char": "扩",
+            "pinyin": "kuò"
+          },
+          {
+            "char": "建",
+            "pinyin": "jiàn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "砖": {
+        "word": "城砖",
+        "chars": [
+          {
+            "char": "城",
+            "pinyin": "chéng"
+          },
+          {
+            "char": "砖",
+            "pinyin": "zhuān"
+          }
+        ],
+        "source": "text"
+      },
+      "屯": {
+        "word": "屯兵",
+        "chars": [
+          {
+            "char": "屯",
+            "pinyin": "tún"
+          },
+          {
+            "char": "兵",
+            "pinyin": "bīng"
+          }
+        ],
+        "source": "text"
+      },
+      "兵": {
+        "word": "屯兵",
+        "chars": [
+          {
+            "char": "屯",
+            "pinyin": "tún"
+          },
+          {
+            "char": "兵",
+            "pinyin": "bīng"
+          }
+        ],
+        "source": "text"
+      },
+      "堡": {
+        "word": "堡垒",
+        "chars": [
+          {
+            "char": "堡",
+            "pinyin": "bǎo"
+          },
+          {
+            "char": "垒",
+            "pinyin": "lěi"
+          }
+        ],
+        "source": "text"
+      },
+      "垒": {
+        "word": "堡垒",
+        "chars": [
+          {
+            "char": "堡",
+            "pinyin": "bǎo"
+          },
+          {
+            "char": "垒",
+            "pinyin": "lěi"
+          }
+        ],
+        "source": "text"
+      },
+      "仗": {
+        "word": "打仗",
+        "chars": [
+          {
+            "char": "打",
+            "pinyin": "dǎ"
+          },
+          {
+            "char": "仗",
+            "pinyin": "zhàng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "畜": {
+        "word": "牲畜",
+        "chars": [
+          {
+            "char": "牲",
+            "pinyin": "shēng"
+          },
+          {
+            "char": "畜",
+            "pinyin": "chù"
+          }
+        ],
+        "source": "text"
+      },
+      "耗": {
+        "word": "耗费",
+        "chars": [
+          {
+            "char": "耗",
+            "pinyin": "hào"
+          },
+          {
+            "char": "费",
+            "pinyin": "fèi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "旋": {
+        "word": "盘旋",
+        "chars": [
+          {
+            "char": "盘",
+            "pinyin": "pán"
+          },
+          {
+            "char": "旋",
+            "pinyin": "xuán"
+          }
+        ],
+        "source": "word-list"
+      },
+      "筑": {
+        "word": "修筑",
+        "chars": [
+          {
+            "char": "修",
+            "pinyin": "xiū"
+          },
+          {
+            "char": "筑",
+            "pinyin": "zhù"
+          }
+        ],
+        "source": "word-list"
+      },
+      "隔": {
+        "word": "隔三米",
+        "chars": [
+          {
+            "char": "隔",
+            "pinyin": "gé"
+          },
+          {
+            "char": "三",
+            "pinyin": "sān"
+          },
+          {
+            "char": "米",
+            "pinyin": "mǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "扶": {
+        "word": "扶着",
+        "chars": [
+          {
+            "char": "扶",
+            "pinyin": "fú"
+          },
+          {
+            "char": "着",
+            "pinyin": "zhe"
+          }
+        ],
+        "source": "text"
+      },
+      "智": {
+        "word": "智慧",
+        "chars": [
+          {
+            "char": "智",
+            "pinyin": "zhì"
+          },
+          {
+            "char": "慧",
+            "pinyin": "huì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "慧": {
+        "word": "智慧",
+        "chars": [
+          {
+            "char": "智",
+            "pinyin": "zhì"
+          },
+          {
+            "char": "慧",
+            "pinyin": "huì"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-18": {
+      "殿": {
+        "word": "大殿",
+        "chars": [
+          {
+            "char": "大",
+            "pinyin": "dà"
+          },
+          {
+            "char": "殿",
+            "pinyin": "diàn"
+          }
+        ],
+        "source": "text"
+      },
+      "漆": {
+        "word": "油漆",
+        "chars": [
+          {
+            "char": "油",
+            "pinyin": "yóu"
+          },
+          {
+            "char": "漆",
+            "pinyin": "qī"
+          }
+        ],
+        "source": "text"
+      },
+      "琉": {
+        "word": "琉璃瓦",
+        "chars": [
+          {
+            "char": "琉",
+            "pinyin": "liú"
+          },
+          {
+            "char": "璃",
+            "pinyin": "lí"
+          },
+          {
+            "char": "瓦",
+            "pinyin": "wǎ"
+          }
+        ],
+        "source": "text"
+      },
+      "佛": {
+        "word": "佛香阁",
+        "chars": [
+          {
+            "char": "佛",
+            "pinyin": "fó"
+          },
+          {
+            "char": "香",
+            "pinyin": "xiāng"
+          },
+          {
+            "char": "阁",
+            "pinyin": "gé"
+          }
+        ],
+        "source": "text"
+      },
+      "煌": {
+        "word": "金碧辉煌",
+        "chars": [
+          {
+            "char": "金",
+            "pinyin": "jīn"
+          },
+          {
+            "char": "碧",
+            "pinyin": "bì"
+          },
+          {
+            "char": "辉",
+            "pinyin": "huī"
+          },
+          {
+            "char": "煌",
+            "pinyin": "huáng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "绕": {
+        "word": "绕过",
+        "chars": [
+          {
+            "char": "绕",
+            "pinyin": "rào"
+          },
+          {
+            "char": "过",
+            "pinyin": "guò"
+          }
+        ],
+        "source": "text"
+      },
+      "幅": {
+        "word": "几幅",
+        "chars": [
+          {
+            "char": "几",
+            "pinyin": "jǐ"
+          },
+          {
+            "char": "幅",
+            "pinyin": "fú"
+          }
+        ],
+        "source": "text"
+      },
+      "栽": {
+        "word": "栽着",
+        "chars": [
+          {
+            "char": "栽",
+            "pinyin": "zāi"
+          },
+          {
+            "char": "着",
+            "pinyin": "zhe"
+          }
+        ],
+        "source": "text"
+      },
+      "耸": {
+        "word": "耸立",
+        "chars": [
+          {
+            "char": "耸",
+            "pinyin": "sǒng"
+          },
+          {
+            "char": "立",
+            "pinyin": "lì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "腰": {
+        "word": "半山腰",
+        "chars": [
+          {
+            "char": "半",
+            "pinyin": "bàn"
+          },
+          {
+            "char": "山",
+            "pinyin": "shān"
+          },
+          {
+            "char": "腰",
+            "pinyin": "yāo"
+          }
+        ],
+        "source": "word-list"
+      },
+      "镜": {
+        "word": "镜子",
+        "chars": [
+          {
+            "char": "镜",
+            "pinyin": "jìng"
+          },
+          {
+            "char": "子",
+            "pinyin": "zi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "隐": {
+        "word": "隐隐约约",
+        "chars": [
+          {
+            "char": "隐",
+            "pinyin": "yǐn"
+          },
+          {
+            "char": "隐",
+            "pinyin": "yǐn"
+          },
+          {
+            "char": "约",
+            "pinyin": "yuē"
+          },
+          {
+            "char": "约",
+            "pinyin": "yuē"
+          }
+        ],
+        "source": "word-list"
+      },
+      "狮": {
+        "word": "狮子",
+        "chars": [
+          {
+            "char": "狮",
+            "pinyin": "shī"
+          },
+          {
+            "char": "子",
+            "pinyin": "zi"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-19": {
+      "享": {
+        "word": "享誉",
+        "chars": [
+          {
+            "char": "享",
+            "pinyin": "xiǎng"
+          },
+          {
+            "char": "誉",
+            "pinyin": "yù"
+          }
+        ],
+        "source": "text"
+      },
+      "誉": {
+        "word": "享誉",
+        "chars": [
+          {
+            "char": "享",
+            "pinyin": "xiǎng"
+          },
+          {
+            "char": "誉",
+            "pinyin": "yù"
+          }
+        ],
+        "source": "text"
+      },
+      "宏": {
+        "word": "规模宏大",
+        "chars": [
+          {
+            "char": "规",
+            "pinyin": "guī"
+          },
+          {
+            "char": "模",
+            "pinyin": "mó"
+          },
+          {
+            "char": "宏",
+            "pinyin": "hóng"
+          },
+          {
+            "char": "大",
+            "pinyin": "dà"
+          }
+        ],
+        "source": "text"
+      },
+      "皇": {
+        "word": "皇家",
+        "chars": [
+          {
+            "char": "皇",
+            "pinyin": "huáng"
+          },
+          {
+            "char": "家",
+            "pinyin": "jiā"
+          }
+        ],
+        "source": "text"
+      },
+      "率": {
+        "word": "统率",
+        "chars": [
+          {
+            "char": "统",
+            "pinyin": "tǒng"
+          },
+          {
+            "char": "率",
+            "pinyin": "shuài"
+          }
+        ],
+        "source": "text"
+      },
+      "着": {
+        "word": "身着",
+        "chars": [
+          {
+            "char": "身",
+            "pinyin": "shēn"
+          },
+          {
+            "char": "着",
+            "pinyin": "zhuó"
+          }
+        ],
+        "source": "text"
+      },
+      "靴": {
+        "word": "短靴",
+        "chars": [
+          {
+            "char": "短",
+            "pinyin": "duǎn"
+          },
+          {
+            "char": "靴",
+            "pinyin": "xuē"
+          }
+        ],
+        "source": "text"
+      },
+      "誓": {
+        "word": "发誓",
+        "chars": [
+          {
+            "char": "发",
+            "pinyin": "fā"
+          },
+          {
+            "char": "誓",
+            "pinyin": "shì"
+          }
+        ],
+        "source": "text"
+      },
+      "塑": {
+        "word": "雕塑",
+        "chars": [
+          {
+            "char": "雕",
+            "pinyin": "diāo"
+          },
+          {
+            "char": "塑",
+            "pinyin": "sù"
+          }
+        ],
+        "source": "text"
+      },
+      "帷": {
+        "word": "帷幔",
+        "chars": [
+          {
+            "char": "帷",
+            "pinyin": "wéi"
+          },
+          {
+            "char": "幔",
+            "pinyin": "màn"
+          }
+        ],
+        "source": "text"
+      },
+      "肖": {
+        "word": "惟肖",
+        "chars": [
+          {
+            "char": "惟",
+            "pinyin": "wéi"
+          },
+          {
+            "char": "肖",
+            "pinyin": "xiào"
+          }
+        ],
+        "source": "text"
+      },
+      "拟": {
+        "word": "模拟",
+        "chars": [
+          {
+            "char": "模",
+            "pinyin": "mó"
+          },
+          {
+            "char": "拟",
+            "pinyin": "nǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "逼": {
+        "word": "逼真",
+        "chars": [
+          {
+            "char": "逼",
+            "pinyin": "bī"
+          },
+          {
+            "char": "真",
+            "pinyin": "zhēn"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "garden-6": {
+      "萨": {
+        "word": "拉萨",
+        "chars": [
+          {
+            "char": "拉",
+            "pinyin": "lā"
+          },
+          {
+            "char": "萨",
+            "pinyin": "sà"
+          }
+        ],
+        "source": "text"
+      },
+      "昭": {
+        "word": "大昭寺",
+        "chars": [
+          {
+            "char": "大",
+            "pinyin": "dà"
+          },
+          {
+            "char": "昭",
+            "pinyin": "zhāo"
+          },
+          {
+            "char": "寺",
+            "pinyin": "sì"
+          }
+        ],
+        "source": "text"
+      },
+      "陵": {
+        "word": "陵寝",
+        "chars": [
+          {
+            "char": "陵",
+            "pinyin": "líng"
+          },
+          {
+            "char": "寝",
+            "pinyin": "qǐn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "寝": {
+        "word": "陵寝",
+        "chars": [
+          {
+            "char": "陵",
+            "pinyin": "líng"
+          },
+          {
+            "char": "寝",
+            "pinyin": "qǐn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "堰": {
+        "word": "都江堰",
+        "chars": [
+          {
+            "char": "都",
+            "pinyin": "dū"
+          },
+          {
+            "char": "江",
+            "pinyin": "jiāng"
+          },
+          {
+            "char": "堰",
+            "pinyin": "yàn"
+          }
+        ],
+        "source": "text"
+      },
+      "尼": {
+        "word": "哈尼",
+        "chars": [
+          {
+            "char": "哈",
+            "pinyin": "hā"
+          },
+          {
+            "char": "尼",
+            "pinyin": "ní"
+          }
+        ],
+        "source": "text"
+      },
+      "绸": {
+        "word": "丝绸",
+        "chars": [
+          {
+            "char": "丝",
+            "pinyin": "sī"
+          },
+          {
+            "char": "绸",
+            "pinyin": "chóu"
+          }
+        ],
+        "source": "word-list"
+      },
+      "廊": {
+        "word": "廊道",
+        "chars": [
+          {
+            "char": "廊",
+            "pinyin": "láng"
+          },
+          {
+            "char": "道",
+            "pinyin": "dào"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-20": {
+      "鹅": {
+        "word": "白鹅",
+        "chars": [
+          {
+            "char": "白",
+            "pinyin": "bái"
+          },
+          {
+            "char": "鹅",
+            "pinyin": "é"
+          }
+        ],
+        "source": "text"
+      },
+      "屁": {
+        "word": "屁股",
+        "chars": [
+          {
+            "char": "屁",
+            "pinyin": "pì"
+          },
+          {
+            "char": "股",
+            "pinyin": "gǔ"
+          }
+        ],
+        "source": "text"
+      },
+      "股": {
+        "word": "屁股",
+        "chars": [
+          {
+            "char": "屁",
+            "pinyin": "pì"
+          },
+          {
+            "char": "股",
+            "pinyin": "gǔ"
+          }
+        ],
+        "source": "text"
+      },
+      "谓": {
+        "word": "无所谓",
+        "chars": [
+          {
+            "char": "无",
+            "pinyin": "wú"
+          },
+          {
+            "char": "所",
+            "pinyin": "suǒ"
+          },
+          {
+            "char": "谓",
+            "pinyin": "wèi"
+          }
+        ],
+        "source": "text"
+      },
+      "捶": {
+        "word": "捶背",
+        "chars": [
+          {
+            "char": "捶",
+            "pinyin": "chuí"
+          },
+          {
+            "char": "背",
+            "pinyin": "bèi"
+          }
+        ],
+        "source": "text"
+      },
+      "顽": {
+        "word": "顽皮",
+        "chars": [
+          {
+            "char": "顽",
+            "pinyin": "wán"
+          },
+          {
+            "char": "皮",
+            "pinyin": "pí"
+          }
+        ],
+        "source": "text"
+      },
+      "吁": {
+        "word": "吁哩哩",
+        "chars": [
+          {
+            "char": "吁",
+            "pinyin": "xū"
+          },
+          {
+            "char": "哩",
+            "pinyin": "lī"
+          },
+          {
+            "char": "哩",
+            "pinyin": "lī"
+          }
+        ],
+        "source": "text"
+      },
+      "膊": {
+        "word": "胳膊",
+        "chars": [
+          {
+            "char": "胳",
+            "pinyin": "gē"
+          },
+          {
+            "char": "膊",
+            "pinyin": "bo"
+          }
+        ],
+        "source": "word-list"
+      },
+      "瓶": {
+        "word": "酒瓶",
+        "chars": [
+          {
+            "char": "酒",
+            "pinyin": "jiǔ"
+          },
+          {
+            "char": "瓶",
+            "pinyin": "píng"
+          }
+        ],
+        "source": "text"
+      },
+      "怖": {
+        "word": "恐怖",
+        "chars": [
+          {
+            "char": "恐",
+            "pinyin": "kǒng"
+          },
+          {
+            "char": "怖",
+            "pinyin": "bù"
+          }
+        ],
+        "source": "text"
+      },
+      "欺": {
+        "word": "欺负",
+        "chars": [
+          {
+            "char": "欺",
+            "pinyin": "qī"
+          },
+          {
+            "char": "负",
+            "pinyin": "fù"
+          }
+        ],
+        "source": "text"
+      },
+      "掐": {
+        "word": "掐住",
+        "chars": [
+          {
+            "char": "掐",
+            "pinyin": "qiā"
+          },
+          {
+            "char": "住",
+            "pinyin": "zhù"
+          }
+        ],
+        "source": "text"
+      },
+      "骑": {
+        "word": "骑到",
+        "chars": [
+          {
+            "char": "骑",
+            "pinyin": "qí"
+          },
+          {
+            "char": "到",
+            "pinyin": "dào"
+          }
+        ],
+        "source": "text"
+      },
+      "拳": {
+        "word": "拳头",
+        "chars": [
+          {
+            "char": "拳",
+            "pinyin": "quán"
+          },
+          {
+            "char": "头",
+            "pinyin": "tou"
+          }
+        ],
+        "source": "word-list"
+      },
+      "竖": {
+        "word": "竖起",
+        "chars": [
+          {
+            "char": "竖",
+            "pinyin": "shù"
+          },
+          {
+            "char": "起",
+            "pinyin": "qǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "竟": {
+        "word": "竟爬到",
+        "chars": [
+          {
+            "char": "竟",
+            "pinyin": "jìng"
+          },
+          {
+            "char": "爬",
+            "pinyin": "pá"
+          },
+          {
+            "char": "到",
+            "pinyin": "dào"
+          }
+        ],
+        "source": "text"
+      },
+      "胸": {
+        "word": "当胸",
+        "chars": [
+          {
+            "char": "当",
+            "pinyin": "dāng"
+          },
+          {
+            "char": "胸",
+            "pinyin": "xiōng"
+          }
+        ],
+        "source": "text"
+      },
+      "鞋": {
+        "word": "鞋子",
+        "chars": [
+          {
+            "char": "鞋",
+            "pinyin": "xié"
+          },
+          {
+            "char": "子",
+            "pinyin": "zǐ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "拖": {
+        "word": "拖我",
+        "chars": [
+          {
+            "char": "拖",
+            "pinyin": "tuō"
+          },
+          {
+            "char": "我",
+            "pinyin": "wǒ"
+          }
+        ],
+        "source": "text"
+      },
+      "胳": {
+        "word": "胳膊",
+        "chars": [
+          {
+            "char": "胳",
+            "pinyin": "gē"
+          },
+          {
+            "char": "膊",
+            "pinyin": "bo"
+          }
+        ],
+        "source": "word-list"
+      },
+      "握": {
+        "word": "握住",
+        "chars": [
+          {
+            "char": "握",
+            "pinyin": "wò"
+          },
+          {
+            "char": "住",
+            "pinyin": "zhù"
+          }
+        ],
+        "source": "text"
+      },
+      "摔": {
+        "word": "摔到",
+        "chars": [
+          {
+            "char": "摔",
+            "pinyin": "shuāi"
+          },
+          {
+            "char": "到",
+            "pinyin": "dào"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-21": {
+      "露": {
+        "word": "露脸",
+        "chars": [
+          {
+            "char": "露",
+            "pinyin": "lòu"
+          },
+          {
+            "char": "脸",
+            "pinyin": "liǎn"
+          }
+        ],
+        "source": "text"
+      },
+      "羡": {
+        "word": "羡慕",
+        "chars": [
+          {
+            "char": "羡",
+            "pinyin": "xiàn"
+          },
+          {
+            "char": "慕",
+            "pinyin": "mù"
+          }
+        ],
+        "source": "text"
+      },
+      "殷": {
+        "word": "殷切",
+        "chars": [
+          {
+            "char": "殷",
+            "pinyin": "yīn"
+          },
+          {
+            "char": "切",
+            "pinyin": "qiè"
+          }
+        ],
+        "source": "text"
+      },
+      "逗": {
+        "word": "逗乐",
+        "chars": [
+          {
+            "char": "逗",
+            "pinyin": "dòu"
+          },
+          {
+            "char": "乐",
+            "pinyin": "lè"
+          }
+        ],
+        "source": "text"
+      },
+      "撇": {
+        "word": "撇嘴",
+        "chars": [
+          {
+            "char": "撇",
+            "pinyin": "piě"
+          },
+          {
+            "char": "嘴",
+            "pinyin": "zuǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "啊": {
+        "word": "啊呜",
+        "chars": [
+          {
+            "char": "啊",
+            "pinyin": "a"
+          },
+          {
+            "char": "呜",
+            "pinyin": "wū"
+          }
+        ],
+        "source": "text"
+      },
+      "霉": {
+        "word": "倒霉",
+        "chars": [
+          {
+            "char": "倒",
+            "pinyin": "dǎo"
+          },
+          {
+            "char": "霉",
+            "pinyin": "méi"
+          }
+        ],
+        "source": "text"
+      },
+      "亏": {
+        "word": "吃亏",
+        "chars": [
+          {
+            "char": "吃",
+            "pinyin": "chī"
+          },
+          {
+            "char": "亏",
+            "pinyin": "kuī"
+          }
+        ],
+        "source": "text"
+      },
+      "撤": {
+        "word": "撤换",
+        "chars": [
+          {
+            "char": "撤",
+            "pinyin": "chè"
+          },
+          {
+            "char": "换",
+            "pinyin": "huàn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "哄": {
+        "word": "哄堂大笑",
+        "chars": [
+          {
+            "char": "哄",
+            "pinyin": "hōng"
+          },
+          {
+            "char": "堂",
+            "pinyin": "táng"
+          },
+          {
+            "char": "大",
+            "pinyin": "dà"
+          },
+          {
+            "char": "笑",
+            "pinyin": "xiào"
+          }
+        ],
+        "source": "word-list"
+      },
+      "拙": {
+        "word": "笨拙",
+        "chars": [
+          {
+            "char": "笨",
+            "pinyin": "bèn"
+          },
+          {
+            "char": "拙",
+            "pinyin": "zhuō"
+          }
+        ],
+        "source": "text"
+      },
+      "唉": {
+        "word": "唉声叹气",
+        "chars": [
+          {
+            "char": "唉",
+            "pinyin": "āi"
+          },
+          {
+            "char": "声",
+            "pinyin": "shēng"
+          },
+          {
+            "char": "叹",
+            "pinyin": "tàn"
+          },
+          {
+            "char": "气",
+            "pinyin": "qì"
+          }
+        ],
+        "source": "text"
+      },
+      "表": {
+        "word": "表演",
+        "chars": [
+          {
+            "char": "表",
+            "pinyin": "biǎo"
+          },
+          {
+            "char": "演",
+            "pinyin": "yǎn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "演": {
+        "word": "表演",
+        "chars": [
+          {
+            "char": "表",
+            "pinyin": "biǎo"
+          },
+          {
+            "char": "演",
+            "pinyin": "yǎn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "俩": {
+        "word": "兄妹俩",
+        "chars": [
+          {
+            "char": "兄",
+            "pinyin": "xiōng"
+          },
+          {
+            "char": "妹",
+            "pinyin": "mèi"
+          },
+          {
+            "char": "俩",
+            "pinyin": "liǎ"
+          }
+        ],
+        "source": "text"
+      },
+      "练": {
+        "word": "排练",
+        "chars": [
+          {
+            "char": "排",
+            "pinyin": "pái"
+          },
+          {
+            "char": "练",
+            "pinyin": "liàn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "捧": {
+        "word": "捧着",
+        "chars": [
+          {
+            "char": "捧",
+            "pinyin": "pěng"
+          },
+          {
+            "char": "着",
+            "pinyin": "zhe"
+          }
+        ],
+        "source": "text"
+      },
+      "示": {
+        "word": "提示",
+        "chars": [
+          {
+            "char": "提",
+            "pinyin": "tí"
+          },
+          {
+            "char": "示",
+            "pinyin": "shì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "技": {
+        "word": "演技",
+        "chars": [
+          {
+            "char": "演",
+            "pinyin": "yǎn"
+          },
+          {
+            "char": "技",
+            "pinyin": "jì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "推": {
+        "word": "推我",
+        "chars": [
+          {
+            "char": "推",
+            "pinyin": "tuī"
+          },
+          {
+            "char": "我",
+            "pinyin": "wǒ"
+          }
+        ],
+        "source": "text"
+      },
+      "堂": {
+        "word": "哄堂大笑",
+        "chars": [
+          {
+            "char": "哄",
+            "pinyin": "hōng"
+          },
+          {
+            "char": "堂",
+            "pinyin": "táng"
+          },
+          {
+            "char": "大",
+            "pinyin": "dà"
+          },
+          {
+            "char": "笑",
+            "pinyin": "xiào"
+          }
+        ],
+        "source": "word-list"
+      },
+      "摘": {
+        "word": "摘下",
+        "chars": [
+          {
+            "char": "摘",
+            "pinyin": "zhāi"
+          },
+          {
+            "char": "下",
+            "pinyin": "xià"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-22": {
+      "钉": {
+        "word": "钉上",
+        "chars": [
+          {
+            "char": "钉",
+            "pinyin": "dīng"
+          },
+          {
+            "char": "上",
+            "pinyin": "shàng"
+          }
+        ],
+        "source": "text"
+      },
+      "质": {
+        "word": "质量",
+        "chars": [
+          {
+            "char": "质",
+            "pinyin": "zhì"
+          },
+          {
+            "char": "量",
+            "pinyin": "liàng"
+          }
+        ],
+        "source": "text"
+      },
+      "岳": {
+        "word": "岳家",
+        "chars": [
+          {
+            "char": "岳",
+            "pinyin": "yuè"
+          },
+          {
+            "char": "家",
+            "pinyin": "jiā"
+          }
+        ],
+        "source": "text"
+      },
+      "削": {
+        "word": "削出",
+        "chars": [
+          {
+            "char": "削",
+            "pinyin": "xiāo"
+          },
+          {
+            "char": "出",
+            "pinyin": "chū"
+          }
+        ],
+        "source": "text"
+      },
+      "匪": {
+        "word": "匪夷所思",
+        "chars": [
+          {
+            "char": "匪",
+            "pinyin": "fěi"
+          },
+          {
+            "char": "夷",
+            "pinyin": "yí"
+          },
+          {
+            "char": "所",
+            "pinyin": "suǒ"
+          },
+          {
+            "char": "思",
+            "pinyin": "sī"
+          }
+        ],
+        "source": "text"
+      },
+      "骂": {
+        "word": "责骂",
+        "chars": [
+          {
+            "char": "责",
+            "pinyin": "zé"
+          },
+          {
+            "char": "骂",
+            "pinyin": "mà"
+          }
+        ],
+        "source": "text"
+      },
+      "帅": {
+        "word": "帅气",
+        "chars": [
+          {
+            "char": "帅",
+            "pinyin": "shuài"
+          },
+          {
+            "char": "气",
+            "pinyin": "qì"
+          }
+        ],
+        "source": "text"
+      },
+      "衅": {
+        "word": "挑衅",
+        "chars": [
+          {
+            "char": "挑",
+            "pinyin": "tiǎo"
+          },
+          {
+            "char": "衅",
+            "pinyin": "xìn"
+          }
+        ],
+        "source": "text"
+      },
+      "扭": {
+        "word": "扭身",
+        "chars": [
+          {
+            "char": "扭",
+            "pinyin": "niǔ"
+          },
+          {
+            "char": "身",
+            "pinyin": "shēn"
+          }
+        ],
+        "source": "text"
+      },
+      "彻": {
+        "word": "彻底",
+        "chars": [
+          {
+            "char": "彻",
+            "pinyin": "chè"
+          },
+          {
+            "char": "底",
+            "pinyin": "dǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "溃": {
+        "word": "溃败",
+        "chars": [
+          {
+            "char": "溃",
+            "pinyin": "kuì"
+          },
+          {
+            "char": "败",
+            "pinyin": "bài"
+          }
+        ],
+        "source": "text"
+      },
+      "豪": {
+        "word": "自豪",
+        "chars": [
+          {
+            "char": "自",
+            "pinyin": "zì"
+          },
+          {
+            "char": "豪",
+            "pinyin": "háo"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-23": {
+      "戎": {
+        "word": "王戎",
+        "chars": [
+          {
+            "char": "王",
+            "pinyin": "wáng"
+          },
+          {
+            "char": "戎",
+            "pinyin": "róng"
+          }
+        ],
+        "source": "text"
+      },
+      "诸": {
+        "word": "诸小儿",
+        "chars": [
+          {
+            "char": "诸",
+            "pinyin": "zhū"
+          },
+          {
+            "char": "小",
+            "pinyin": "xiǎo"
+          },
+          {
+            "char": "儿",
+            "pinyin": "ér"
+          }
+        ],
+        "source": "text"
+      },
+      "竞": {
+        "word": "竞走",
+        "chars": [
+          {
+            "char": "竞",
+            "pinyin": "jìng"
+          },
+          {
+            "char": "走",
+            "pinyin": "zǒu"
+          }
+        ],
+        "source": "text"
+      },
+      "唯": {
+        "word": "唯我",
+        "chars": [
+          {
+            "char": "唯",
+            "pinyin": "wéi"
+          },
+          {
+            "char": "我",
+            "pinyin": "wǒ"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "garden-7": {
+      "韭": {
+        "word": "韭菜",
+        "chars": [
+          {
+            "char": "韭",
+            "pinyin": "jiǔ"
+          },
+          {
+            "char": "菜",
+            "pinyin": "cài"
+          }
+        ],
+        "source": "word-list"
+      },
+      "芹": {
+        "word": "芹菜",
+        "chars": [
+          {
+            "char": "芹",
+            "pinyin": "qín"
+          },
+          {
+            "char": "菜",
+            "pinyin": "cài"
+          }
+        ],
+        "source": "word-list"
+      },
+      "椒": {
+        "word": "辣椒",
+        "chars": [
+          {
+            "char": "辣",
+            "pinyin": "là"
+          },
+          {
+            "char": "椒",
+            "pinyin": "jiāo"
+          }
+        ],
+        "source": "word-list"
+      },
+      "蒜": {
+        "word": "大蒜",
+        "chars": [
+          {
+            "char": "大",
+            "pinyin": "dà"
+          },
+          {
+            "char": "蒜",
+            "pinyin": "suàn"
+          }
+        ],
+        "source": "text"
+      },
+      "薯": {
+        "word": "红薯",
+        "chars": [
+          {
+            "char": "红",
+            "pinyin": "hóng"
+          },
+          {
+            "char": "薯",
+            "pinyin": "shǔ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "藕": {
+        "word": "莲藕",
+        "chars": [
+          {
+            "char": "莲",
+            "pinyin": "lián"
+          },
+          {
+            "char": "藕",
+            "pinyin": "ǒu"
+          }
+        ],
+        "source": "word-list"
+      },
+      "芋": {
+        "word": "芋头",
+        "chars": [
+          {
+            "char": "芋",
+            "pinyin": "yù"
+          },
+          {
+            "char": "头",
+            "pinyin": "tou"
+          }
+        ],
+        "source": "word-list"
+      },
+      "姜": {
+        "word": "生姜",
+        "chars": [
+          {
+            "char": "生",
+            "pinyin": "shēng"
+          },
+          {
+            "char": "姜",
+            "pinyin": "jiāng"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-24": {
+      "菲": {
+        "word": "菲科",
+        "chars": [
+          {
+            "char": "菲",
+            "pinyin": "fēi"
+          },
+          {
+            "char": "科",
+            "pinyin": "kē"
+          }
+        ],
+        "source": "text"
+      },
+      "抛": {
+        "word": "抛出",
+        "chars": [
+          {
+            "char": "抛",
+            "pinyin": "pāo"
+          },
+          {
+            "char": "出",
+            "pinyin": "chū"
+          }
+        ],
+        "source": "text"
+      },
+      "奉": {
+        "word": "奉献",
+        "chars": [
+          {
+            "char": "奉",
+            "pinyin": "fèng"
+          },
+          {
+            "char": "献",
+            "pinyin": "xiàn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "亿": {
+        "word": "亿多",
+        "chars": [
+          {
+            "char": "亿",
+            "pinyin": "yì"
+          },
+          {
+            "char": "多",
+            "pinyin": "duō"
+          }
+        ],
+        "source": "text"
+      },
+      "邀": {
+        "word": "邀请",
+        "chars": [
+          {
+            "char": "邀",
+            "pinyin": "yāo"
+          },
+          {
+            "char": "请",
+            "pinyin": "qǐng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "席": {
+        "word": "主席",
+        "chars": [
+          {
+            "char": "主",
+            "pinyin": "zhǔ"
+          },
+          {
+            "char": "席",
+            "pinyin": "xí"
+          }
+        ],
+        "source": "word-list"
+      },
+      "激": {
+        "word": "激动",
+        "chars": [
+          {
+            "char": "激",
+            "pinyin": "jī"
+          },
+          {
+            "char": "动",
+            "pinyin": "dòng"
+          }
+        ],
+        "source": "word-list"
+      },
+      "训": {
+        "word": "训练",
+        "chars": [
+          {
+            "char": "训",
+            "pinyin": "xùn"
+          },
+          {
+            "char": "练",
+            "pinyin": "liàn"
+          }
+        ],
+        "source": "word-list"
+      },
+      "勤": {
+        "word": "勤劳",
+        "chars": [
+          {
+            "char": "勤",
+            "pinyin": "qín"
+          },
+          {
+            "char": "劳",
+            "pinyin": "láo"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-25": {
+      "崛": {
+        "word": "崛起",
+        "chars": [
+          {
+            "char": "崛",
+            "pinyin": "jué"
+          },
+          {
+            "char": "起",
+            "pinyin": "qǐ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "范": {
+        "word": "模范",
+        "chars": [
+          {
+            "char": "模",
+            "pinyin": "mó"
+          },
+          {
+            "char": "范",
+            "pinyin": "fàn"
+          }
+        ],
+        "source": "text"
+      },
+      "魏": {
+        "word": "魏校长",
+        "chars": [
+          {
+            "char": "魏",
+            "pinyin": "wèi"
+          },
+          {
+            "char": "校",
+            "pinyin": "xiào"
+          },
+          {
+            "char": "长",
+            "pinyin": "zhǎng"
+          }
+        ],
+        "source": "text"
+      },
+      "默": {
+        "word": "默默",
+        "chars": [
+          {
+            "char": "默",
+            "pinyin": "mò"
+          },
+          {
+            "char": "默",
+            "pinyin": "mò"
+          }
+        ],
+        "source": "word-list"
+      },
+      "晰": {
+        "word": "清晰",
+        "chars": [
+          {
+            "char": "清",
+            "pinyin": "qīng"
+          },
+          {
+            "char": "晰",
+            "pinyin": "xī"
+          }
+        ],
+        "source": "word-list"
+      },
+      "惑": {
+        "word": "疑惑",
+        "chars": [
+          {
+            "char": "疑",
+            "pinyin": "yí"
+          },
+          {
+            "char": "惑",
+            "pinyin": "huò"
+          }
+        ],
+        "source": "text"
+      },
+      "轧": {
+        "word": "轧死",
+        "chars": [
+          {
+            "char": "轧",
+            "pinyin": "yà"
+          },
+          {
+            "char": "死",
+            "pinyin": "sǐ"
+          }
+        ],
+        "source": "text"
+      },
+      "惩": {
+        "word": "惩处",
+        "chars": [
+          {
+            "char": "惩",
+            "pinyin": "chéng"
+          },
+          {
+            "char": "处",
+            "pinyin": "chǔ"
+          }
+        ],
+        "source": "word-list"
+      },
+      "肇": {
+        "word": "肇事",
+        "chars": [
+          {
+            "char": "肇",
+            "pinyin": "zhào"
+          },
+          {
+            "char": "事",
+            "pinyin": "shì"
+          }
+        ],
+        "source": "text"
+      },
+      "斥": {
+        "word": "训斥",
+        "chars": [
+          {
+            "char": "训",
+            "pinyin": "xùn"
+          },
+          {
+            "char": "斥",
+            "pinyin": "chì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "辱": {
+        "word": "屈辱",
+        "chars": [
+          {
+            "char": "屈",
+            "pinyin": "qū"
+          },
+          {
+            "char": "辱",
+            "pinyin": "rǔ"
+          }
+        ],
+        "source": "text"
+      },
+      "肃": {
+        "word": "严肃",
+        "chars": [
+          {
+            "char": "严",
+            "pinyin": "yán"
+          },
+          {
+            "char": "肃",
+            "pinyin": "sù"
+          }
+        ],
+        "source": "word-list"
+      },
+      "脆": {
+        "word": "干脆",
+        "chars": [
+          {
+            "char": "干",
+            "pinyin": "gān"
+          },
+          {
+            "char": "脆",
+            "pinyin": "cuì"
+          }
+        ],
+        "source": "word-list"
+      },
+      "离": {
+        "word": "离开",
+        "chars": [
+          {
+            "char": "离",
+            "pinyin": "lí"
+          },
+          {
+            "char": "开",
+            "pinyin": "kāi"
+          }
+        ],
+        "source": "word-list"
+      },
+      "凡": {
+        "word": "非凡",
+        "chars": [
+          {
+            "char": "非",
+            "pinyin": "fēi"
+          },
+          {
+            "char": "凡",
+            "pinyin": "fán"
+          }
+        ],
+        "source": "word-list"
+      },
+      "燃": {
+        "word": "燃烧",
+        "chars": [
+          {
+            "char": "燃",
+            "pinyin": "rán"
+          },
+          {
+            "char": "烧",
+            "pinyin": "shāo"
+          }
+        ],
+        "source": "word-list"
+      }
+    },
+    "lesson-26": {
+      "昔": {
+        "word": "昔日",
+        "chars": [
+          {
+            "char": "昔",
+            "pinyin": "xī"
+          },
+          {
+            "char": "日",
+            "pinyin": "rì"
+          }
+        ],
+        "source": "text"
+      },
+      "茅": {
+        "word": "茅屋",
+        "chars": [
+          {
+            "char": "茅",
+            "pinyin": "máo"
+          },
+          {
+            "char": "屋",
+            "pinyin": "wū"
+          }
+        ],
+        "source": "text"
+      },
+      "炕": {
+        "word": "土炕",
+        "chars": [
+          {
+            "char": "土",
+            "pinyin": "tǔ"
+          },
+          {
+            "char": "炕",
+            "pinyin": "kàng"
+          }
+        ],
+        "source": "text"
+      },
+      "索": {
+        "word": "探索",
+        "chars": [
+          {
+            "char": "探",
+            "pinyin": "tàn"
+          },
+          {
+            "char": "索",
+            "pinyin": "suǒ"
+          }
+        ],
+        "source": "text"
+      },
+      "媚": {
+        "word": "明媚",
+        "chars": [
+          {
+            "char": "明",
+            "pinyin": "míng"
+          },
+          {
+            "char": "媚",
+            "pinyin": "mèi"
+          }
+        ],
+        "source": "text"
+      }
+    },
+    "lesson-27": {
+      "催": {
+        "word": "催促",
+        "chars": [
+          {
+            "char": "催",
+            "pinyin": "cuī"
+          },
+          {
+            "char": "促",
+            "pinyin": "cù"
+          }
+        ],
+        "source": "text"
+      },
+      "君": {
+        "word": "君莫笑",
+        "chars": [
+          {
+            "char": "君",
+            "pinyin": "jūn"
+          },
+          {
+            "char": "莫",
+            "pinyin": "mò"
+          },
+          {
+            "char": "笑",
+            "pinyin": "xiào"
+          }
+        ],
+        "source": "text"
+      },
+      "征": {
+        "word": "征战",
+        "chars": [
+          {
+            "char": "征",
+            "pinyin": "zhēng"
+          },
+          {
+            "char": "战",
+            "pinyin": "zhàn"
+          }
+        ],
+        "source": "text"
+      },
+      "塞": {
+        "word": "出塞",
+        "chars": [
+          {
+            "char": "出",
+            "pinyin": "chū"
+          },
+          {
+            "char": "塞",
+            "pinyin": "sài"
+          }
+        ],
+        "source": "text"
+      },
+      "秦": {
+        "word": "秦时",
+        "chars": [
+          {
+            "char": "秦",
+            "pinyin": "qín"
+          },
+          {
+            "char": "时",
+            "pinyin": "shí"
+          }
+        ],
+        "source": "text"
+      },
+      "杰": {
+        "word": "人杰",
+        "chars": [
+          {
+            "char": "人",
+            "pinyin": "rén"
+          },
+          {
+            "char": "杰",
+            "pinyin": "jié"
+          }
+        ],
+        "source": "text"
+      },
+      "鬼": {
+        "word": "鬼雄",
+        "chars": [
+          {
+            "char": "鬼",
+            "pinyin": "guǐ"
+          },
+          {
+            "char": "雄",
+            "pinyin": "xióng"
+          }
+        ],
+        "source": "text"
+      },
+      "词": {
+        "word": "凉州词",
+        "chars": [
+          {
+            "char": "凉",
+            "pinyin": "liáng"
+          },
+          {
+            "char": "州",
+            "pinyin": "zhōu"
+          },
+          {
+            "char": "词",
+            "pinyin": "cí"
+          }
+        ],
+        "source": "text"
+      },
+      "葡": {
+        "word": "葡萄",
+        "chars": [
+          {
+            "char": "葡",
+            "pinyin": "pú"
+          },
+          {
+            "char": "萄",
+            "pinyin": "táo"
+          }
+        ],
+        "source": "text"
+      },
+      "萄": {
+        "word": "葡萄",
+        "chars": [
+          {
+            "char": "葡",
+            "pinyin": "pú"
+          },
+          {
+            "char": "萄",
+            "pinyin": "táo"
+          }
+        ],
+        "source": "text"
+      },
+      "杯": {
+        "word": "夜光杯",
+        "chars": [
+          {
+            "char": "夜",
+            "pinyin": "yè"
+          },
+          {
+            "char": "光",
+            "pinyin": "guāng"
+          },
+          {
+            "char": "杯",
+            "pinyin": "bēi"
+          }
+        ],
+        "source": "text"
+      },
+      "将": {
+        "word": "飞将",
+        "chars": [
+          {
+            "char": "飞",
+            "pinyin": "fēi"
+          },
+          {
+            "char": "将",
+            "pinyin": "jiāng"
+          }
+        ],
+        "source": "text"
+      },
+      "雄": {
+        "word": "鬼雄",
+        "chars": [
+          {
+            "char": "鬼",
+            "pinyin": "guǐ"
+          },
+          {
+            "char": "雄",
+            "pinyin": "xióng"
+          }
+        ],
+        "source": "text"
+      },
+      "项": {
+        "word": "项羽",
+        "chars": [
+          {
+            "char": "项",
+            "pinyin": "xiàng"
+          },
+          {
+            "char": "羽",
+            "pinyin": "yǔ"
+          }
+        ],
+        "source": "text"
+      }
+    }
+  }
+}

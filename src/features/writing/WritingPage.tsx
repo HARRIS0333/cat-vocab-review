@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { navigate } from "../../app/hash-router";
 import { getWritingItems, resolveWritingSource } from "../../content/sources";
-import type { ContentGroup, PracticeItem, WritingSource } from "../../content/types";
+import type {
+  ContentGroup,
+  PracticeItem,
+  WordPracticeCharacter,
+  WritingSource,
+} from "../../content/types";
 import { loadCharacter } from "../../content/load-content";
 import {
   evaluateCharacter,
@@ -19,7 +24,7 @@ import { createSessionSummary, saveSessionSummary } from "../session/session-sum
 import { takeRetryQueue } from "../session/retry-queue";
 import { FeedbackPanel } from "./FeedbackPanel";
 import { SourceSelector } from "./SourceSelector";
-import { WritingBoard } from "./WritingBoard";
+import { WordWritingBoard } from "./WordWritingBoard";
 import {
   createWritingSession,
   writingSessionReducer,
@@ -41,9 +46,24 @@ type InitialWriting = {
 };
 
 type LoadState =
-  | { char: string; status: "loading" }
-  | { char: string; status: "loaded"; data: CharacterFileData }
-  | { char: string; status: "failed" };
+  | { itemId: string; status: "loading" }
+  | { itemId: string; status: "loaded"; data: CharacterFileData[] }
+  | { itemId: string; status: "failed" };
+
+type FeedbackResult = {
+  evaluation: Evaluation;
+  char: string;
+  characterData: CharacterFileData;
+};
+
+function charactersForItem(item: PracticeItem | undefined): WordPracticeCharacter[] {
+  if (!item) return [];
+  return item.word?.chars ?? [{ char: item.char, pinyin: item.pinyin }];
+}
+
+function emptyStrokesForItem(item: PracticeItem | undefined): InputStroke[][] {
+  return charactersForItem(item).map(() => []);
+}
 
 function resolveInitialWriting(
   group: ContentGroup,
@@ -83,6 +103,45 @@ function displayTitle(title: string): string {
   return title.trim() || "未命名课目";
 }
 
+function combineWordEvaluations(evaluations: Evaluation[]): {
+  evaluation: Evaluation;
+  failedIndex: number;
+} {
+  const failedIndex = evaluations.findIndex((entry) => entry.verdict !== "correct");
+  if (failedIndex < 0) {
+    return {
+      evaluation: {
+        verdict: "correct",
+        reasons: [],
+        confidence:
+          evaluations.reduce((sum, entry) => sum + entry.confidence, 0) /
+          Math.max(evaluations.length, 1),
+        strokeMatches: [],
+      },
+      failedIndex: 0,
+    };
+  }
+
+  const hasIncorrect = evaluations.some((entry) => entry.verdict === "incorrect");
+  const reasons = [
+    ...new Set(
+      evaluations
+        .filter((entry) => entry.verdict !== "correct")
+        .flatMap((entry) => entry.reasons),
+    ),
+  ];
+  const firstFailure = evaluations[failedIndex]!;
+  return {
+    evaluation: {
+      verdict: hasIncorrect ? "incorrect" : "unclear",
+      reasons,
+      confidence: firstFailure.confidence,
+      strokeMatches: [],
+    },
+    failedIndex,
+  };
+}
+
 export function WritingPage({
   group,
   retry,
@@ -94,7 +153,10 @@ export function WritingPage({
   const [source, setSource] = useState(initial.source);
   const [sourceNotice, setSourceNotice] = useState(initial.notice);
   const [state, setState] = useState(initial.session);
-  const [draftStrokes, setDraftStrokes] = useState<InputStroke[]>([]);
+  const [wordStrokes, setWordStrokes] = useState<InputStroke[][]>(() =>
+    emptyStrokesForItem(initial.session.currentItem),
+  );
+  const [feedbackResult, setFeedbackResult] = useState<FeedbackResult | null>(null);
   const [loadState, setLoadState] = useState<LoadState | null>(null);
   const [loadVersion, setLoadVersion] = useState(0);
   const boardAnchorRef = useRef<HTMLDivElement>(null);
@@ -102,40 +164,40 @@ export function WritingPage({
   const completedHandled = useRef(false);
   const submissionLocked = useRef(false);
   const currentItem = state.currentItem;
-  const currentChar = currentItem?.char;
-  const characterData =
-    currentChar &&
-    loadState?.char === currentChar &&
+  const currentItemId = currentItem?.id;
+  const wordCharacters = charactersForItem(currentItem);
+  const wordData =
+    currentItemId &&
+    loadState?.itemId === currentItemId &&
     loadState.status === "loaded"
       ? loadState.data
       : undefined;
   const loadFailed =
-    Boolean(currentChar) &&
-    loadState?.char === currentChar &&
+    Boolean(currentItemId) &&
+    loadState?.itemId === currentItemId &&
     loadState?.status === "failed";
   const isLoading =
-    Boolean(currentChar) && !characterData && !loadFailed;
+    Boolean(currentItemId) && !wordData && !loadFailed;
 
   useEffect(() => {
-    if (!currentChar) {
+    if (!currentItemId || wordCharacters.length === 0) {
       setLoadState(null);
       return;
     }
 
     let active = true;
-    setLoadState({ char: currentChar, status: "loading" });
+    setLoadState({ itemId: currentItemId, status: "loading" });
 
-    void Promise.resolve()
-      .then(() => loadCharacterData(currentChar))
+    void Promise.all(wordCharacters.map((character) => loadCharacterData(character.char)))
       .then(
         (data) => {
           if (active) {
-            setLoadState({ char: currentChar, status: "loaded", data });
+            setLoadState({ itemId: currentItemId, status: "loaded", data });
           }
         },
         () => {
           if (active) {
-            setLoadState({ char: currentChar, status: "failed" });
+            setLoadState({ itemId: currentItemId, status: "failed" });
           }
         },
       );
@@ -143,7 +205,12 @@ export function WritingPage({
     return () => {
       active = false;
     };
-  }, [currentChar, loadCharacterData, loadVersion]);
+  }, [currentItemId, loadCharacterData, loadVersion]);
+
+  useEffect(() => {
+    setWordStrokes(emptyStrokesForItem(currentItem));
+    setFeedbackResult(null);
+  }, [currentItemId]);
 
   useEffect(() => {
     if (state.phase === "answering") submissionLocked.current = false;
@@ -153,7 +220,7 @@ export function WritingPage({
     if (state.phase !== "correct" || !currentItem) return;
     const itemId = currentItem.id;
     const timer = window.setTimeout(() => {
-      setDraftStrokes([]);
+      setWordStrokes([]);
       scrollToBoardPending.current = true;
       setState((current) =>
         current.phase === "correct" && current.currentItem?.id === itemId
@@ -166,13 +233,13 @@ export function WritingPage({
   }, [state.phase, currentItem?.id]);
 
   useEffect(() => {
-    if (!scrollToBoardPending.current || !characterData) return;
+    if (!scrollToBoardPending.current || !wordData) return;
     scrollToBoardPending.current = false;
     boardAnchorRef.current?.scrollIntoView?.({
       behavior: "smooth",
       block: "center",
     });
-  }, [characterData, currentItem?.id]);
+  }, [wordData, currentItemId]);
 
   useEffect(() => {
     if (state.results.length === 0) return;
@@ -189,25 +256,41 @@ export function WritingPage({
     setSource(resolved.source);
     setSourceNotice(resolved.notice);
     setState(createWritingSession(resolved.items));
-    setDraftStrokes([]);
+    setWordStrokes(emptyStrokesForItem(resolved.items[0]));
+    setFeedbackResult(null);
     store.setDefaultWritingSource(nextSource);
   }
 
-  function handleStrokesChange(strokes: InputStroke[]) {
-    if (state.phase === "answering") setDraftStrokes(strokes);
+  function handleStrokesChange(strokes: InputStroke[][]) {
+    if (state.phase === "answering") setWordStrokes(strokes);
   }
 
-  function handleSubmit(strokes: InputStroke[]) {
-    if (!currentItem || !characterData || state.phase !== "answering") return;
-    if (strokes.length === 0 || submissionLocked.current) return;
+  function handleSubmit(strokes: InputStroke[][]) {
+    if (!currentItem || !wordData || state.phase !== "answering") return;
+    if (wordData.length !== wordCharacters.length || submissionLocked.current) return;
+    const normalizedStrokes = wordCharacters.map((_, index) => strokes[index] ?? []);
+    if (normalizedStrokes.some((entry) => entry.length === 0)) return;
 
     submissionLocked.current = true;
-    setDraftStrokes(strokes);
+    setWordStrokes(normalizedStrokes);
     setState((current) =>
-      writingSessionReducer(current, { type: "submit", strokes }),
+      writingSessionReducer(current, {
+        type: "submit",
+        strokes: normalizedStrokes.flat(),
+      }),
     );
 
-    const evaluation: Evaluation = evaluate(strokes, characterData);
+    const evaluations = normalizedStrokes.map((entry, index) =>
+      evaluate(entry, wordData[index]!),
+    );
+    const combined = combineWordEvaluations(evaluations);
+    const evaluation = combined.evaluation;
+    const feedbackIndex = combined.failedIndex;
+    setFeedbackResult({
+      evaluation,
+      char: wordCharacters[feedbackIndex]!.char,
+      characterData: wordData[feedbackIndex]!,
+    });
     setState((current) =>
       writingSessionReducer(current, { type: "evaluated", evaluation }),
     );
@@ -221,7 +304,8 @@ export function WritingPage({
   }
 
   function handleRetry() {
-    setDraftStrokes([]);
+    setWordStrokes(emptyStrokesForItem(currentItem));
+    setFeedbackResult(null);
     setState((current) => writingSessionReducer(current, { type: "retry" }));
   }
 
@@ -229,7 +313,8 @@ export function WritingPage({
     if (!currentItem) return;
     store.recordWriting(currentItem.id, "skipped");
     scrollToBoardPending.current = true;
-    setDraftStrokes([]);
+    setWordStrokes([]);
+    setFeedbackResult(null);
     setState((current) => writingSessionReducer(current, { type: "skip" }));
   }
 
@@ -237,7 +322,8 @@ export function WritingPage({
     if (!currentItem) return;
     store.recordWriting(currentItem.id, "skipped");
     scrollToBoardPending.current = true;
-    setDraftStrokes([]);
+    setWordStrokes([]);
+    setFeedbackResult(null);
     setState((current) => writingSessionReducer(current, { type: "load-failed" }));
   }
 
@@ -282,7 +368,6 @@ export function WritingPage({
 
             <div className="writing-prompt">
               <Mascot mood="write" />
-              <p className="writing-pinyin">{currentItem.pinyin}</p>
               {currentItem.polyphone ? (
                 <span className="writing-polyphone">多音字</span>
               ) : null}
@@ -290,12 +375,12 @@ export function WritingPage({
 
             {isLoading ? (
               <p className="status-message" role="status" aria-live="polite">
-                正在准备这个字的笔顺数据…
+                正在准备词语中每个字的笔顺数据…
               </p>
             ) : loadFailed ? (
               <section className="writing-load-error" aria-labelledby="load-error-heading">
-                <h3 id="load-error-heading">这个字的笔顺数据暂时无法加载</h3>
-                <p>可以先重新加载，或者跳过这个字，稍后再复习。</p>
+                <h3 id="load-error-heading">词语中的字形数据暂时无法加载</h3>
+                <p>可以先重新加载，或者跳过这个词，稍后再复习。</p>
                 <div className="writing-load-error-actions">
                   <Button onClick={reloadCharacter}>重新加载</Button>
                   <Button variant="secondary" onClick={handleSkipUnavailable}>
@@ -303,10 +388,12 @@ export function WritingPage({
                   </Button>
                 </div>
               </section>
-            ) : characterData ? (
+            ) : wordData ? (
               <div ref={boardAnchorRef} className="writing-board-anchor">
-                <WritingBoard
-                  strokes={draftStrokes}
+                <WordWritingBoard
+                  key={currentItem.id}
+                  characters={wordCharacters}
+                  strokes={wordStrokes}
                   disabled={state.phase !== "answering"}
                   onChange={handleStrokesChange}
                   onSubmit={handleSubmit}
@@ -316,11 +403,11 @@ export function WritingPage({
                     正在检查这次书写…
                   </p>
                 ) : null}
-                {state.evaluation ? (
+                {state.evaluation && feedbackResult ? (
                   <FeedbackPanel
-                    evaluation={state.evaluation}
-                    char={currentItem.char}
-                    characterData={characterData}
+                    evaluation={feedbackResult.evaluation}
+                    char={feedbackResult.char}
+                    characterData={feedbackResult.characterData}
                     attempt={state.attempt}
                     onRetry={handleRetry}
                     onSkip={handleSkipWrong}
