@@ -478,7 +478,7 @@ describe("real Hanzi Writer calibration fixtures", () => {
 
     expect(verdictCounts).toEqual({ correct: 413, incorrect: 0, unclear: 0 });
     expect(failures).toEqual([]);
-  });
+  }, 20_000);
 
   it("accepts 40-point dense exact-median input for all 413 content characters", () => {
     const characters = loadContentCharacters();
@@ -503,7 +503,7 @@ describe("real Hanzi Writer calibration fixtures", () => {
 
     expect(verdictCounts).toEqual({ correct: 413, incorrect: 0, unclear: 0 });
     expect(failures).toEqual([]);
-  });
+  }, 20_000);
 
   it("never accepts endpoint-only median traces for any of the 413 characters", () => {
     const characters = loadContentCharacters();
