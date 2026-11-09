@@ -50,7 +50,7 @@ test("loads under the GitHub Pages subpath and becomes offline-ready", async ({
   await page.goto("./");
 
   await expect(
-    page.getByRole("heading", { name: "小桃猫生字屋" }),
+    page.getByRole("heading", { name: "小咪学生字" }),
   ).toBeVisible();
   await expect(
     page.getByRole("main").getByRole("heading", { name: "选择课目" }),
@@ -77,6 +77,39 @@ test("keeps practice header geometry and footer navigation consistent", async ({
   const writingMetrics = await practiceHeaderMetrics(page);
 
   expect(writingMetrics).toEqual(recognitionMetrics);
+  const headerRows = await page.evaluate(() => {
+    const brand = document.querySelector(".app-header .brand");
+    const actions = document.querySelector(".app-header__actions");
+    if (!brand || !actions) throw new Error("Header layout is incomplete");
+    const brandRect = brand.getBoundingClientRect();
+    const actionsRect = actions.getBoundingClientRect();
+    return {
+      brandTop: Math.round(brandRect.top),
+      brandBottom: Math.round(brandRect.bottom),
+      actionsTop: Math.round(actionsRect.top),
+      actionsBottom: Math.round(actionsRect.bottom),
+    };
+  });
+  expect(headerRows.actionsTop).toBeGreaterThanOrEqual(
+    headerRows.brandTop - 1,
+  );
+  expect(headerRows.actionsBottom).toBeLessThanOrEqual(
+    headerRows.brandBottom + 1,
+  );
+
+  const lessonToggle = page.locator("#lesson-drawer-trigger");
+  if ((await lessonToggle.count()) > 0) {
+    await expect(lessonToggle).toBeVisible();
+    if ((page.viewportSize()?.width ?? 0) <= 560) {
+      await expect
+        .poll(() => lessonToggle.evaluate((element) => element.innerText.trim()))
+        .toBe("课目");
+    }
+  } else {
+    await expect(
+      page.getByRole("complementary", { name: "课目列表" }),
+    ).toBeVisible();
+  }
   const footer = page.getByRole("contentinfo");
   await expect(
     footer.getByRole("link", { name: "关于与许可" }),
@@ -163,7 +196,7 @@ test("reloads offline after the first online visit, completes real writing, and 
   await context.setOffline(true);
   await page.reload();
   await expect(
-    page.getByRole("heading", { name: "小桃猫生字屋" }),
+    page.getByRole("heading", { name: "小咪学生字" }),
   ).toBeVisible();
 
   const data = await openSingleItemPractice(page, target);

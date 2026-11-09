@@ -33,7 +33,7 @@ export function AboutPage({ content }: AboutPageProps) {
         <div className="brand">
           <Mascot mood="read" />
           <div>
-            <p className="eyebrow">小桃猫生字屋</p>
+            <p className="eyebrow">小咪学生字</p>
             <h2 id="about-heading">关于与许可</h2>
           </div>
         </div>

@@ -210,7 +210,7 @@ export function AppShell({ content, currentRoute, children }: AppShellProps) {
           <div className="brand">
             <Mascot mood="wave" />
             <div>
-              <h1>小桃猫生字屋</h1>
+              <h1>小咪学生字</h1>
               <p>四年级上册生字复习</p>
             </div>
           </div>
@@ -221,6 +221,7 @@ export function AppShell({ content, currentRoute, children }: AppShellProps) {
                 id="lesson-drawer-trigger"
                 className="button button-secondary lesson-drawer-trigger"
                 type="button"
+                aria-label="打开课目列表"
                 aria-expanded={drawerOpen}
                 aria-controls="lesson-drawer"
                 aria-haspopup="dialog"
@@ -229,7 +230,10 @@ export function AppShell({ content, currentRoute, children }: AppShellProps) {
                   setDrawerOpen(true);
                 }}
               >
-                打开课目列表
+                <span className="lesson-drawer-trigger__full">打开课目列表</span>
+                <span className="lesson-drawer-trigger__compact" aria-hidden="true">
+                  课目
+                </span>
               </button>
             ) : null}
           </nav>

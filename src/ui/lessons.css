@@ -50,6 +50,10 @@
   display: inline-flex;
 }
 
+.lesson-drawer-trigger__compact {
+  display: none;
+}
+
 .app-main {
   grid-area: main;
   width: 100%;
@@ -392,9 +396,52 @@
 }
 
 @media (max-width: 560px) {
+  .app-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding-bottom: 18px;
+  }
+
+  .app-header .brand {
+    min-width: 0;
+  }
+
+  .app-header .brand .mascot {
+    width: 46px;
+  }
+
+  .app-header .brand h1 {
+    font-size: clamp(1.25rem, 6.2vw, 1.55rem);
+    white-space: nowrap;
+  }
+
+  .app-header .brand p {
+    overflow: hidden;
+    font-size: 0.82rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .app-header__actions {
-    width: 100%;
+    width: auto;
     justify-content: flex-end;
+  }
+
+  .lesson-drawer-trigger {
+    min-width: 64px;
+    min-height: 44px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .lesson-drawer-trigger__full {
+    display: none;
+  }
+
+  .lesson-drawer-trigger__compact {
+    display: inline;
   }
 
   .progress-actions {

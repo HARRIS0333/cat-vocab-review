@@ -58,9 +58,11 @@ function highDistanceThresholds(): HandwritingThresholds {
 }
 
 describe("character evaluator", () => {
-  it("keeps the Task 11 production thresholds from the specification", () => {
+  it("keeps production thresholds explicit and calibrated", () => {
     expect(DEFAULT_THRESHOLDS.minimumPointCount).toBe(3);
     expect(DEFAULT_THRESHOLDS.outOfBoundsTolerance).toBe(0.08);
+    expect(DEFAULT_THRESHOLDS.shapeDistance).toBe(0.55);
+    expect(DEFAULT_THRESHOLDS.minimumOrderScoreAdvantage).toBe(0.12);
   });
 
   it("returns correct for exact ordered strokes", () => {
@@ -208,6 +210,24 @@ describe("character evaluator", () => {
       { x: 512, y: 900 },
     ]);
     const result = evaluateCharacter(jittered, data);
+
+    expect(result.verdict).toBe("correct");
+    expect(result.reasons).toEqual([]);
+  });
+
+  it("accepts a correctly ordered character written at a smaller scale", () => {
+    const data = makeData(
+      line(300, 120, 900),
+      verticalLine(512, 300, 860),
+    );
+    const scale = 0.62;
+    const scaled = data.medians.map((median) =>
+      median.map((point) => ({
+        x: 512 + (point.x - 512) * scale,
+        y: 512 + (point.y - 512) * scale,
+      })),
+    );
+    const result = evaluateCharacter(strokes(...scaled), data);
 
     expect(result.verdict).toBe("correct");
     expect(result.reasons).toEqual([]);

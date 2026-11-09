@@ -11,8 +11,8 @@ export default defineConfig({
       injectRegister: false,
       includeAssets: ["icons/apple-touch-icon.png"],
       manifest: {
-        name: "小桃猫生字复习",
-        short_name: "小桃猫生字",
+        name: "小咪学生字",
+        short_name: "小咪学生字",
         description: "四年级上册生字认读与手写练习",
         lang: "zh-CN",
         start_url: ".",

@@ -33,7 +33,7 @@ describe("App", () => {
     render(<App />);
 
     expect(
-      screen.getByRole("heading", { name: "小桃猫生字屋" }),
+      screen.getByRole("heading", { name: "小咪学生字" }),
     ).toBeInTheDocument();
     expect(
       await screen.findByRole("heading", { name: "选择课目" }),

@@ -13,10 +13,10 @@ import type {
 } from "./types";
 
 const CHARACTER_SIZE = 1024;
-const POSITION_CENTER_DISTANCE = 350;
-const POSITION_MINIMUM_DIAGONAL_RATIO = 0.45;
-const POSITION_MAXIMUM_DIAGONAL_RATIO = 1.8;
-const POSITION_MINIMUM_STUDENT_OVERLAP = 0.35;
+const POSITION_CENTER_DISTANCE = 380;
+const POSITION_MINIMUM_DIAGONAL_RATIO = 0.44;
+const POSITION_MAXIMUM_DIAGONAL_RATIO = 2.2;
+const POSITION_MINIMUM_STUDENT_OVERLAP = 0.22;
 const EPSILON = 1e-9;
 
 export type Verdict = "correct" | "incorrect" | "unclear";
@@ -125,56 +125,123 @@ function totalLength(strokes: ProcessedStroke[] | Point[][]): number {
   }, 0);
 }
 
-function canAssignRemaining(
-  matches: StrokeMatchMatrix,
-  forcedActual: number,
-  usedExpected: boolean[],
-  memo: Set<string>,
-): boolean {
-  const visit = (index: number): boolean => {
-    if (index === matches.length) return true;
-    if (index === forcedActual) return visit(index + 1);
-
-    const memoKey = `${index}:${usedExpected.map((used) => (used ? "1" : "0")).join("")}`;
-    if (memo.has(memoKey)) return false;
-
-    const row = matches[index]!;
-    for (let expectedIndex = 0; expectedIndex < row.length; expectedIndex += 1) {
-      if (usedExpected[expectedIndex] || !row[expectedIndex]!.matched) continue;
-      usedExpected[expectedIndex] = true;
-      if (visit(index + 1)) return true;
-      usedExpected[expectedIndex] = false;
-    }
-
-    memo.add(memoKey);
-    return false;
-  };
-
-  return visit(0);
-}
-
-function hasNonIdentityFullAssignment(matches: StrokeMatchMatrix): boolean {
-  const strokeCount = matches.length;
-  if (strokeCount === 0 || matches.some((row) => row.length !== strokeCount)) {
-    return false;
+function maximumAssignmentScore(weights: number[][]): number | null {
+  const size = weights.length;
+  if (size === 0) return 0;
+  if (weights.some((row) => row.some((value) => !Number.isFinite(value)))) {
+    return null;
   }
 
+  const rowPotential = Array.from({ length: size + 1 }, () => 0);
+  const columnPotential = Array.from({ length: size + 1 }, () => 0);
+  const columnMatch = Array.from({ length: size + 1 }, () => 0);
+  const previousColumn = Array.from({ length: size + 1 }, () => 0);
+
+  for (let row = 1; row <= size; row += 1) {
+    columnMatch[0] = row;
+    let currentColumn = 0;
+    const minimum = Array.from({ length: size + 1 }, () =>
+      Number.POSITIVE_INFINITY,
+    );
+    const used = Array.from({ length: size + 1 }, () => false);
+
+    do {
+      used[currentColumn] = true;
+      const currentRow = columnMatch[currentColumn]!;
+      let delta = Number.POSITIVE_INFINITY;
+      let nextColumn = 0;
+
+      for (let column = 1; column <= size; column += 1) {
+        if (used[column]) continue;
+        const reducedCost =
+          -weights[currentRow - 1]![column - 1]! -
+          rowPotential[currentRow]! -
+          columnPotential[column]!;
+        if (reducedCost < minimum[column]!) {
+          minimum[column] = reducedCost;
+          previousColumn[column] = currentColumn;
+        }
+        if (minimum[column]! < delta) {
+          delta = minimum[column]!;
+          nextColumn = column;
+        }
+      }
+
+      if (!Number.isFinite(delta)) return null;
+      for (let column = 0; column <= size; column += 1) {
+        if (used[column]) {
+          const matchedRow = columnMatch[column]!;
+          rowPotential[matchedRow] = rowPotential[matchedRow]! + delta;
+          columnPotential[column] = columnPotential[column]! - delta;
+        } else {
+          minimum[column] = minimum[column]! - delta;
+        }
+      }
+      currentColumn = nextColumn;
+    } while (columnMatch[currentColumn] !== 0);
+
+    do {
+      const nextColumn = previousColumn[currentColumn]!;
+      columnMatch[currentColumn] = columnMatch[nextColumn]!;
+      currentColumn = nextColumn;
+    } while (currentColumn !== 0);
+  }
+
+  const assignment = Array.from({ length: size }, () => 0);
+  for (let column = 1; column <= size; column += 1) {
+    assignment[columnMatch[column]! - 1] = column - 1;
+  }
+  return assignment.reduce(
+    (sum, column, row) => sum + weights[row]![column]!,
+    0,
+  );
+}
+
+function bestNonIdentityAssignmentScore(
+  matches: StrokeMatchMatrix,
+): number | null {
+  const strokeCount = matches.length;
+  if (strokeCount < 2 || matches.some((row) => row.length !== strokeCount)) {
+    return null;
+  }
+
+  const weights = matches.map((row) =>
+    row.map((match) =>
+      match.matched ? match.forward.score : Number.NEGATIVE_INFINITY,
+    ),
+  );
+  let best: number | null = null;
+
   for (let actualIndex = 0; actualIndex < strokeCount; actualIndex += 1) {
-    const row = matches[actualIndex]!;
     for (let expectedIndex = 0; expectedIndex < strokeCount; expectedIndex += 1) {
-      if (actualIndex === expectedIndex || !row[expectedIndex]!.matched) {
+      if (
+        actualIndex === expectedIndex ||
+        !matches[actualIndex]![expectedIndex]!.matched
+      ) {
         continue;
       }
 
-      const usedExpected = Array.from({ length: strokeCount }, () => false);
-      usedExpected[expectedIndex] = true;
-      if (canAssignRemaining(matches, actualIndex, usedExpected, new Set())) {
-        return true;
-      }
+      const remainingRows = Array.from(
+        { length: strokeCount },
+        (_, index) => index,
+      ).filter((index) => index !== actualIndex);
+      const remainingColumns = Array.from(
+        { length: strokeCount },
+        (_, index) => index,
+      ).filter((index) => index !== expectedIndex);
+      const remainingWeights = remainingRows.map((row) =>
+        remainingColumns.map((column) => weights[row]![column]!),
+      );
+      const remainingScore = maximumAssignmentScore(remainingWeights);
+      if (remainingScore === null) continue;
+
+      const total =
+        matches[actualIndex]![expectedIndex]!.forward.score + remainingScore;
+      best = best === null ? total : Math.max(best, total);
     }
   }
 
-  return false;
+  return best;
 }
 
 function centroid(points: Point[]): Point {
@@ -440,7 +507,17 @@ export function evaluateCharacter(
   const allForwardMatched = identityMatches.every(
     (match) => match?.matched === true,
   );
-  if (!allForwardMatched && hasNonIdentityFullAssignment(matches)) {
+  const identityScore = identityMatches.reduce(
+    (sum, match) => sum + match!.forward.score,
+    0,
+  );
+  const nonIdentityScore = allForwardMatched
+    ? null
+    : bestNonIdentityAssignmentScore(matches);
+  if (
+    nonIdentityScore !== null &&
+    nonIdentityScore >= identityScore + thresholds.minimumOrderScoreAdvantage
+  ) {
     return result(
       "incorrect",
       ["stroke_order"],
