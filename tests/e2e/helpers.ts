@@ -124,13 +124,13 @@ export async function drawMedians(
 
     await page.mouse.move(
       Math.round(box.x + (first[0] / 1024) * box.width),
-      Math.round(box.y + (first[1] / 1024) * box.height),
+      Math.round(box.y + ((900 - first[1]) / 1024) * box.height),
     );
     await page.mouse.down();
     for (const point of rest) {
       await page.mouse.move(
         Math.round(box.x + (point[0] / 1024) * box.width),
-        Math.round(box.y + (point[1] / 1024) * box.height),
+        Math.round(box.y + ((900 - point[1]) / 1024) * box.height),
         { steps: 2 },
       );
     }

@@ -252,7 +252,7 @@ function toInput(
     id: `fixture-${index}`,
     points: median.map((point) => ({
       x: point.x / 1024,
-      y: point.y / 1024,
+      y: (900 - point.y) / 1024,
     })),
   }));
 }

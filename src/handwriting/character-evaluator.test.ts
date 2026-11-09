@@ -17,6 +17,16 @@ function strokes(...medians: Median[]): InputStroke[] {
     id: `s${index}`,
     points: points.map((point) => ({
       x: point.x / 1024,
+      y: (900 - point.y) / 1024,
+    })),
+  }));
+}
+
+function screenStrokes(...medians: Median[]): InputStroke[] {
+  return medians.map((points, index) => ({
+    id: `screen-${index}`,
+    points: points.map((point) => ({
+      x: point.x / 1024,
       y: point.y / 1024,
     })),
   }));
@@ -61,7 +71,7 @@ describe("character evaluator", () => {
   it("keeps production thresholds explicit and calibrated", () => {
     expect(DEFAULT_THRESHOLDS.minimumPointCount).toBe(3);
     expect(DEFAULT_THRESHOLDS.outOfBoundsTolerance).toBe(0.08);
-    expect(DEFAULT_THRESHOLDS.shapeDistance).toBe(0.55);
+    expect(DEFAULT_THRESHOLDS.shapeDistance).toBe(0.48);
     expect(DEFAULT_THRESHOLDS.minimumOrderScoreAdvantage).toBe(0.12);
   });
 
@@ -70,6 +80,21 @@ describe("character evaluator", () => {
     expect(result.verdict).toBe("correct");
     expect(result.reasons).toEqual([]);
     expect(result.confidence).toBeGreaterThan(0.99);
+  });
+
+  it("accepts a vertical stroke captured top-to-bottom on the writing pad", () => {
+    const data = makeData(verticalLine(512, 800, 0));
+    const result = evaluateCharacter(
+      screenStrokes([
+        { x: 512, y: 100 },
+        { x: 512, y: 500 },
+        { x: 512, y: 900 },
+      ]),
+      data,
+    );
+
+    expect(result.verdict).toBe("correct");
+    expect(result.reasons).toEqual([]);
   });
 
   it("prioritizes stroke count over shape mismatches", () => {
@@ -254,8 +279,8 @@ describe("character evaluator", () => {
 
   it("rejects an excessive student/model center distance", () => {
     const thresholds = highDistanceThresholds();
-    const data = makeData(line(0, 100, 220), line(650, 100, 220));
-    const shifted = strokes(line(400, 100, 220), line(1050, 100, 220));
+    const data = makeData(line(300, 100, 220), line(600, 100, 220));
+    const shifted = strokes(line(300, 760, 880), line(600, 760, 880));
     const result = evaluateCharacter(shifted, data, thresholds);
 
     expect(result.verdict).toBe("incorrect");

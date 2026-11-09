@@ -13,11 +13,13 @@ import type {
 } from "./types";
 
 const CHARACTER_SIZE = 1024;
+const HANZI_WRITER_TOP_Y = 900;
 const POSITION_CENTER_DISTANCE = 380;
 const POSITION_MINIMUM_DIAGONAL_RATIO = 0.44;
-const POSITION_MAXIMUM_DIAGONAL_RATIO = 2.2;
-const POSITION_MINIMUM_STUDENT_OVERLAP = 0.22;
+const POSITION_MAXIMUM_DIAGONAL_RATIO = 2;
+const POSITION_MINIMUM_STUDENT_OVERLAP = 0.28;
 const EPSILON = 1e-9;
+const ASSIGNMENT_FORBIDDEN = -1_000_000;
 
 export type Verdict = "correct" | "incorrect" | "unclear";
 
@@ -118,6 +120,17 @@ function hasInvalidInput(
   return pointCount === 0;
 }
 
+function orientWritingPadStrokes(strokes: InputStroke[]): InputStroke[] {
+  const topOffset = HANZI_WRITER_TOP_Y / CHARACTER_SIZE;
+  return strokes.map((stroke) => ({
+    ...stroke,
+    points: stroke.points.map((point) => ({
+      x: point.x,
+      y: topOffset - point.y,
+    })),
+  }));
+}
+
 function totalLength(strokes: ProcessedStroke[] | Point[][]): number {
   return strokes.reduce((sum, stroke) => {
     const points = Array.isArray(stroke) ? stroke : stroke.points;
@@ -128,9 +141,14 @@ function totalLength(strokes: ProcessedStroke[] | Point[][]): number {
 function maximumAssignmentScore(weights: number[][]): number | null {
   const size = weights.length;
   if (size === 0) return 0;
-  if (weights.some((row) => row.some((value) => !Number.isFinite(value)))) {
+  if (weights.some((row) => row.every((value) => !Number.isFinite(value)))) {
     return null;
   }
+  const normalizedWeights = weights.map((row) =>
+    row.map((value) =>
+      Number.isFinite(value) ? value : ASSIGNMENT_FORBIDDEN,
+    ),
+  );
 
   const rowPotential = Array.from({ length: size + 1 }, () => 0);
   const columnPotential = Array.from({ length: size + 1 }, () => 0);
@@ -154,7 +172,7 @@ function maximumAssignmentScore(weights: number[][]): number | null {
       for (let column = 1; column <= size; column += 1) {
         if (used[column]) continue;
         const reducedCost =
-          -weights[currentRow - 1]![column - 1]! -
+          -normalizedWeights[currentRow - 1]![column - 1]! -
           rowPotential[currentRow]! -
           columnPotential[column]!;
         if (reducedCost < minimum[column]!) {
@@ -191,10 +209,11 @@ function maximumAssignmentScore(weights: number[][]): number | null {
   for (let column = 1; column <= size; column += 1) {
     assignment[columnMatch[column]! - 1] = column - 1;
   }
-  return assignment.reduce(
-    (sum, column, row) => sum + weights[row]![column]!,
+  const score = assignment.reduce(
+    (sum, column, row) => sum + normalizedWeights[row]![column]!,
     0,
   );
+  return score <= ASSIGNMENT_FORBIDDEN / 2 ? null : score;
 }
 
 function bestNonIdentityAssignmentScore(
@@ -440,7 +459,7 @@ export function evaluateCharacter(
     return result("unclear", ["ink_quality"], 0);
   }
 
-  const processed = preprocessStrokes(strokes, {
+  const processed = preprocessStrokes(orientWritingPadStrokes(strokes), {
     size: CHARACTER_SIZE,
     minimumPointCount: thresholds.minimumPointCount,
     minimumLength: thresholds.minimumStrokeLength,
