@@ -1,0 +1,51 @@
+{
+  "name": "cat-vocab-review",
+  "version": "1.0.0",
+  "description": "统编版四年级上册生字认读与手写复习工具",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "vitest",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test:e2e": "VITE_BASE_PATH=/cat-vocab/ npm run build && VITE_BASE_PATH=/cat-vocab/ playwright test",
+    "generate:content": "node scripts/generate-content.mjs",
+    "pretest": "npm run generate:content",
+    "prebuild": "npm run generate:content && npm run generate:icons && npm run generate:licenses",
+    "verify:dist": "node scripts/verify-dist.mjs",
+    "generate:icons": "node scripts/generate-icons.mjs",
+    "generate:licenses": "node scripts/generate-licenses.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "hanzi-writer": "^3.7.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "hanzi-writer-data": "^2.0.1",
+    "jsdom": "^31.0.0",
+    "sharp": "^0.35.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.1.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,5 +1,12 @@
-.DS_Store
 node_modules/
 dist/
-work/node_modules/
-work/textbook-page-*.jpg
+public/content.json
+public/characters/
+playwright-report/
+test-results/
+.DS_Store
+*.tsbuildinfo
+work/
+
+public/icons/
+public/licenses/

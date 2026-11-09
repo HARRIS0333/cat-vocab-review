@@ -1,0 +1,406 @@
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: calc(8px + var(--safe-top));
+  left: calc(8px + var(--safe-left));
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 2px solid var(--color-cherry-pink);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  color: var(--color-deep-plum);
+  font-weight: 800;
+  text-decoration: none;
+  transform: translateY(calc(-100% - 24px - var(--safe-top)));
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus-visible {
+  outline-offset: 2px;
+  transform: translateY(0);
+}
+
+.app-header {
+  position: relative;
+  z-index: 2;
+  grid-area: header;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.brand,
+.brand > div {
+  min-width: 0;
+}
+
+.app-header h1 {
+  overflow-wrap: anywhere;
+}
+
+.app-header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.lesson-drawer-trigger {
+  display: inline-flex;
+}
+
+.app-main {
+  grid-area: main;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
+.app-main:focus {
+  outline: none;
+}
+
+.app-main:focus-visible {
+  outline: 3px solid var(--color-cherry-pink);
+  outline-offset: 8px;
+}
+
+.lesson-sidebar {
+  display: none;
+}
+
+.lesson-list--compact {
+  min-width: 0;
+}
+
+.lesson-list--compact .unit-heading {
+  padding: 14px 6px 6px;
+}
+
+.lesson-list--compact .unit-heading:first-child {
+  padding-top: 2px;
+}
+
+.lesson-list--compact .unit-heading h3 {
+  color: #986077;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+
+.lesson-list--compact .lesson-item {
+  margin-bottom: 4px;
+}
+
+.lesson-list--compact .lesson-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 3px 8px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border-color: transparent;
+  border-radius: 13px;
+  background: rgb(255 255 255 / 62%);
+  font-size: 0.9rem;
+}
+
+.lesson-list--compact .lesson-title {
+  grid-column: 1 / -1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.lesson-list--compact .lesson-count {
+  font-size: 0.76rem;
+  opacity: 0.82;
+}
+
+.lesson-list--compact .lesson-link[aria-current="page"] {
+  border-color: #e9b9c5;
+  background: #fff5f7;
+  box-shadow: inset 3px 0 0 var(--color-cherry-pink);
+}
+
+.lesson-drawer {
+  width: min(calc(100% - 32px), 560px);
+  max-height: min(82dvh, 760px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e9bdc8;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 100% 0, #f9dce4 0, transparent 15rem),
+    #fffaf8;
+  box-shadow: 0 28px 80px rgb(81 42 54 / 24%);
+  color: var(--color-deep-plum);
+}
+
+.lesson-drawer[open] {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+}
+
+.lesson-drawer::backdrop {
+  background: rgb(79 45 57 / 38%);
+  backdrop-filter: blur(3px);
+}
+
+.lesson-drawer__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 22px 20px 10px;
+}
+
+.lesson-drawer__header h2 {
+  margin: 0;
+  font-family: var(--font-kai);
+  font-size: clamp(1.7rem, 5vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.lesson-drawer__eyebrow,
+.lesson-drawer__description {
+  margin: 0;
+}
+
+.lesson-drawer__eyebrow {
+  color: #986077;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.lesson-drawer__description {
+  padding: 0 20px 12px;
+  color: #8d5365;
+  font-size: 0.92rem;
+}
+
+.lesson-drawer__content {
+  min-height: 0;
+  padding: 0 12px calc(16px + var(--safe-bottom));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #e8b8c4 transparent;
+  scrollbar-width: thin;
+}
+
+.progress-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.progress-clear-trigger {
+  color: #8e4c61;
+}
+
+.progress-clear-feedback {
+  margin: 8px 0 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #eaf7ef;
+  color: #376b56;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.fatal-error {
+  display: grid;
+  width: min(calc(100% - 24px), 640px);
+  min-height: calc(100dvh - 12px - var(--safe-top) - var(--safe-bottom));
+  align-content: center;
+  justify-items: center;
+  gap: 12px;
+  margin-inline: auto;
+  padding:
+    calc(24px + var(--safe-top))
+    calc(20px + var(--safe-right))
+    calc(24px + var(--safe-bottom))
+    calc(20px + var(--safe-left));
+  text-align: center;
+}
+
+.fatal-error__mascot {
+  display: grid;
+  width: 92px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 2px solid #e6b4c1;
+  border-radius: 46% 54% 48% 52%;
+  background:
+    radial-gradient(circle at 32% 55%, #7b4051 0 3px, transparent 3.5px),
+    radial-gradient(circle at 68% 55%, #7b4051 0 3px, transparent 3.5px),
+    #fff1dc;
+  box-shadow: 0 12px 28px rgb(123 64 81 / 12%);
+  color: transparent;
+  font-size: 0;
+}
+
+.fatal-error h1,
+.fatal-error p {
+  margin: 0;
+}
+
+.fatal-error h1 {
+  font-family: var(--font-kai);
+  font-size: clamp(1.8rem, 7vw, 2.6rem);
+}
+
+.fatal-error p {
+  max-width: 34rem;
+}
+
+.fatal-error .button {
+  margin-top: 6px;
+}
+
+@media (orientation: landscape) and (min-width: 900px) {
+  .app-shell {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "sidebar main";
+    grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0 24px;
+    align-items: start;
+  }
+
+  .lesson-sidebar {
+    position: sticky;
+    top: calc(12px + var(--safe-top));
+    display: grid;
+    grid-area: sidebar;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    max-height: calc(100dvh - 24px - var(--safe-top) - var(--safe-bottom));
+    padding: 20px 12px 16px 18px;
+    overflow: hidden;
+    border: 1px solid #edc7d1;
+    border-radius: 26px;
+    background:
+      radial-gradient(circle at 100% 0, rgb(247 211 221 / 76%) 0, transparent 12rem),
+      radial-gradient(circle at 8% 96%, rgb(238 248 242 / 82%) 0, transparent 9rem),
+      rgb(255 253 251 / 92%);
+    box-shadow: 0 18px 38px rgb(123 64 81 / 9%);
+  }
+
+  .lesson-sidebar::after {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 20px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(217 108 138 / 12%);
+    box-shadow:
+      -8px -7px 0 -4px rgb(217 108 138 / 16%),
+      8px -7px 0 -4px rgb(217 108 138 / 16%);
+    content: "";
+    pointer-events: none;
+  }
+
+  .lesson-sidebar__eyebrow,
+  .lesson-sidebar h2 {
+    margin: 0;
+  }
+
+  .lesson-sidebar__eyebrow {
+    color: #986077;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .lesson-sidebar h2 {
+    margin: 2px 0 10px;
+    font-family: var(--font-kai);
+    font-size: 1.55rem;
+  }
+
+  .lesson-sidebar__content {
+    min-height: 0;
+    padding-right: 6px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: #e8b8c4 transparent;
+    scrollbar-width: thin;
+  }
+
+  .lesson-drawer-trigger {
+    display: none;
+  }
+
+  .app-main {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .home-page {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.78fr) minmax(320px, 1.22fr);
+    align-items: start;
+    gap: 20px 28px;
+    width: min(100%, 1040px);
+  }
+
+  .home-page > .page-heading {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .home-page > .resume-card {
+    grid-column: 1;
+    margin-bottom: 0;
+  }
+
+  .home-page > .home-lesson-list {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+}
+
+@media (max-width: 680px), (orientation: portrait) {
+  .lesson-drawer {
+    position: fixed;
+    inset: auto 8px calc(8px + var(--safe-bottom));
+    width: auto;
+    max-height: min(86dvh, 860px);
+    margin: 0;
+    border-radius: 28px 28px 20px 20px;
+  }
+
+  .lesson-drawer__header {
+    padding: 18px 16px 8px;
+  }
+
+  .lesson-drawer__description {
+    padding-inline: 16px;
+  }
+
+  .lesson-drawer__content {
+    padding-inline: 8px;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-header__actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .app-header__actions .header-link {
+    margin-left: auto;
+  }
+
+  .progress-actions {
+    justify-content: stretch;
+  }
+
+  .progress-clear-trigger {
+    width: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+:root {
+  --color-warm-white: #fff9f7;
+  --color-cream-pink: #fbe8ec;
+  --color-cherry-pink: #d96c8a;
+  --color-action-rose: #b44d6d;
+  --color-deep-plum: #7b4051;
+  --color-mint: #78bfa4;
+  --color-border-pink: #ebcbd3;
+  --font-kai: "Kaiti SC", "STKaiti", "KaiTi", serif;
+  --font-ui: system-ui, -apple-system, "PingFang SC", sans-serif;
+  --radius-card: 24px;
+  --radius-control: 14px;
+  --shadow-soft: 0 12px 36px rgb(123 64 81 / 12%);
+}
