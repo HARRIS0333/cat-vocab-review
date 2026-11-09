@@ -107,6 +107,7 @@ export function WritingBoard({
   function handlePointerDown(event: ReactPointerEvent<HTMLDivElement>) {
     if (disabled || activePointerRef.current !== null) return;
 
+    event.preventDefault();
     activePointerRef.current = event.pointerId;
     const id = createStrokeId();
     activeStrokeRef.current = id;
@@ -170,6 +171,7 @@ export function WritingBoard({
       className="writing-board-panel"
       aria-label="手写练习"
       data-disabled={disabled ? "true" : undefined}
+      onContextMenu={(event) => event.preventDefault()}
     >
       <p className="writing-board-hint">请按笔顺在田字格中书写</p>
       <div

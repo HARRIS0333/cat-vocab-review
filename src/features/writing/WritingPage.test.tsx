@@ -13,10 +13,19 @@ import { saveRetryQueue } from "../session/retry-queue";
 import { WritingPage } from "./WritingPage";
 
 vi.mock("./WritingBoard", () => ({
-  WritingBoard: ({ onSubmit }: { onSubmit: (strokes: InputStroke[]) => void }) => (
-    <button onClick={() => onSubmit([
-      { id: "s1", points: [{ x: 0.1, y: 0.2 }, { x: 0.8, y: 0.2 }] },
-    ])}>提交测试笔迹</button>
+  WritingBoard: ({
+    strokes,
+    onSubmit,
+  }: {
+    strokes: InputStroke[];
+    onSubmit: (strokes: InputStroke[]) => void;
+  }) => (
+    <div>
+      <output data-testid="draft-stroke-count">{strokes.length}</output>
+      <button onClick={() => onSubmit([
+        { id: "s1", points: [{ x: 0.1, y: 0.2 }, { x: 0.8, y: 0.2 }] },
+      ])}>提交测试笔迹</button>
+    </div>
   ),
 }));
 
@@ -79,8 +88,6 @@ it("shows pinyin but not the answer and records a correct response", async () =>
   await userEvent.click(screen.getByRole("button", { name: "提交测试笔迹" }));
   expect(await screen.findByText("写对了！")).toBeInTheDocument();
   expect(store.getSnapshot().state.items[group.writing[0]!.id]?.writing?.status).toBe("correct");
-  await userEvent.click(screen.getByRole("button", { name: "下一字" }));
-  expect(window.location.hash).toContain("/summary?mode=write");
   const persisted = `${JSON.stringify(localStorage)}${JSON.stringify(sessionStorage)}`;
   expect(persisted).not.toContain("points");
   expect(persisted).not.toContain("strokes");
@@ -312,10 +319,17 @@ it("recovers after retrying a failed character-data load", async () => {
   expect(loadCharacterData).toHaveBeenCalledTimes(2);
 });
 
-it("automatically advances 800ms after a correct answer", async () => {
+it("automatically advances and clears strokes 2 seconds after a correct answer", async () => {
+  const twoItemGroup: ContentGroup = {
+    ...group,
+    writing: [
+      group.writing[0]!,
+      { id: "lesson-11:大:dà", char: "大", pinyin: "dà", polyphone: false },
+    ],
+  };
   render(
     <WritingPage
-      group={group}
+      group={twoItemGroup}
       retry={false}
       store={store}
       loadCharacterData={vi.fn().mockResolvedValue(data)}
@@ -335,11 +349,18 @@ it("automatically advances 800ms after a correct answer", async () => {
   try {
     fireEvent.click(screen.getByRole("button", { name: "提交测试笔迹" }));
     expect(screen.getByText("写对了！")).toBeInTheDocument();
+    expect(screen.getByTestId("draft-stroke-count")).toHaveTextContent("1");
     expect(window.location.hash).not.toContain("/summary");
 
-    act(() => vi.advanceTimersByTime(800));
+    act(() => vi.advanceTimersByTime(1999));
+    expect(screen.getByText("写对了！")).toBeInTheDocument();
 
-    expect(window.location.hash).toContain("/summary?mode=write");
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(1);
+    });
+
+    expect(screen.getByText("dà")).toBeInTheDocument();
+    expect(screen.getByTestId("draft-stroke-count")).toHaveTextContent("0");
   } finally {
     vi.useRealTimers();
   }

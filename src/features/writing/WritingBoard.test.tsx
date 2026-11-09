@@ -258,6 +258,9 @@ it("exposes the writing instructions and touch-safe visual contract", () => {
   expect(board.querySelector("svg")).toHaveAttribute("aria-hidden", "true");
   expect(css).toMatch(/\.writing-board\s*\{[^}]*touch-action:\s*none/s);
   expect(css).toMatch(/\.writing-board\s*\{[^}]*aspect-ratio:\s*1/s);
+  expect(css).toMatch(/\.writing-board-panel\s*\{[^}]*user-select:\s*none/s);
+  expect(css).toMatch(/\.writing-board-panel\s*\{[^}]*-webkit-touch-callout:\s*none/s);
   expect(css).toMatch(/\.writing-board__svg\s*\{[^}]*pointer-events:\s*none/s);
   expect(css).toMatch(/\.writing-board-actions\s+\.button\s*\{[^}]*min-height:\s*(?:4[4-9]|[5-9]\d)px/s);
+  expect(fireEvent.contextMenu(board)).toBe(false);
 });

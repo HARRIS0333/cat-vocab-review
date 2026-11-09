@@ -150,9 +150,13 @@ export function StrokePlayer({
   }, []);
 
   useEffect(() => {
-    if (size === null) return;
     const host = hostRef.current;
     if (!host) return;
+    const measuredWidth =
+      containerRef.current?.getBoundingClientRect().width ||
+      containerRef.current?.clientWidth ||
+      0;
+    const writerSize = displaySize(measuredWidth);
 
     const writerFactory = createWriter ?? HanziWriter.create;
     const sourceChanged =
@@ -172,8 +176,8 @@ export function StrokePlayer({
     }
 
     const options = {
-      width: size,
-      height: size,
+      width: writerSize,
+      height: writerSize,
       padding: 8,
       showOutline: false,
       showCharacter: false,
@@ -223,8 +227,17 @@ export function StrokePlayer({
     characterData,
     createWriter,
     prefersReducedMotion,
-    size,
   ]);
+
+  useEffect(() => {
+    if (size === null || !writerRef.current) return;
+
+    try {
+      writerRef.current.updateDimensions({ width: size, height: size });
+    } catch {
+      // A non-resizable test double can keep its original dimensions.
+    }
+  }, [size]);
 
   useEffect(
     () => () => {

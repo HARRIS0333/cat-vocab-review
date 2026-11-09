@@ -13,6 +13,9 @@ a,
 button,
 [role="button"] {
   touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .button {

@@ -151,12 +151,13 @@ export function WritingPage({
     if (state.phase !== "correct" || !currentItem) return;
     const itemId = currentItem.id;
     const timer = window.setTimeout(() => {
+      setDraftStrokes([]);
       setState((current) =>
         current.phase === "correct" && current.currentItem?.id === itemId
           ? writingSessionReducer(current, { type: "next" })
           : current,
       );
-    }, 800);
+    }, 2000);
 
     return () => window.clearTimeout(timer);
   }, [state.phase, currentItem?.id]);
@@ -210,11 +211,6 @@ export function WritingPage({
   function handleRetry() {
     setDraftStrokes([]);
     setState((current) => writingSessionReducer(current, { type: "retry" }));
-  }
-
-  function handleNext() {
-    setDraftStrokes([]);
-    setState((current) => writingSessionReducer(current, { type: "next" }));
   }
 
   function handleSkipWrong() {
@@ -314,7 +310,6 @@ export function WritingPage({
                     attempt={state.attempt}
                     onRetry={handleRetry}
                     onSkip={handleSkipWrong}
-                    onNext={handleNext}
                   />
                 ) : null}
               </>

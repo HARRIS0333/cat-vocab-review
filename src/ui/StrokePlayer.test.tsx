@@ -23,9 +23,15 @@ type WriterStub = {
   cancelQuiz?: ReturnType<typeof vi.fn>;
   hideCharacter?: ReturnType<typeof vi.fn>;
   showCharacter?: ReturnType<typeof vi.fn>;
+  updateDimensions?: ReturnType<typeof vi.fn>;
 };
 
-function setupWriter(writer: WriterStub = { animateCharacter: vi.fn() }) {
+function setupWriter(
+  writer: WriterStub = {
+    animateCharacter: vi.fn(),
+    updateDimensions: vi.fn(),
+  },
+) {
   const createWriter = vi.fn(() => writer) as unknown as StrokePlayerCreate;
   return { writer, createWriter };
 }
@@ -191,7 +197,11 @@ it("does not replay autoplay when only its container size changes", async () => 
     );
   });
 
-  await waitFor(() => expect(createWriter).toHaveBeenCalledTimes(2));
+  await waitFor(() => expect(writer.updateDimensions).toHaveBeenCalledWith({
+    width: 640,
+    height: 640,
+  }));
+  expect(createWriter).toHaveBeenCalledTimes(1);
   expect(writer.animateCharacter).toHaveBeenCalledTimes(1);
 });
 
@@ -247,7 +257,7 @@ it("suppresses automatic JavaScript animation for reduced motion", async () => {
   expect(writer.animateCharacter).not.toHaveBeenCalled();
 });
 
-it("rebuilds a square writer capped at 640 pixels when its container resizes", async () => {
+it("updates a square writer capped at 640 pixels when its container resizes", async () => {
   let resize: ResizeObserverCallback | undefined;
   const observe = vi.fn();
   const disconnect = vi.fn();
@@ -263,7 +273,7 @@ it("rebuilds a square writer capped at 640 pixels when its container resizes", a
   }
 
   vi.stubGlobal("ResizeObserver", ResizeObserverStub);
-  const { createWriter } = setupWriter();
+  const { writer, createWriter } = setupWriter();
   render(
     <StrokePlayer char="十" characterData={data} createWriter={createWriter} />,
   );
@@ -285,11 +295,11 @@ it("rebuilds a square writer capped at 640 pixels when its container resizes", a
     );
   });
 
-  await waitFor(() => expect(createWriter).toHaveBeenCalledTimes(2));
-  expect(writerCalls(createWriter)[1]?.[2]).toMatchObject({
+  await waitFor(() => expect(writer.updateDimensions).toHaveBeenCalledWith({
     width: 640,
     height: 640,
-  });
+  }));
+  expect(createWriter).toHaveBeenCalledTimes(1);
 });
 
 it("cancels, clears its host, disconnects observation, and clears timers on unmount", () => {

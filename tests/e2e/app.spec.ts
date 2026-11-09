@@ -130,7 +130,9 @@ test("draws real pointer strokes, shows correct feedback, summarizes, and persis
   await drawMedians(page, data);
   await page.getByRole("button", { name: "提交" }).click();
 
-  await expect(page.getByText("写对了！")).toBeVisible();
+  await expect(
+    page.getByRole("dialog", { name: "写对了！" }),
+  ).toBeVisible();
   await expectNoHorizontalOverflow(page);
   await expect(
     page.getByRole("heading", { name: "本次练习结果" }),
@@ -157,9 +159,8 @@ test("shows stroke-count feedback, autoplay guidance, and skip review summary", 
   await drawOneWrongStroke(page);
   await page.getByRole("button", { name: "提交" }).click();
 
-  await expect(
-    page.getByRole("heading", { name: "这次还差一点" }),
-  ).toBeVisible();
+  const errorDialog = page.getByRole("dialog", { name: "这次还差一点" });
+  await expect(errorDialog).toBeVisible();
   await expect(page.getByText("笔画数量不对")).toBeVisible();
   const strokePlayer = page.getByRole("region", { name: /标准笔顺动画/ });
   await expect(strokePlayer).toBeVisible();
@@ -171,6 +172,8 @@ test("shows stroke-count feedback, autoplay guidance, and skip review summary", 
   await expect(
     page.getByRole("button", { name: "重播笔顺" }),
   ).toBeVisible({ timeout: 30_000 });
+  await page.waitForTimeout(2200);
+  await expect(errorDialog).toBeVisible();
   await page.getByRole("button", { name: "先跳过" }).click();
 
   await expect(
@@ -203,7 +206,9 @@ test("reloads offline after the first online visit, completes real writing, and 
   await expectNoHorizontalOverflow(page);
   await drawMedians(page, data);
   await page.getByRole("button", { name: "提交" }).click();
-  await expect(page.getByText("写对了！")).toBeVisible();
+  await expect(
+    page.getByRole("dialog", { name: "写对了！" }),
+  ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "本次练习结果" }),
   ).toBeVisible();
