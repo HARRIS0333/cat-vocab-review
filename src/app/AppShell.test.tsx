@@ -112,7 +112,7 @@ describe("AppShell", () => {
     expect(toggle).toHaveFocus();
   });
 
-  it("shows a fixed lesson sidebar instead of the drawer trigger on wide screens", () => {
+  it("keeps the lesson drawer trigger on wide screens", () => {
     mockMatchMedia(true);
     render(
       <AppShell content={makeContentFixture()} currentRoute={{ name: "home" }}>
@@ -121,10 +121,10 @@ describe("AppShell", () => {
     );
 
     expect(
-      screen.getByRole("complementary", { name: "课目列表" }),
+      screen.getByRole("button", { name: "打开课目列表" }),
     ).toBeInTheDocument();
     expect(
-      screen.queryByRole("button", { name: "打开课目列表" }),
+      screen.queryByRole("complementary", { name: "课目列表" }),
     ).not.toBeInTheDocument();
     expect(screen.getByRole("contentinfo")).toHaveTextContent("关于与许可");
   });
@@ -194,10 +194,8 @@ describe("responsive CSS contract", () => {
     expect(stylesCss).toMatch(/overflow-x:\s*clip/);
     expect(stylesCss).toMatch(/address|textarea|select|input/);
     expect(uiCss).toMatch(/prefers-reduced-motion:\s*reduce/);
-    expect(lessonsCss).toMatch(
-      /grid-template-columns:\s*minmax\(240px, 300px\)\s+minmax\(0, 1fr\)/,
-    );
-    expect(lessonsCss).toMatch(
+    expect(stylesCss).toMatch(/\.app-shell\s*\{[^}]*display:\s*flex/s);
+    expect(lessonsCss).not.toMatch(
       /grid-template-areas:\s*"header header"\s*"sidebar main"/,
     );
     expect(writingCss).toMatch(

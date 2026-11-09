@@ -97,6 +97,8 @@ export function WritingPage({
   const [draftStrokes, setDraftStrokes] = useState<InputStroke[]>([]);
   const [loadState, setLoadState] = useState<LoadState | null>(null);
   const [loadVersion, setLoadVersion] = useState(0);
+  const boardAnchorRef = useRef<HTMLDivElement>(null);
+  const scrollToBoardPending = useRef(false);
   const completedHandled = useRef(false);
   const submissionLocked = useRef(false);
   const currentItem = state.currentItem;
@@ -152,6 +154,7 @@ export function WritingPage({
     const itemId = currentItem.id;
     const timer = window.setTimeout(() => {
       setDraftStrokes([]);
+      scrollToBoardPending.current = true;
       setState((current) =>
         current.phase === "correct" && current.currentItem?.id === itemId
           ? writingSessionReducer(current, { type: "next" })
@@ -161,6 +164,15 @@ export function WritingPage({
 
     return () => window.clearTimeout(timer);
   }, [state.phase, currentItem?.id]);
+
+  useEffect(() => {
+    if (!scrollToBoardPending.current || !characterData) return;
+    scrollToBoardPending.current = false;
+    boardAnchorRef.current?.scrollIntoView?.({
+      behavior: "smooth",
+      block: "center",
+    });
+  }, [characterData, currentItem?.id]);
 
   useEffect(() => {
     if (state.results.length === 0) return;
@@ -216,6 +228,7 @@ export function WritingPage({
   function handleSkipWrong() {
     if (!currentItem) return;
     store.recordWriting(currentItem.id, "skipped");
+    scrollToBoardPending.current = true;
     setDraftStrokes([]);
     setState((current) => writingSessionReducer(current, { type: "skip" }));
   }
@@ -223,6 +236,7 @@ export function WritingPage({
   function handleSkipUnavailable() {
     if (!currentItem) return;
     store.recordWriting(currentItem.id, "skipped");
+    scrollToBoardPending.current = true;
     setDraftStrokes([]);
     setState((current) => writingSessionReducer(current, { type: "load-failed" }));
   }
@@ -290,7 +304,7 @@ export function WritingPage({
                 </div>
               </section>
             ) : characterData ? (
-              <>
+              <div ref={boardAnchorRef} className="writing-board-anchor">
                 <WritingBoard
                   strokes={draftStrokes}
                   disabled={state.phase !== "answering"}
@@ -312,7 +326,7 @@ export function WritingPage({
                     onSkip={handleSkipWrong}
                   />
                 ) : null}
-              </>
+              </div>
             ) : null}
           </>
         ) : (

@@ -16,36 +16,6 @@ type AppShellProps = PropsWithChildren<{
   currentRoute: Route;
 }>;
 
-const WIDE_LESSON_QUERY = "(orientation: landscape) and (min-width: 900px)";
-
-function useWideLessonSidebar(): boolean {
-  const [wide, setWide] = useState(() => {
-    if (typeof window.matchMedia !== "function") return false;
-    return window.matchMedia(WIDE_LESSON_QUERY).matches;
-  });
-
-  useEffect(() => {
-    if (typeof window.matchMedia !== "function") {
-      setWide(false);
-      return;
-    }
-
-    const query = window.matchMedia(WIDE_LESSON_QUERY);
-    const update = () => setWide(query.matches);
-    update();
-
-    if (typeof query.addEventListener === "function") {
-      query.addEventListener("change", update);
-      return () => query.removeEventListener("change", update);
-    }
-
-    query.addListener(update);
-    return () => query.removeListener(update);
-  }, []);
-
-  return wide;
-}
-
 function currentGroupId(route: Route): string | undefined {
   return route.name === "practice" || route.name === "summary"
     ? route.groupId
@@ -168,18 +138,10 @@ function LessonDrawer({
 }
 
 export function AppShell({ content, currentRoute, children }: AppShellProps) {
-  const wideLessonSidebar = useWideLessonSidebar();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const restoreDrawerFocus = useRef(false);
   const activeGroupId = currentGroupId(currentRoute);
-
-  useEffect(() => {
-    if (wideLessonSidebar && drawerOpen) {
-      restoreDrawerFocus.current = false;
-      setDrawerOpen(false);
-    }
-  }, [drawerOpen, wideLessonSidebar]);
 
   useEffect(() => {
     if (!drawerOpen && restoreDrawerFocus.current) {
@@ -215,43 +177,27 @@ export function AppShell({ content, currentRoute, children }: AppShellProps) {
             </div>
           </div>
           <nav className="app-header__actions" aria-label="页面导航">
-            {!wideLessonSidebar ? (
-              <button
-                ref={triggerRef}
-                id="lesson-drawer-trigger"
-                className="button button-secondary lesson-drawer-trigger"
-                type="button"
-                aria-label="打开课目列表"
-                aria-expanded={drawerOpen}
-                aria-controls="lesson-drawer"
-                aria-haspopup="dialog"
-                onClick={() => {
-                  restoreDrawerFocus.current = false;
-                  setDrawerOpen(true);
-                }}
-              >
-                <span className="lesson-drawer-trigger__full">打开课目列表</span>
-                <span className="lesson-drawer-trigger__compact" aria-hidden="true">
-                  课目
-                </span>
-              </button>
-            ) : null}
+            <button
+              ref={triggerRef}
+              id="lesson-drawer-trigger"
+              className="button button-secondary lesson-drawer-trigger"
+              type="button"
+              aria-label="打开课目列表"
+              aria-expanded={drawerOpen}
+              aria-controls="lesson-drawer"
+              aria-haspopup="dialog"
+              onClick={() => {
+                restoreDrawerFocus.current = false;
+                setDrawerOpen(true);
+              }}
+            >
+              <span className="lesson-drawer-trigger__full">打开课目列表</span>
+              <span className="lesson-drawer-trigger__compact" aria-hidden="true">
+                课目
+              </span>
+            </button>
           </nav>
         </header>
-
-        {wideLessonSidebar ? (
-          <aside className="lesson-sidebar" aria-label="课目列表">
-            <p className="lesson-sidebar__eyebrow">小桃猫陪你复习</p>
-            <h2>选择课目</h2>
-            <div className="lesson-sidebar__content">
-              <LessonList
-                groups={content.groups}
-                variant="compact"
-                currentGroupId={activeGroupId}
-              />
-            </div>
-          </aside>
-        ) : null}
 
         <main id="main-content" className="app-main" tabIndex={-1}>
           {children}

@@ -11,6 +11,8 @@ export type HandwritingThresholds = {
   maximumInkLengthRatio: number;
   ambiguityRatio: number;
   minimumOrderScoreAdvantage: number;
+  shapeDistanceP95: number;
+  normalizedShapeDistanceP95: number;
 };
 
 export const DEFAULT_THRESHOLDS: HandwritingThresholds = {
@@ -26,4 +28,6 @@ export const DEFAULT_THRESHOLDS: HandwritingThresholds = {
   maximumInkLengthRatio: 4,
   ambiguityRatio: 1.2,
   minimumOrderScoreAdvantage: 0.12,
+  shapeDistanceP95: 150,
+  normalizedShapeDistanceP95: 0.06,
 };

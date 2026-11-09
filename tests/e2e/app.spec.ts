@@ -98,17 +98,14 @@ test("keeps practice header geometry and footer navigation consistent", async ({
   );
 
   const lessonToggle = page.locator("#lesson-drawer-trigger");
-  if ((await lessonToggle.count()) > 0) {
-    await expect(lessonToggle).toBeVisible();
-    if ((page.viewportSize()?.width ?? 0) <= 560) {
-      await expect
-        .poll(() => lessonToggle.evaluate((element) => element.innerText.trim()))
-        .toBe("课目");
-    }
-  } else {
-    await expect(
-      page.getByRole("complementary", { name: "课目列表" }),
-    ).toBeVisible();
+  await expect(lessonToggle).toBeVisible();
+  await expect(
+    page.getByRole("complementary", { name: "课目列表" }),
+  ).toHaveCount(0);
+  if ((page.viewportSize()?.width ?? 0) <= 560) {
+    await expect
+      .poll(() => lessonToggle.evaluate((element) => element.innerText.trim()))
+      .toBe("课目");
   }
   const footer = page.getByRole("contentinfo");
   await expect(
@@ -148,7 +145,7 @@ test("draws real pointer strokes, shows correct feedback, summarizes, and persis
   await expect(page.getByText("已掌握 1")).toBeVisible();
 });
 
-test("shows stroke-count feedback, autoplay guidance, and skip review summary", async ({
+test("shows glyph feedback, autoplay guidance, and skip review summary", async ({
   page,
 }) => {
   await page.goto("./");
@@ -161,7 +158,7 @@ test("shows stroke-count feedback, autoplay guidance, and skip review summary", 
 
   const errorDialog = page.getByRole("dialog", { name: "这次还差一点" });
   await expect(errorDialog).toBeVisible();
-  await expect(page.getByText("笔画数量不对")).toBeVisible();
+  await expect(page.getByText("字形或笔画位置不太准确")).toBeVisible();
   const strokePlayer = page.getByRole("region", { name: /标准笔顺动画/ });
   await expect(strokePlayer).toBeVisible();
   await expect(strokePlayer.locator("svg")).toBeVisible();

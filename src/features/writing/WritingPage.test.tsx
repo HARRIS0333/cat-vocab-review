@@ -320,6 +320,8 @@ it("recovers after retrying a failed character-data load", async () => {
 });
 
 it("automatically advances and clears strokes 2 seconds after a correct answer", async () => {
+  const scrollIntoView = vi.fn();
+  Element.prototype.scrollIntoView = scrollIntoView;
   const twoItemGroup: ContentGroup = {
     ...group,
     writing: [
@@ -361,6 +363,10 @@ it("automatically advances and clears strokes 2 seconds after a correct answer",
 
     expect(screen.getByText("dà")).toBeInTheDocument();
     expect(screen.getByTestId("draft-stroke-count")).toHaveTextContent("0");
+    expect(scrollIntoView).toHaveBeenCalledWith({
+      behavior: "smooth",
+      block: "center",
+    });
   } finally {
     vi.useRealTimers();
   }

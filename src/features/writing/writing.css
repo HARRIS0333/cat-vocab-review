@@ -131,6 +131,12 @@
   margin-top: 20px;
 }
 
+.writing-board-anchor {
+  scroll-margin-block:
+    calc(72px + var(--safe-top))
+    calc(24px + var(--safe-bottom));
+}
+
 .writing-source-selector {
   display: grid;
   gap: 10px;

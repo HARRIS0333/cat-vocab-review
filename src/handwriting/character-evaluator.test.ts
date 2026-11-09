@@ -72,6 +72,8 @@ describe("character evaluator", () => {
     expect(DEFAULT_THRESHOLDS.minimumPointCount).toBe(3);
     expect(DEFAULT_THRESHOLDS.outOfBoundsTolerance).toBe(0.08);
     expect(DEFAULT_THRESHOLDS.shapeDistance).toBe(0.48);
+    expect(DEFAULT_THRESHOLDS.shapeDistanceP95).toBe(150);
+    expect(DEFAULT_THRESHOLDS.normalizedShapeDistanceP95).toBe(0.06);
     expect(DEFAULT_THRESHOLDS.minimumOrderScoreAdvantage).toBe(0.12);
   });
 
@@ -97,10 +99,10 @@ describe("character evaluator", () => {
     expect(result.reasons).toEqual([]);
   });
 
-  it("prioritizes stroke count over shape mismatches", () => {
+  it("uses missing visible strokes as a glyph-shape mismatch", () => {
     const result = evaluateCharacter(strokes(shi.medians[0]!), shi);
     expect(result.verdict).toBe("incorrect");
-    expect(result.reasons).toContain("stroke_count");
+    expect(result.reasons).toEqual(["stroke_shape"]);
   });
 
   it("prefers correct identity matches over an incidental non-identity assignment", () => {
@@ -111,33 +113,33 @@ describe("character evaluator", () => {
     expect(result.reasons).toEqual([]);
   });
 
-  it("prioritizes a complete wrong-order assignment over reversed identity strokes", () => {
+  it("accepts the same glyph written in a different stroke order", () => {
     const downward = verticalLine(512, 120, 900);
     const upward = [...downward].reverse();
     const data = makeData(downward, upward);
     const result = evaluateCharacter(strokes(upward, downward), data);
 
-    expect(result.verdict).toBe("incorrect");
-    expect(result.reasons).toEqual(["stroke_order"]);
+    expect(result.verdict).toBe("correct");
+    expect(result.reasons).toEqual([]);
   });
 
-  it("detects swapped stroke order", () => {
+  it("ignores swapped stroke order", () => {
     const result = evaluateCharacter(
       strokes(shi.medians[1]!, shi.medians[0]!),
       shi,
     );
-    expect(result.verdict).toBe("incorrect");
-    expect(result.reasons).toContain("stroke_order");
+    expect(result.verdict).toBe("correct");
+    expect(result.reasons).toEqual([]);
   });
 
-  it("detects reversed direction when order is otherwise correct", () => {
+  it("ignores stroke direction when the glyph shape is correct", () => {
     const reversedVertical = [...shi.medians[1]!].reverse();
     const result = evaluateCharacter(
       strokes(shi.medians[0]!, reversedVertical),
       shi,
     );
-    expect(result.verdict).toBe("incorrect");
-    expect(result.reasons).toContain("stroke_direction");
+    expect(result.verdict).toBe("correct");
+    expect(result.reasons).toEqual([]);
   });
 
   it("returns unclear for a single accidental tap", () => {
@@ -173,7 +175,7 @@ describe("character evaluator", () => {
     expect(result.reasons).toEqual(["ink_quality"]);
   });
 
-  it("returns unclear when every mismatch stays inside the ambiguity band", () => {
+  it("rejects a too-short horizontal as a glyph-shape mismatch", () => {
     const data = makeData(line(512, 120, 900));
     const tooShort = strokes([
       { x: 387, y: 512 },
@@ -182,8 +184,8 @@ describe("character evaluator", () => {
     ]);
     const result = evaluateCharacter(tooShort, data);
 
-    expect(result.verdict).toBe("unclear");
-    expect(result.reasons).toEqual(["ink_quality"]);
+    expect(result.verdict).toBe("incorrect");
+    expect(result.reasons).toEqual(["stroke_shape"]);
   });
 
   it("detects writing outside the normalized pad before matching", () => {
@@ -287,7 +289,7 @@ describe("character evaluator", () => {
     expect(result.reasons).toEqual(["stroke_shape"]);
   });
 
-  it("finds a complete non-identity assignment for a three-stroke order error", () => {
+  it("accepts a three-stroke glyph drawn out of order", () => {
     const data = makeData(
       line(200, 100, 220),
       line(500, 100, 220),
@@ -298,8 +300,8 @@ describe("character evaluator", () => {
       data,
     );
 
-    expect(result.verdict).toBe("incorrect");
-    expect(result.reasons).toEqual(["stroke_order"]);
+    expect(result.verdict).toBe("correct");
+    expect(result.reasons).toEqual([]);
   });
 
   it("keeps confidence bounded and returns no raw handwriting", () => {

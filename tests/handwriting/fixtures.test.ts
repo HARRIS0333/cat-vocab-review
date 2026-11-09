@@ -329,29 +329,27 @@ const variants: CalibrationVariant[] = [
     name: "swapped 十",
     char: "十",
     transform: "swap",
-    expected: "incorrect",
-    reason: "stroke_order",
+    expected: "correct",
   },
   {
     name: "reversed 人",
     char: "人",
     transform: "reverse",
-    expected: "incorrect",
-    reason: "stroke_direction",
+    expected: "correct",
   },
   {
     name: "missing 十",
     char: "十",
     transform: "missing",
     expected: "incorrect",
-    reason: "stroke_count",
+    reason: "stroke_shape",
   },
   {
     name: "extra 十",
     char: "十",
     transform: "extra",
     expected: "incorrect",
-    reason: "stroke_count",
+    reason: "stroke_shape",
   },
   {
     name: "wrong-shape 心",
@@ -417,7 +415,8 @@ describe("real Hanzi Writer calibration fixtures", () => {
 
   it.each(variants)("$name -> $expected", (variant) => {
     const character = loadCharacter(variant.char);
-    const result = evaluateCharacter(makeInput(character, variant.transform), character);
+    const input = makeInput(character, variant.transform);
+    const result = evaluateCharacter(input, character);
 
     expect(result.verdict).toBe(variant.expected);
     expect(result.confidence).toBeGreaterThanOrEqual(0);

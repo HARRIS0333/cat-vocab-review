@@ -1,9 +1,6 @@
 import { getBoundingBox, polylineLength, preprocessStrokes } from "./preprocess";
-import { matchStroke, type StrokeMetrics } from "./stroke-matcher";
-import {
-  DEFAULT_THRESHOLDS,
-  type HandwritingThresholds,
-} from "./thresholds";
+import type { StrokeMetrics } from "./stroke-matcher";
+import { DEFAULT_THRESHOLDS, type HandwritingThresholds } from "./thresholds";
 import type {
   Box,
   CharacterFileData,
@@ -19,7 +16,6 @@ const POSITION_MINIMUM_DIAGONAL_RATIO = 0.44;
 const POSITION_MAXIMUM_DIAGONAL_RATIO = 2;
 const POSITION_MINIMUM_STUDENT_OVERLAP = 0.28;
 const EPSILON = 1e-9;
-const ASSIGNMENT_FORBIDDEN = -1_000_000;
 
 export type Verdict = "correct" | "incorrect" | "unclear";
 
@@ -47,14 +43,9 @@ export type Evaluation = {
   strokeMatches: StrokeMatchDetail[];
 };
 
-type StrokeMatchMatrix = ReturnType<typeof matchStroke>[][];
-
 type PlacementCheck = {
   passed: boolean;
   quality: number;
-  centerDistance: number;
-  diagonalRatio: number;
-  studentOverlap: number;
 };
 
 function clamp(value: number, minimum: number, maximum: number): number {
@@ -65,35 +56,11 @@ function result(
   verdict: Verdict,
   reasons: ErrorReason[],
   confidence: number,
-  strokeMatches: StrokeMatchDetail[] = [],
 ): Evaluation {
-  return { verdict, reasons, confidence, strokeMatches };
+  return { verdict, reasons, confidence, strokeMatches: [] };
 }
 
-function cloneMetrics(metrics: StrokeMetrics): StrokeMetrics {
-  return { ...metrics };
-}
-
-function summarizeMatch(
-  actualIndex: number,
-  expectedIndex: number,
-  match: ReturnType<typeof matchStroke>,
-): StrokeMatchDetail {
-  return {
-    actualIndex,
-    expectedIndex,
-    matched: match.matched,
-    reverseMatched: match.reverseMatched,
-    score: match.forward.score,
-    forward: cloneMetrics(match.forward),
-    reverse: match.reverse ? cloneMetrics(match.reverse) : null,
-  };
-}
-
-function hasFiniteAndInBoundsPoint(
-  point: Point,
-  tolerance: number,
-): boolean {
+function hasFiniteAndInBoundsPoint(point: Point, tolerance: number): boolean {
   return (
     Number.isFinite(point.x) &&
     Number.isFinite(point.y) &&
@@ -104,10 +71,7 @@ function hasFiniteAndInBoundsPoint(
   );
 }
 
-function hasInvalidInput(
-  strokes: InputStroke[],
-  tolerance: number,
-): boolean {
+function hasInvalidInput(strokes: InputStroke[], tolerance: number): boolean {
   if (strokes.length === 0) return true;
 
   let pointCount = 0;
@@ -136,131 +100,6 @@ function totalLength(strokes: ProcessedStroke[] | Point[][]): number {
     const points = Array.isArray(stroke) ? stroke : stroke.points;
     return sum + polylineLength(points);
   }, 0);
-}
-
-function maximumAssignmentScore(weights: number[][]): number | null {
-  const size = weights.length;
-  if (size === 0) return 0;
-  if (weights.some((row) => row.every((value) => !Number.isFinite(value)))) {
-    return null;
-  }
-  const normalizedWeights = weights.map((row) =>
-    row.map((value) =>
-      Number.isFinite(value) ? value : ASSIGNMENT_FORBIDDEN,
-    ),
-  );
-
-  const rowPotential = Array.from({ length: size + 1 }, () => 0);
-  const columnPotential = Array.from({ length: size + 1 }, () => 0);
-  const columnMatch = Array.from({ length: size + 1 }, () => 0);
-  const previousColumn = Array.from({ length: size + 1 }, () => 0);
-
-  for (let row = 1; row <= size; row += 1) {
-    columnMatch[0] = row;
-    let currentColumn = 0;
-    const minimum = Array.from({ length: size + 1 }, () =>
-      Number.POSITIVE_INFINITY,
-    );
-    const used = Array.from({ length: size + 1 }, () => false);
-
-    do {
-      used[currentColumn] = true;
-      const currentRow = columnMatch[currentColumn]!;
-      let delta = Number.POSITIVE_INFINITY;
-      let nextColumn = 0;
-
-      for (let column = 1; column <= size; column += 1) {
-        if (used[column]) continue;
-        const reducedCost =
-          -normalizedWeights[currentRow - 1]![column - 1]! -
-          rowPotential[currentRow]! -
-          columnPotential[column]!;
-        if (reducedCost < minimum[column]!) {
-          minimum[column] = reducedCost;
-          previousColumn[column] = currentColumn;
-        }
-        if (minimum[column]! < delta) {
-          delta = minimum[column]!;
-          nextColumn = column;
-        }
-      }
-
-      if (!Number.isFinite(delta)) return null;
-      for (let column = 0; column <= size; column += 1) {
-        if (used[column]) {
-          const matchedRow = columnMatch[column]!;
-          rowPotential[matchedRow] = rowPotential[matchedRow]! + delta;
-          columnPotential[column] = columnPotential[column]! - delta;
-        } else {
-          minimum[column] = minimum[column]! - delta;
-        }
-      }
-      currentColumn = nextColumn;
-    } while (columnMatch[currentColumn] !== 0);
-
-    do {
-      const nextColumn = previousColumn[currentColumn]!;
-      columnMatch[currentColumn] = columnMatch[nextColumn]!;
-      currentColumn = nextColumn;
-    } while (currentColumn !== 0);
-  }
-
-  const assignment = Array.from({ length: size }, () => 0);
-  for (let column = 1; column <= size; column += 1) {
-    assignment[columnMatch[column]! - 1] = column - 1;
-  }
-  const score = assignment.reduce(
-    (sum, column, row) => sum + normalizedWeights[row]![column]!,
-    0,
-  );
-  return score <= ASSIGNMENT_FORBIDDEN / 2 ? null : score;
-}
-
-function bestNonIdentityAssignmentScore(
-  matches: StrokeMatchMatrix,
-): number | null {
-  const strokeCount = matches.length;
-  if (strokeCount < 2 || matches.some((row) => row.length !== strokeCount)) {
-    return null;
-  }
-
-  const weights = matches.map((row) =>
-    row.map((match) =>
-      match.matched ? match.forward.score : Number.NEGATIVE_INFINITY,
-    ),
-  );
-  let best: number | null = null;
-
-  for (let actualIndex = 0; actualIndex < strokeCount; actualIndex += 1) {
-    for (let expectedIndex = 0; expectedIndex < strokeCount; expectedIndex += 1) {
-      if (
-        actualIndex === expectedIndex ||
-        !matches[actualIndex]![expectedIndex]!.matched
-      ) {
-        continue;
-      }
-
-      const remainingRows = Array.from(
-        { length: strokeCount },
-        (_, index) => index,
-      ).filter((index) => index !== actualIndex);
-      const remainingColumns = Array.from(
-        { length: strokeCount },
-        (_, index) => index,
-      ).filter((index) => index !== expectedIndex);
-      const remainingWeights = remainingRows.map((row) =>
-        remainingColumns.map((column) => weights[row]![column]!),
-      );
-      const remainingScore = maximumAssignmentScore(remainingWeights);
-      if (remainingScore === null) continue;
-
-      const total =
-        matches[actualIndex]![expectedIndex]!.forward.score + remainingScore;
-      best = best === null ? total : Math.max(best, total);
-    }
-  }
-
-  return best;
 }
 
 function centroid(points: Point[]): Point {
@@ -328,13 +167,7 @@ function checkPlacement(
   const studentPoints = studentStrokes.flatMap((stroke) => stroke.points);
   const standardPoints = standardMedians.flat();
   if (studentPoints.length === 0 || standardPoints.length === 0) {
-    return {
-      passed: false,
-      quality: 0,
-      centerDistance: Number.POSITIVE_INFINITY,
-      diagonalRatio: 0,
-      studentOverlap: 0,
-    };
+    return { passed: false, quality: 0 };
   }
 
   const studentCenter = centroid(studentPoints);
@@ -352,7 +185,6 @@ function checkPlacement(
     standardDiagonal <= EPSILON
       ? Number.POSITIVE_INFINITY
       : studentDiagonal / standardDiagonal;
-
   const studentOverlap = studentBoxOverlapRatio(studentBounds, standardBounds);
 
   const centerQuality = 1 - clamp(
@@ -361,15 +193,15 @@ function checkPlacement(
     1,
   );
   let diagonalQuality = 0;
-  if (diagonalRatio >= POSITION_MINIMUM_DIAGONAL_RATIO &&
-      diagonalRatio <= POSITION_MAXIMUM_DIAGONAL_RATIO) {
+  if (
+    diagonalRatio >= POSITION_MINIMUM_DIAGONAL_RATIO &&
+    diagonalRatio <= POSITION_MAXIMUM_DIAGONAL_RATIO
+  ) {
     diagonalQuality = 1;
   } else if (diagonalRatio < POSITION_MINIMUM_DIAGONAL_RATIO) {
-    diagonalQuality =
-      diagonalRatio / POSITION_MINIMUM_DIAGONAL_RATIO;
+    diagonalQuality = diagonalRatio / POSITION_MINIMUM_DIAGONAL_RATIO;
   } else {
-    diagonalQuality =
-      POSITION_MAXIMUM_DIAGONAL_RATIO / diagonalRatio;
+    diagonalQuality = POSITION_MAXIMUM_DIAGONAL_RATIO / diagonalRatio;
   }
   const overlapQuality = clamp(
     studentOverlap / POSITION_MINIMUM_STUDENT_OVERLAP,
@@ -377,69 +209,205 @@ function checkPlacement(
     1,
   );
 
-  const passed =
-    centerDistance <= POSITION_CENTER_DISTANCE &&
-    diagonalRatio >= POSITION_MINIMUM_DIAGONAL_RATIO &&
-    diagonalRatio <= POSITION_MAXIMUM_DIAGONAL_RATIO &&
-    studentOverlap >= POSITION_MINIMUM_STUDENT_OVERLAP;
-
   return {
-    passed,
+    passed:
+      centerDistance <= POSITION_CENTER_DISTANCE &&
+      diagonalRatio >= POSITION_MINIMUM_DIAGONAL_RATIO &&
+      diagonalRatio <= POSITION_MAXIMUM_DIAGONAL_RATIO &&
+      studentOverlap >= POSITION_MINIMUM_STUDENT_OVERLAP,
     quality: Math.min(centerQuality, diagonalQuality, overlapQuality),
-    centerDistance,
-    diagonalRatio,
-    studentOverlap,
   };
 }
 
-function metricsWithinAmbiguity(
-  metrics: StrokeMetrics,
-  thresholds: HandwritingThresholds,
-): boolean {
-  const ratio = thresholds.ambiguityRatio;
-  return (
-    metrics.meanDistance <= thresholds.meanDistance * ratio &&
-    metrics.startDistance <= thresholds.startEndDistance * ratio &&
-    metrics.endDistance <= thresholds.startEndDistance * ratio &&
-    metrics.shapeDistance <= thresholds.shapeDistance * ratio &&
-    metrics.lengthRatio >= thresholds.minimumLengthRatio / ratio &&
-    metrics.lengthRatio <= thresholds.maximumLengthRatio * ratio &&
-    metrics.directionSimilarity >= thresholds.minimumDirectionSimilarity / ratio
-  );
+function squaredDistance(first: Point, second: Point): number {
+  const dx = first.x - second.x;
+  const dy = first.y - second.y;
+  return dx * dx + dy * dy;
 }
 
-function calculateConfidence(
-  identityMatches: Array<ReturnType<typeof matchStroke> | undefined>,
-  actualCount: number,
-  expectedCount: number,
-  placement: PlacementCheck | null,
-  reason: ErrorReason | null,
+function distanceToSegment(
+  point: Point,
+  start: Point,
+  end: Point,
 ): number {
-  const denominator = Math.max(actualCount, expectedCount, 1);
-  const scoreSum = identityMatches.reduce(
-    (sum, match) => sum + (match?.forward.score ?? 0),
-    0,
-  );
-  const averageScore = scoreSum / denominator;
-  const countRatio =
-    Math.min(actualCount, expectedCount) / Math.max(actualCount, expectedCount, 1);
-  const placementFactor = placement?.quality ?? 0.45;
-  const reasonFactor: Record<ErrorReason, number> = {
-    stroke_count: 0.55,
-    stroke_shape: 0.65,
-    stroke_order: 0.7,
-    stroke_direction: 0.7,
-    ink_quality: 0.35,
-  };
+  const segmentLengthSquared = squaredDistance(start, end);
+  if (segmentLengthSquared === 0) {
+    return Math.hypot(point.x - start.x, point.y - start.y);
+  }
 
-  return clamp(
-    averageScore *
-      countRatio *
-      placementFactor *
-      (reason ? reasonFactor[reason] : 1),
+  const projection = clamp(
+    ((point.x - start.x) * (end.x - start.x) +
+      (point.y - start.y) * (end.y - start.y)) /
+      segmentLengthSquared,
     0,
     1,
   );
+  return Math.hypot(
+    point.x - (start.x + (end.x - start.x) * projection),
+    point.y - (start.y + (end.y - start.y) * projection),
+  );
+}
+
+function distanceToStrokes(point: Point, strokes: Point[][]): number {
+  let nearest = Number.POSITIVE_INFINITY;
+
+  for (const stroke of strokes) {
+    if (stroke.length === 1) {
+      nearest = Math.min(
+        nearest,
+        Math.hypot(point.x - stroke[0]!.x, point.y - stroke[0]!.y),
+      );
+      continue;
+    }
+
+    for (let index = 1; index < stroke.length; index += 1) {
+      nearest = Math.min(
+        nearest,
+        distanceToSegment(point, stroke[index - 1]!, stroke[index]!),
+      );
+    }
+  }
+
+  return nearest;
+}
+
+type DirectionDistanceProfile = {
+  mean: number;
+  p90: number;
+  p95: number;
+};
+
+function distanceProfile(
+  points: Point[],
+  strokes: Point[][],
+): DirectionDistanceProfile {
+  const distances = points
+    .map((point) => distanceToStrokes(point, strokes))
+    .sort((first, second) => first - second);
+  if (distances.length === 0) {
+    return {
+      mean: Number.POSITIVE_INFINITY,
+      p90: Number.POSITIVE_INFINITY,
+      p95: Number.POSITIVE_INFINITY,
+    };
+  }
+
+  return {
+    mean:
+      distances.reduce((sum, distance) => sum + distance, 0) / distances.length,
+    p90:
+      distances[Math.min(distances.length - 1, Math.floor(distances.length * 0.9))]!,
+    p95:
+      distances[Math.min(distances.length - 1, Math.floor(distances.length * 0.95))]!,
+  };
+}
+
+function normalizeGlyph(strokes: Point[][]): Point[][] {
+  const points = strokes.flat();
+  if (points.length === 0) return [];
+  const bounds = getBoundingBox(points);
+  const center = {
+    x: (bounds.minX + bounds.maxX) / 2,
+    y: (bounds.minY + bounds.maxY) / 2,
+  };
+  const diagonal = Math.hypot(bounds.width, bounds.height);
+  const scale = diagonal <= EPSILON ? 1 : 1 / diagonal;
+
+  return strokes.map((stroke) =>
+    stroke.map((point) => ({
+      x: (point.x - center.x) * scale,
+      y: (point.y - center.y) * scale,
+    })),
+  );
+}
+
+function bidirectionalInkMetrics(
+  actualStrokes: ProcessedStroke[],
+  expectedStrokes: Point[][],
+): {
+  mean: number;
+  actualP90: number;
+  expectedP90: number;
+  actualP95: number;
+  expectedP95: number;
+  normalizedMean: number;
+  normalizedActualP95: number;
+  normalizedExpectedP95: number;
+} {
+  const actualPoints = actualStrokes.flatMap((stroke) => stroke.points);
+  const expectedPoints = expectedStrokes.flat();
+  if (actualPoints.length === 0 || expectedPoints.length === 0) {
+    return {
+      mean: Number.POSITIVE_INFINITY,
+      actualP90: Number.POSITIVE_INFINITY,
+      expectedP90: Number.POSITIVE_INFINITY,
+      actualP95: Number.POSITIVE_INFINITY,
+      expectedP95: Number.POSITIVE_INFINITY,
+      normalizedMean: Number.POSITIVE_INFINITY,
+      normalizedActualP95: Number.POSITIVE_INFINITY,
+      normalizedExpectedP95: Number.POSITIVE_INFINITY,
+    };
+  }
+
+  const actualToExpected = distanceProfile(actualPoints, expectedStrokes);
+  const expectedToActual = distanceProfile(
+    expectedPoints,
+    actualStrokes.map((stroke) => stroke.points),
+  );
+  const normalizedActual = normalizeGlyph(
+    actualStrokes.map((stroke) => stroke.points),
+  );
+  const normalizedExpected = normalizeGlyph(expectedStrokes);
+  const normalizedActualToExpected = distanceProfile(
+    normalizedActual.flat(),
+    normalizedExpected,
+  );
+  const normalizedExpectedToActual = distanceProfile(
+    normalizedExpected.flat(),
+    normalizedActual,
+  );
+
+  return {
+    mean: (actualToExpected.mean + expectedToActual.mean) / 2,
+    actualP90: actualToExpected.p90,
+    expectedP90: expectedToActual.p90,
+    actualP95: actualToExpected.p95,
+    expectedP95: expectedToActual.p95,
+    normalizedMean:
+      (normalizedActualToExpected.mean + normalizedExpectedToActual.mean) / 2,
+    normalizedActualP95: normalizedActualToExpected.p95,
+    normalizedExpectedP95: normalizedExpectedToActual.p95,
+  };
+}
+
+export function measureGlyphMetrics(
+  strokes: InputStroke[],
+  characterData: CharacterFileData,
+  thresholds: HandwritingThresholds = DEFAULT_THRESHOLDS,
+): ReturnType<typeof bidirectionalInkMetrics> {
+  const processed = preprocessStrokes(orientWritingPadStrokes(strokes), {
+    size: CHARACTER_SIZE,
+    minimumPointCount: thresholds.minimumPointCount,
+    minimumLength: thresholds.minimumStrokeLength,
+  });
+  return bidirectionalInkMetrics(processed, characterData.medians);
+}
+
+function confidenceFromShape(
+  inkMetrics: ReturnType<typeof bidirectionalInkMetrics>,
+  placement: PlacementCheck,
+  thresholds: HandwritingThresholds,
+  verdict: Verdict,
+): number {
+  const tolerance = thresholds.meanDistance * thresholds.ambiguityRatio;
+  const shapeError = Math.max(
+    inkMetrics.mean,
+    inkMetrics.actualP95,
+    inkMetrics.expectedP95,
+  );
+  const shapeQuality = 1 - clamp(shapeError / Math.max(tolerance, 1), 0, 1);
+  const combined = shapeQuality * 0.75 + placement.quality * 0.25;
+  return clamp(verdict === "correct" ? combined : combined * 0.8, 0, 1);
 }
 
 export function evaluateCharacter(
@@ -468,165 +436,36 @@ export function evaluateCharacter(
     return result("unclear", ["ink_quality"], 0);
   }
 
-  const matches: StrokeMatchMatrix = processed.map((stroke) =>
-    characterData.medians.map((median) =>
-      matchStroke(stroke.points, median, thresholds),
-    ),
-  );
-  const identityMatches = matches.map((row, index) => row[index]);
-  const averageIdentityMatches = identityMatches.filter(
-    (match): match is ReturnType<typeof matchStroke> => Boolean(match),
-  );
-
   const studentLength = totalLength(processed);
   const expectedLength = totalLength(characterData.medians);
-  const anySameIndexForwardMatch = identityMatches.some(
-    (match) => match?.matched === true,
-  );
-
-  if (
-    studentLength >
-      expectedLength * thresholds.maximumInkLengthRatio &&
-    !anySameIndexForwardMatch
-  ) {
-    return result(
-      "unclear",
-      ["ink_quality"],
-      calculateConfidence(
-        identityMatches,
-        processed.length,
-        characterData.medians.length,
-        null,
-        "ink_quality",
-      ),
-    );
+  if (studentLength > expectedLength * thresholds.maximumInkLengthRatio) {
+    return result("unclear", ["ink_quality"], 0);
   }
 
-  if (processed.length !== characterData.medians.length) {
-    return result(
-      "incorrect",
-      ["stroke_count"],
-      calculateConfidence(
-        identityMatches,
-        processed.length,
-        characterData.medians.length,
-        null,
-        "stroke_count",
-      ),
-      matches
-        .slice(0, characterData.medians.length)
-        .map((row, index) => summarizeMatch(index, index, row[index]!)),
-    );
-  }
-
-  const strokeMatches = matches.map((row, index) =>
-    summarizeMatch(index, index, row[index]!),
+  const placement = checkPlacement(processed, characterData.medians);
+  const inkMetrics = bidirectionalInkMetrics(processed, characterData.medians);
+  const acceptableDistance =
+    thresholds.meanDistance * thresholds.ambiguityRatio;
+  const absoluteShapeAccepted =
+    inkMetrics.actualP95 <= thresholds.shapeDistanceP95 &&
+    inkMetrics.expectedP95 <= thresholds.shapeDistanceP95;
+  const normalizedShapeAccepted =
+    inkMetrics.normalizedActualP95 <= thresholds.normalizedShapeDistanceP95 &&
+    inkMetrics.normalizedExpectedP95 <= thresholds.normalizedShapeDistanceP95;
+  const shapeAccepted =
+    placement.passed &&
+    inkMetrics.mean <= acceptableDistance &&
+    (absoluteShapeAccepted || normalizedShapeAccepted);
+  const confidence = confidenceFromShape(
+    inkMetrics,
+    placement,
+    thresholds,
+    shapeAccepted ? "correct" : "incorrect",
   );
 
-  const allForwardMatched = identityMatches.every(
-    (match) => match?.matched === true,
-  );
-  const identityScore = identityMatches.reduce(
-    (sum, match) => sum + match!.forward.score,
-    0,
-  );
-  const nonIdentityScore = allForwardMatched
-    ? null
-    : bestNonIdentityAssignmentScore(matches);
-  if (
-    nonIdentityScore !== null &&
-    nonIdentityScore >= identityScore + thresholds.minimumOrderScoreAdvantage
-  ) {
-    return result(
-      "incorrect",
-      ["stroke_order"],
-      calculateConfidence(
-        identityMatches,
-        processed.length,
-        characterData.medians.length,
-        null,
-        "stroke_order",
-      ),
-      strokeMatches,
-    );
+  if (shapeAccepted) {
+    return result("correct", [], confidence);
   }
 
-  if (identityMatches.some((match) => match?.reverseMatched === true)) {
-    return result(
-      "incorrect",
-      ["stroke_direction"],
-      calculateConfidence(
-        identityMatches,
-        processed.length,
-        characterData.medians.length,
-        null,
-        "stroke_direction",
-      ),
-      strokeMatches,
-    );
-  }
-
-  if (allForwardMatched) {
-    const placement = checkPlacement(processed, characterData.medians);
-    if (placement.passed) {
-      return result(
-        "correct",
-        [],
-        calculateConfidence(
-          averageIdentityMatches,
-          processed.length,
-          characterData.medians.length,
-          placement,
-          null,
-        ),
-        strokeMatches,
-      );
-    }
-
-    return result(
-      "incorrect",
-      ["stroke_shape"],
-      calculateConfidence(
-        identityMatches,
-        processed.length,
-        characterData.medians.length,
-        placement,
-        "stroke_shape",
-      ),
-      strokeMatches,
-    );
-  }
-
-  const allNearMisses = identityMatches.every(
-    (match) =>
-      match?.matched === true ||
-      metricsWithinAmbiguity(match!.forward, thresholds),
-  );
-  if (allNearMisses) {
-    return result(
-      "unclear",
-      ["ink_quality"],
-      calculateConfidence(
-        identityMatches,
-        processed.length,
-        characterData.medians.length,
-        null,
-        "ink_quality",
-      ),
-      strokeMatches,
-    );
-  }
-
-  return result(
-    "incorrect",
-    ["stroke_shape"],
-    calculateConfidence(
-      identityMatches,
-      processed.length,
-      characterData.medians.length,
-      null,
-      "stroke_shape",
-    ),
-    strokeMatches,
-  );
+  return result("incorrect", ["stroke_shape"], confidence);
 }
