@@ -39,7 +39,6 @@ test("draws real pointer strokes, shows correct feedback, summarizes, and persis
 
   await expect(page.getByText("写对了！")).toBeVisible();
   await expectNoHorizontalOverflow(page);
-  await page.getByRole("button", { name: "下一字" }).click();
   await expect(
     page.getByRole("heading", { name: "本次练习结果" }),
   ).toBeVisible();
@@ -112,7 +111,6 @@ test("reloads offline after the first online visit, completes real writing, and 
   await drawMedians(page, data);
   await page.getByRole("button", { name: "提交" }).click();
   await expect(page.getByText("写对了！")).toBeVisible();
-  await page.getByRole("button", { name: "下一字" }).click();
   await expect(
     page.getByRole("heading", { name: "本次练习结果" }),
   ).toBeVisible();
