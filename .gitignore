@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+dist/
+work/node_modules/
+work/textbook-page-*.jpg
