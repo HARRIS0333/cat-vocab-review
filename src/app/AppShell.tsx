@@ -232,9 +232,6 @@ export function AppShell({ content, currentRoute, children }: AppShellProps) {
                 打开课目列表
               </button>
             ) : null}
-            <a className="header-link" href="#/about">
-              关于与许可
-            </a>
           </nav>
         </header>
 
@@ -255,6 +252,11 @@ export function AppShell({ content, currentRoute, children }: AppShellProps) {
         <main id="main-content" className="app-main" tabIndex={-1}>
           {children}
         </main>
+        <footer className="app-footer">
+          <a className="footer-link" href="#/about">
+            关于与许可
+          </a>
+        </footer>
       </div>
 
       {drawerOpen ? (

@@ -114,10 +114,14 @@
 
 .practice-page.writing-page,
 .writing-page {
+  width: min(100%, 760px);
+  margin-inline: auto;
+}
+
+.writing-stage {
   display: grid;
   gap: 20px;
-  width: min(100%, 960px);
-  margin-inline: auto;
+  margin-top: 20px;
 }
 
 .writing-source-selector {

@@ -69,6 +69,7 @@ describe("AppShell", () => {
       "href",
       "#/lesson/lesson-1/read",
     );
+    expect(screen.getByRole("contentinfo")).toHaveTextContent("关于与许可");
   });
 
   it("closes the drawer after choosing a lesson and restores trigger focus", async () => {
@@ -125,6 +126,7 @@ describe("AppShell", () => {
     expect(
       screen.queryByRole("button", { name: "打开课目列表" }),
     ).not.toBeInTheDocument();
+    expect(screen.getByRole("contentinfo")).toHaveTextContent("关于与许可");
   });
 
   it("moves focus to the main content without changing the route", async () => {

@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import {
   chooseSimpleTarget,
   drawMedians,
@@ -8,6 +8,41 @@ import {
   openSingleItemPractice,
   waitForOfflineReady,
 } from "./helpers";
+
+async function practiceHeaderMetrics(page: Page) {
+  return page.locator(".practice-page").evaluate((practice) => {
+    const back = practice.querySelector(":scope > .text-link");
+    const eyebrow = practice.querySelector(":scope > .eyebrow");
+    const title = practice.querySelector(":scope > #practice-heading");
+    const mode = practice.querySelector(":scope > .mode-switch");
+    if (!back || !eyebrow || !title || !mode) {
+      throw new Error("Practice header is incomplete");
+    }
+
+    const rect = (element: Element) =>
+      element.getBoundingClientRect();
+    const backRect = rect(back);
+    const eyebrowRect = rect(eyebrow);
+    const titleRect = rect(title);
+    const modeRect = rect(mode);
+
+    return {
+      backTop: Math.round(backRect.top),
+      backWidth: Math.round(backRect.width),
+      eyebrowTop: Math.round(eyebrowRect.top),
+      titleTop: Math.round(titleRect.top),
+      titleLineHeight: Math.round(
+        Number.parseFloat(getComputedStyle(title).lineHeight),
+      ),
+      modeTop: Math.round(modeRect.top),
+      modeLeft: Math.round(modeRect.left),
+      modeWidth: Math.round(modeRect.width),
+      modeLinkWidths: Array.from(
+        practice.querySelectorAll(":scope > .mode-switch .mode-switch-link"),
+      ).map((link) => Math.round(link.getBoundingClientRect().width)),
+    };
+  });
+}
 
 test("loads under the GitHub Pages subpath and becomes offline-ready", async ({
   page,
@@ -24,6 +59,31 @@ test("loads under the GitHub Pages subpath and becomes offline-ready", async ({
 
   expect(new URL(page.url()).pathname).toBe("/cat-vocab/");
   await expectNoHorizontalOverflow(page);
+});
+
+test("keeps practice header geometry and footer navigation consistent", async ({
+  page,
+}) => {
+  await page.goto("./#/lesson/lesson-1/read");
+  await expect(
+    page.getByRole("heading", { name: "1 观潮" }),
+  ).toBeVisible();
+  const recognitionMetrics = await practiceHeaderMetrics(page);
+
+  await page.goto("./#/lesson/lesson-1/write");
+  await expect(
+    page.getByRole("heading", { name: "1 观潮" }),
+  ).toBeVisible();
+  const writingMetrics = await practiceHeaderMetrics(page);
+
+  expect(writingMetrics).toEqual(recognitionMetrics);
+  const footer = page.getByRole("contentinfo");
+  await expect(
+    footer.getByRole("link", { name: "关于与许可" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("banner").getByRole("link", { name: "关于与许可" }),
+  ).toHaveCount(0);
 });
 
 test("draws real pointer strokes, shows correct feedback, summarizes, and persists progress", async ({

@@ -254,76 +254,78 @@ export function WritingPage({
         onChange={changeSource}
       />
 
-      {state.items.length === 0 ? (
-        <p className="placeholder-note">本课暂时没有书写内容</p>
-      ) : currentItem ? (
-        <>
-          <div className="writing-progress">
-            <p>
-              第 {state.index + 1} / {state.items.length} 题
-            </p>
-            <progress
-              aria-label="书写练习进度"
-              max={state.items.length}
-              value={state.index}
-            />
-          </div>
-
-          <div className="writing-prompt">
-            <Mascot mood="write" />
-            <p className="writing-pinyin">{currentItem.pinyin}</p>
-            {currentItem.polyphone ? (
-              <span className="writing-polyphone">多音字</span>
-            ) : null}
-          </div>
-
-          {isLoading ? (
-            <p className="status-message" role="status" aria-live="polite">
-              正在准备这个字的笔顺数据…
-            </p>
-          ) : loadFailed ? (
-            <section className="writing-load-error" aria-labelledby="load-error-heading">
-              <h3 id="load-error-heading">这个字的笔顺数据暂时无法加载</h3>
-              <p>可以先重新加载，或者跳过这个字，稍后再复习。</p>
-              <div className="writing-load-error-actions">
-                <Button onClick={reloadCharacter}>重新加载</Button>
-                <Button variant="secondary" onClick={handleSkipUnavailable}>
-                  先跳过
-                </Button>
-              </div>
-            </section>
-          ) : characterData ? (
-            <>
-              <WritingBoard
-                strokes={draftStrokes}
-                disabled={state.phase !== "answering"}
-                onChange={handleStrokesChange}
-                onSubmit={handleSubmit}
+      <div className="writing-stage">
+        {state.items.length === 0 ? (
+          <p className="placeholder-note">本课暂时没有书写内容</p>
+        ) : currentItem ? (
+          <>
+            <div className="writing-progress">
+              <p>
+                第 {state.index + 1} / {state.items.length} 题
+              </p>
+              <progress
+                aria-label="书写练习进度"
+                max={state.items.length}
+                value={state.index}
               />
-              {state.phase === "evaluating" ? (
-                <p className="status-message" role="status" aria-live="polite">
-                  正在检查这次书写…
-                </p>
+            </div>
+
+            <div className="writing-prompt">
+              <Mascot mood="write" />
+              <p className="writing-pinyin">{currentItem.pinyin}</p>
+              {currentItem.polyphone ? (
+                <span className="writing-polyphone">多音字</span>
               ) : null}
-              {state.evaluation ? (
-                <FeedbackPanel
-                  evaluation={state.evaluation}
-                  char={currentItem.char}
-                  characterData={characterData}
-                  attempt={state.attempt}
-                  onRetry={handleRetry}
-                  onSkip={handleSkipWrong}
-                  onNext={handleNext}
+            </div>
+
+            {isLoading ? (
+              <p className="status-message" role="status" aria-live="polite">
+                正在准备这个字的笔顺数据…
+              </p>
+            ) : loadFailed ? (
+              <section className="writing-load-error" aria-labelledby="load-error-heading">
+                <h3 id="load-error-heading">这个字的笔顺数据暂时无法加载</h3>
+                <p>可以先重新加载，或者跳过这个字，稍后再复习。</p>
+                <div className="writing-load-error-actions">
+                  <Button onClick={reloadCharacter}>重新加载</Button>
+                  <Button variant="secondary" onClick={handleSkipUnavailable}>
+                    先跳过
+                  </Button>
+                </div>
+              </section>
+            ) : characterData ? (
+              <>
+                <WritingBoard
+                  strokes={draftStrokes}
+                  disabled={state.phase !== "answering"}
+                  onChange={handleStrokesChange}
+                  onSubmit={handleSubmit}
                 />
-              ) : null}
-            </>
-          ) : null}
-        </>
-      ) : (
-        <p className="status-message" role="status" aria-live="polite">
-          正在整理练习结果…
-        </p>
-      )}
+                {state.phase === "evaluating" ? (
+                  <p className="status-message" role="status" aria-live="polite">
+                    正在检查这次书写…
+                  </p>
+                ) : null}
+                {state.evaluation ? (
+                  <FeedbackPanel
+                    evaluation={state.evaluation}
+                    char={currentItem.char}
+                    characterData={characterData}
+                    attempt={state.attempt}
+                    onRetry={handleRetry}
+                    onSkip={handleSkipWrong}
+                    onNext={handleNext}
+                  />
+                ) : null}
+              </>
+            ) : null}
+          </>
+        ) : (
+          <p className="status-message" role="status" aria-live="polite">
+            正在整理练习结果…
+          </p>
+        )}
+      </div>
     </section>
   );
 }

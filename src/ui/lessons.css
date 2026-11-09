@@ -263,9 +263,10 @@
     display: grid;
     grid-template-areas:
       "header header"
-      "sidebar main";
+      "sidebar main"
+      "footer footer";
     grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
     gap: 0 24px;
     align-items: start;
   }
@@ -339,6 +340,10 @@
     grid-row: 2;
   }
 
+  .app-footer {
+    grid-area: footer;
+  }
+
   .home-page {
     display: grid;
     grid-template-columns: minmax(240px, 0.78fr) minmax(320px, 1.22fr);
@@ -389,11 +394,7 @@
 @media (max-width: 560px) {
   .app-header__actions {
     width: 100%;
-    justify-content: space-between;
-  }
-
-  .app-header__actions .header-link {
-    margin-left: auto;
+    justify-content: flex-end;
   }
 
   .progress-actions {

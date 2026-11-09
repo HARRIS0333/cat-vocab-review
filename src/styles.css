@@ -61,7 +61,9 @@ textarea:focus-visible {
 }
 
 .app-shell {
+  display: flex;
   min-height: 100dvh;
+  flex-direction: column;
   padding:
     calc(12px + var(--safe-top))
     calc(12px + var(--safe-right))
@@ -90,6 +92,30 @@ textarea:focus-visible {
 .error-panel {
   width: min(100%, 760px);
   margin-inline: auto;
+}
+
+.app-main {
+  flex: 1 0 auto;
+}
+
+.app-footer {
+  display: flex;
+  width: min(100%, 760px);
+  justify-content: center;
+  margin: auto auto 0;
+  padding: 28px 0 4px;
+  border-top: 1px solid rgb(235 203 211 / 65%);
+}
+
+.footer-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  color: var(--color-deep-plum);
+  font-weight: 650;
+  text-decoration: none;
 }
 
 .app-header {
